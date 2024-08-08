@@ -1,0 +1,92 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+```
+
+Firstly, if we read the data in without passing any extra arguments, we get:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+)
+temperature.head()
+```
+
+So we need to dot he same as before, setting the `skiprows` argument:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    skiprows=4,  # skip first 4 rows of the header
+)
+temperature.head()
+```
+
+It's not separating the columns correctly so if we look at the data and see spaces, we _might_ think that useing `sep=" "` would work, but if we try it:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    skiprows=4,
+    sep=" ",  # try this...
+)
+temperature.head()
+```
+
+That doesn't look right. This is because `sep=" "` means "use a single space" as the separator, but in the data most columns are separated by multiple spaces. To make it use "any number of spaces" as the separator, you can instead set `sep='\s+'`:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    skiprows=4,
+    sep='\s+',  # whitespace-separated columns
+)
+temperature.head()
+```
+
+That looks much better! Now we set the `index_col`:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    skiprows=4,
+    sep='\s+',
+    index_col="Year",  # Set the index
+)
+temperature.head()
+```
+
+And, as we should always do, we plot the data we've just read in:
+
+```{python}
+#| tags: []
+temperature.plot()
+```
+
+Something is wrong with this. There's a line on the right-hand side which seems wrong. If we look at the last few lines of the data to see what's going on:
+
+```{python}
+temperature.tail()
+```
+
+We can see there are some `-99.9` in the data, repsenting missing data. We should fix this with `na_values`:
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    skiprows=4,
+    sep='\s+',
+    index_col="Year",
+    na_values=["-99.9"]
+)
+temperature.tail()
+```
+
+```{python}
+temperature.plot()
+```
+
+[Return to course](../pages/02%20Reading%20from%20file.qmd#exercise-1)

@@ -1,0 +1,109 @@
+---
+title: Example answers for final exercise
+jupyter: python3
+---
+
+
+
+```{python}
+import pandas as pd
+import seaborn as sns
+titanic = pd.read_csv("https://milliams.com/courses/data_analysis_python/titanic.csv")
+titanic
+```
+
+## Summarising
+
+### Find the average age of all people on board
+
+```{python}
+titanic["age"].mean()
+```
+
+### Use a filter to select only the males
+
+```{python}
+all_males = titanic[titanic["gender"] == "male"]
+```
+
+### Find the average age of the males on board
+
+```{python}
+all_males["age"].mean()
+```
+
+## Filtering
+
+### Select on the people in 3<sup>rd</sup> class
+
+```{python}
+titanic[titanic["class"] == "3rd"]
+```
+
+### Select just the passengers
+
+The technique shown in class was to combine together multiple selectors with `|`:
+
+```{python}
+passengers = titanic[
+    (titanic["class"] == "1st") | 
+    (titanic["class"] == "2nd") | 
+    (titanic["class"] == "3rd")
+]
+```
+
+However, it is also possible to use the `isin` method to select from a list of matching options:
+
+```{python}
+passengers = titanic[titanic["class"].isin(["1st", "2nd", "3rd"])]
+```
+
+## Plotting
+
+### Plot the distribution of ages for males and females
+
+Using `displot` with `age` as the main variable shows the distribution. YOu can overlay the two genders using `hue="gender"`. To simplify the view, you can set `kind="kde"`. Since KDE mode smooths the data, you can also set a cutoff of 0 to avoid it showing negative ages:
+
+```{python}
+sns.displot(
+    data=passengers,
+    x="age",
+    hue="gender",
+    kind="kde",
+    cut=0
+)
+```
+
+### How does this differ by class?
+
+All that has changed from the last plot is adding in the split by `class` over multiple columns:
+
+```{python}
+sns.displot(
+    data=passengers,
+    x="age",
+    hue="gender",
+    kind="kde",
+    cut=0,
+    col="class",
+    col_order=["1st", "2nd", "3rd"]
+)
+```
+
+## Combining
+
+To reduce the duplication of effort here, I create a function which, given a set of data, calculated the survived fraction within. This is then called three times, once for each class:
+
+```{python}
+#| tags: []
+def survived_ratio(df):
+    yes = df[df["survived"] == "yes"]
+    return len(yes) / len(df)
+
+ratio_1st = survived_ratio(passengers[passengers["class"] == "1st"])
+ratio_2nd = survived_ratio(passengers[passengers["class"] == "2nd"])
+ratio_3rd = survived_ratio(passengers[passengers["class"] == "3rd"])
+
+print(ratio_1st, ratio_2nd, ratio_3rd)
+```
+

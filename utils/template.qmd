@@ -1,0 +1,14 @@
+```{python}
+#| filename: FILENAME
+#| output: false
+CODE
+```
+
+```{.bash}
+python FILENAME
+```
+
+```{python}
+#| echo: false
+CODE
+```

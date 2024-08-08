@@ -1,0 +1,23 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+thurs = tips[tips["day"] == "Thur"]
+thurs
+```
+
+```{python}
+thurs["tip"].mean()
+```
+
+```{python}
+tips[tips["day"] == "Sat"]["tip"].mean()
+```
+

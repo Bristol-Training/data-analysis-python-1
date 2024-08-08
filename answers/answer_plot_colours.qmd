@@ -1,0 +1,47 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+from pandas import Series
+```
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/cetml1659on.txt",  # file name
+    skiprows=6,  # skip header
+    delim_whitespace=True,  # whitespace separated
+    na_values=['-99.9', '-99.99'],  # NaNs
+)
+```
+
+Taking the colours from the [matplotlib docs](https://matplotlib.org/gallery/color/named_colors.html):
+
+```{python}
+year_plot = temperature['JAN'].plot(color="steelblue")
+year_plot = temperature['JUN'].plot(color="firebrick")
+
+year_plot.set_xlabel(r'Year')
+year_plot.set_ylabel(r'Temperature ($^\circ$C)')
+
+plt.show()
+```
+
+And taking the line style from [the docs](https://matplotlib.org/gallery/lines_bars_and_markers/line_styles_reference.html) again:
+
+```{python}
+year_plot = temperature['JAN'].plot(color="steelblue")
+year_plot = temperature['JUN'].plot(color="firebrick")
+year_plot = temperature['YEAR'].plot(color="green", linestyle="--")
+
+year_plot.set_xlabel(r'Year')
+year_plot.set_ylabel(r'Temperature ($^\circ$C)')
+
+plt.show()
+```
+

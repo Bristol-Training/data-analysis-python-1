@@ -1,0 +1,39 @@
+project:
+  type: website
+  execute-dir: project
+
+jupyter: python3
+
+website:
+  title: "Intermediate Python"
+  page-navigation: true
+
+  sidebar: 
+    title: "Introduction to Data Analysis"
+    logo: "assets/logo.png"
+    logo-alt: "Jean Golding Institute Logo"
+    style: "docked"
+    border: true
+    contents: 
+      - index.qmd
+      - auto: "pages/*qmd"
+
+  page-footer:
+    left: "Course delivered by the [Jean Golding Institute](https://www.bristol.ac.uk/golding/)<br>© [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/)"  
+  repo-url: https://github.com/uob-training/beginning-python
+  repo-actions: [edit, issue]
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: true
+    shift-heading-level-by: 1
+    highlight-style: github
+
+    # code-line-numbers: true
+
+execute:
+  error: true
+
+
+

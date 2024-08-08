@@ -1,0 +1,101 @@
+---
+title: Improving the look of a plot
+jupyter: python3
+---
+
+
+This aside will show how we can go about improving the visuals of this graph. This will use some of the topics that we will be covering in later chapters, so you might want to come back to this aside once you've been through the material in the [visualisation chapter](../pages/05%20Visualisation.qmd).
+
+
+```{python}
+#| tags: []
+import pandas as pd
+
+city_pop_file = "https://milliams.com/courses/data_analysis_python/city_pop.csv"
+census = pd.read_csv(
+    city_pop_file,
+    skiprows=5,
+    sep=";",
+    na_values="-1",
+    index_col="year",
+)
+census
+```
+
+The simplest thing you can do is plot the graph with no additional options:
+
+```{python}
+#| tags: []
+census.plot()
+```
+
+The label on the x-axis is taken directly from the column name that we made into the index, `"year"`. Let's make it have a capital letter at the start by passing the `xlabel` argument to `plot`:
+
+```{python}
+#| tags: []
+census.plot(
+    xlabel="Year",
+)
+```
+
+And then also set a y-axis label in a similar way:
+
+```{python}
+#| tags: []
+census.plot(
+    xlabel="Year",
+    ylabel="Population (millions)",
+)
+```
+
+The y-axis currently starts around 2 which makes the difference between London and the other cities look greater than it actually is. It's usually a good idea to set your y-axis to start at zero. We can pass a tuple `(0, None)` to the `ylim` argument which tells the y-axis to start at `0` and the `None` tells it to use the default scale for the upper bound:
+
+```{python}
+#| tags: []
+census.plot(
+    xlabel="Year",
+    ylabel="Population (millions)",
+    ylim=(0, None),
+)
+```
+
+This is now a perfectly functional graph. All we might want to do now is to play with the aesthetics a little. Using [seaborn](https://seaborn.pydata.org) we can use their theme which can use nicer fonts and colours:
+
+```{python}
+#| tags: []
+import seaborn as sns
+
+sns.set_theme()
+
+census.plot(
+    xlabel="Year",
+    ylabel="Population (millions)",
+    ylim=(0, None),
+)
+```
+
+If we want a white background again, we can specify the seaborn style with `sns.set_style`:
+
+```{python}
+#| tags: []
+sns.set_style("white")
+
+census.plot(
+    xlabel="Year",
+    ylabel="Population (millions)",
+    ylim=(0, None),
+)
+```
+
+Or, if we want, we can use seaborn directly as the plotting tool using seaborn's `sns.relplot`:
+
+```{python}
+#| tags: []
+sns.relplot(data=census, kind="line").set(
+    xlabel="Year",
+    ylabel="Population (millions)",
+    ylim=(0, None),
+)
+```
+
+[Return to course](../pages/02%20Reading%20from%20file.qmd#visualise-your-data)

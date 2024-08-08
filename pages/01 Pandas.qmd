@@ -1,0 +1,47 @@
+---
+title: Introduction to Pandas
+jupyter: python3
+---
+
+
+Pandas is a Python library providing high-performance, easy-to-use data structures and data analysis tools. Pandas provides easy and powerful ways to import data from a variety of sources and export it to just as many. It is also explicitly designed to handle *missing data* elegantly which is a very common problem in data from the real world.
+
+It can be used to perform the same tasks that you might use spreadsheets such as Excel for: columns of data being combined together with functions being applied to them and finally being displayed as a graph.
+
+The official [pandas documentation](http://pandas.pydata.org/pandas-docs/stable/) is very comprehensive and you will be able to answer a lot of questions in there, however, it can sometimes be hard to find the right page. Don't be afraid to use Google to find help.
+
+
+Most data analyses will follow a similar series of steps which we will go through in this course:
+
+
+
+```{=html}
+<div class="contents-grid">
+    <div class="grid-icon"><img src="../assets/pipeline1.svg" width="100%"></div>
+    <div class="grid-text">
+        <p>
+            The first step of any data analysis is getting hold of some data.
+            This may be data you've collected yourself or perhaps from some external source.
+        </p>
+        <p>
+            Pandas provides you with the tools you need to read in a variety of different formats and to deal with the data cleaning that inevitably will be required in the real world.
+        </p>
+    </div>
+    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="100%"></div>
+    <div class="grid-text"></div>
+    <div class="grid-item"><img src="../assets/pipeline2.svg" width="100%"></div>
+    <div class="grid-text">
+        <p>Pandas provides us with all the tools we need to be able to select, query, filter and combine our data.</p>
+        <p>We will start with the basics of selcting our data and then move on to more complex selections and how to ask questions of your data.</p>
+    </div>
+    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="100%"></div>
+    <div class="grid-text"></div>
+    <div class="grid-icon"><img src="../assets/pipeline3.svg" width="100%"></div>
+    <div class="grid-text">
+        <p>
+            Working with raw data will only get you so far.
+            At the end we will learn how we can visualise our data with graphs and plot to communicate our results best.
+        </p>
+    </div>
+</div> 
+```

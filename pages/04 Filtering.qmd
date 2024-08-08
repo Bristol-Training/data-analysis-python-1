@@ -1,0 +1,152 @@
+---
+title: Filtering data
+jupyter: python3
+---
+
+
+
+In the last section we looked at how to act on entire columns at once. For example when we did:
+
+```python
+tips["total_bill"] * 100
+```
+
+it applied the multiplication to every row, multiplying each number by 100.
+
+Sometimes we don't want to have to deal with entire columns at once, we might only want to grab a subset of the data and look in just that part. For example, with the tips data, we might think that the day of the week will affect the data so we just want to grab the data for Saturdays.
+
+In Pandas there are two steps to asking a question like this.
+
+1. create a *filter* which describes the question you want to ask
+2. *apply* that filter to the data to get just the bits you are interested in
+
+You create a filter by performing some operation on your `DataFrame` or a column within it. To ask about only those rows which refer to Saturday, you grab the `day` column and compare it to `"Sat"`:
+
+```{python}
+import pandas as pd
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+tips["day"] == "Sat"
+```
+
+This has created a filter object (sometimes called a *mask* or a *boolean array*) which has `True` set for the rows where the day is Saturday and `False` elsewhere.
+
+We could save this filter as a variable:
+
+```{python}
+sat_filter = tips["day"] == "Sat"
+```
+
+We can use this to filter the `DataFrame` as a whole. `tips["day"] == "Sat"` has returned a `Series` containing booleans. Passing it back into `tips` as an indexing operation will use it to filter based on the `day` column, only keeping those rows which contained `True` in the filter:
+
+```{python}
+tips[sat_filter]
+```
+
+Notice that it now says that the table only has 87 rows, down from 244. However, the index has been maintained. This is because the row labels are connected to the row, they're not just row numbers.
+
+It is more common to do this in one step, rather than creating and naming a filter object. So the code becomes:
+
+```{python}
+tips[tips["day"] == "Sat"]
+```
+
+This has given us back our subset of data as another `DataFrame` which can used in exactly the same way as the previous one (further filtering, summarising etc.).
+
+### Exercise 1
+
+- Select the data for only Thursdays.
+- Calculate the mean of the `tip` column for Thursdays
+- Compare this with the mean of the `tip` column for Saturdays
+
+[<small>answer</small>](answer_filtering_tip_day.ipynb)
+
+## Other filters
+
+As well as filtering with the `==` operator (which only checks for exact matches), you can do other types of comparisons. Any of the standard Python comparisons will work (i.e. `==`, `!=`, `<`, `<=`, `>`, `>=`).
+
+To grab only the rows where the total bill is less than £8 we can use `<`:
+
+```{python}
+tips[tips["total_bill"] < 8]
+```
+
+### Exercise 2
+
+Filter the data to only include parties of 5 or more people.
+
+[<small>answer</small>](answer_filtering_party_size.ipynb)
+
+## Combining filters
+
+If you want to apply multiple filters, for example to select only "Saturdays with small total bills" you can do it in one of two different ways. Either split the question into multiple steps, or ask it all at once.
+
+Let's do it multiple steps first since we already have tools we need for that:
+
+```{python}
+sat_tips = tips[tips["day"] == "Sat"]  # First grab the Saturday data and save it as a variable
+sat_tips[sat_tips["total_bill"] < 8]  # Then act on the new DataFrame as use it as before
+```
+
+Or, you can combine the questions together using the `&` operator with a syntax like:
+
+```python
+df[(filter_1) & (filter_2)]
+```
+
+so in our case filter 1 is `tips["day"] == "Sat"` and filter 2 is `tips["total_bill"] < 8` so it becomes:
+
+```{python}
+tips[(tips["day"] == "Sat") & (tips["total_bill"] < 8)]
+```
+
+If you want to do an "or" operation, then instead of `&` you can use `|`.
+
+### Exercise 3
+
+Filter the data to only include parties of 4 or more people which happened at lunch time.
+
+Hint: The `size` and `time` columns are what you want to use here.
+
+[<small>answer</small>](answer_filtering_combined.ipynb)
+
+## DataFrame indexing
+
+When we use the square bracket syntax on a `DataFrame` directly there are a few different types of object that can be passed:
+
+<dl>
+<dt>A single string</dt>
+<dd>This will select a single column form the <code>DataFrame</code>, returning a <code>Series</code> object.</dd>
+<dt>A list of strings</dt>
+<dd>This will select those columns by name, returning a <code>DataFrame</code>.</dd>
+<dt>A filter (a <code>Series</code> of <code>True</code>/<code>False</code>)</dt>
+<dd>This will filter the table as a whole, returning a <code>DataFrame</code> with only the rows matching <code>True</code>included.</dd>
+</dl>
+
+These are provided as shortcuts as they are the most common operations to do an a `DataFrame`. This is why some of them operate on columns and other on rows.
+
+If you want to be explicit about which axis you are acting on, you can pass these same types of objects to the `.loc[rows, columns]` attribute with one argument per axis. This means that
+
+```python
+tips[sat_filter]
+```
+
+is equivalent to
+```python
+tips.loc[sat_filter]
+```
+
+and that
+```python
+tips["size"]
+```
+
+is equivalent to
+```python
+tips.loc[:, "size"]
+```
+
+The full set of rules for [`DataFrame.loc` are in the documentation](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html).
+

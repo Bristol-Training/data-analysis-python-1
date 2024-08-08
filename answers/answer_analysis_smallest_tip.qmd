@@ -1,0 +1,16 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+index_of_smallest_bill = tips["total_bill"].idxmin()
+tips["tip"][index_of_smallest_bill]
+```
+
+[Return to the course](../pages/03%20Analysis.qmd#exercise-2)

@@ -1,0 +1,15 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+tips["bill_per_person"] = tips["total_bill"] / tips["size"]
+tips
+```
+

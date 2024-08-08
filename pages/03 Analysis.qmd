@@ -1,0 +1,170 @@
+---
+title: Querying your data
+jupyter: python3
+---
+
+
+Once your data is read in and available as a DataFrame, Pandas provides a whole suite of tools for extracting information from it.
+
+Let's start by looking at some example data which contains information about the amounts that people at a restaurant paid and tipped for their meals:
+
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips
+```
+
+The first thing that you usually want to be able to do is to pull apart the overall table to get at specific bits of data from inside.
+
+When using `list`s and `dict`s in Python, the square-bracket syntax was used to fetch an item from the container. In Pandas we can use the same syntax but it's a much more powerful tool.
+
+If you pass a single string to the square brackets of a `DataFrame` it will return to you just that one column:
+
+```{python}
+tips["total_bill"]
+```
+
+Accessing a column like this returns an object called [a `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) which is the second of the two main Pandas data types. Don't worry too much about these just yet but think of them as being a single column of the `DataFrame`, along with the index of the `DataFrame`.
+
+If you pass a list of column names to the square brackets then you can grab out just those columns:
+
+```{python}
+tips[["total_bill", "tip"]]
+```
+
+::: {.column-margin}
+### Aside: Indexing
+Note that the outer square brackets are saying "I'm selecting data" and the inner square brackets are saying "I'm giving you a `list` of column names".
+:::
+
+In this case it gives you back another `DataFrame`, just with only the required columns present.
+
+### Getting rows
+
+If you want to select a *row* from a `DataFrame` then you can use the `.loc` (short for "location") attribute which allows you to pass index values like:
+
+```{python}
+tips.loc[2]
+```
+
+If you want to grab a single value from the table, you can follow the row label with the column name that you want:
+
+```{python}
+tips.loc[2, "total_bill"]
+```
+
+
+::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
+The `size` column in the data is the number of people in the dining party. Extract this column from the DataFrame.
+
+[<small>answer</small>](../answers/answer_analysis_get_column.qmd)
+:::
+
+## Descriptive statistics
+
+Now that we know how to refer to individual columns, we can start asking questions about the data therein. If you've worked with columns of data in Excel for example, you've probably come across the `SUM()` and `AVERAGE()` functions to summarise data. We can do the same thing in pandas by calling the `sum()` or `mean()` methods on a column:
+
+```{python}
+tips["total_bill"].sum()
+```
+
+```{python}
+tips["total_bill"].mean()
+```
+
+You can see a list of all the possible functions you can call in the [documentation for `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html). So for example, you can also ask for the maximum value from a column with the `max()` method. 
+
+```{python}
+tips["tip"].max()
+```
+
+In some situations, you don't just want to get the *value* of the maximum, but rather to find out *which row* it came from. In cases like that there is the `idxmax()` method which give you the *index label* of the row with the maximum:
+
+```{python}
+tips["total_bill"].idxmax()
+```
+
+So we know that the value of the maximum bill was £7 and it was found in the row with the label `170`.
+
+You can then use this information with the `.loc` attribute to get the rest of the information for that row:
+
+```{python}
+index_of_max_bill = tips["total_bill"].idxmax()
+tips.loc[index_of_max_bill]
+```
+
+::: {#exercise-2 .callout-tip title="Exercise 2" icon=false} 
+
+Find the value of the tip that was paid for the smallest total bill.
+
+Hint: Have a look at the [documentation page for `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html). There's a function which works like `idxmax()` but finds the minimum.
+
+[<small>answer</small>](../answers/answer_analysis_smallest_tip.qmd)
+
+:::
+
+## Acting on columns
+
+Functions like `sum()` and `max()` summarise down the column to a single value. In some situations we instead want to manipulate a column to create a new column.
+
+For example, the data in the table is in British pounds. If we wanted to convert it into the number of pennies then we need to multiply each value by 100. In Pandas you can refer to an entire column and perform mathematical operations on it and it will apply the operation to each row:
+
+```{python}
+tips["total_bill"] * 100
+```
+
+The data in row `0` was previously 16.99 but the result here is 1699.0, and likewise for every other row.
+
+You can do any mathematical operation that Python supports, such as `+`, `-` and `/`.
+
+## Combining columns
+
+<aside><h>Aside</h><p>Columns are actually combined by matching together their <em>index labels</em>, not strictly by their <em>position</em> in the column.</p></aside>
+
+As well as operating on individual columns, you can combine together multiple columns. Any operation you do between two columns will be done *row-wise*, that is adding two columns will add together the two values from the first row of each, then the second row from each etc.
+
+For example if we wanted to find out, for each entry in our table what the ratio between tip amount and total bill was, we could divide one column by the other:
+
+```{python}
+tips["tip"] / tips["total_bill"]
+```
+
+Of course, if we want the tip *percentage* so we need to multiply the value by 100:
+
+```{python}
+(tips["tip"] / tips["total_bill"])*100
+```
+
+It can get messy and hard-to-read doing too many things on one line, so it's a good idea to split each part of your calculation onto its own line, giving each step its own variable name along the way.
+
+```{python}
+tip_fraction = tips["tip"] / tips["total_bill"]
+tip_percent = tip_fraction*100
+tip_percent
+```
+
+### Exercise 3
+
+The `total_bill` column give the total amount for the entire dining party. Calculate the amount spent *per person* for each row in the DataFrame.
+
+Extra: calculate the average and the standard deviation of this data. You might need to take a look at [the documentation page for the `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) type.
+
+[<small>answer</small>](answer_analysis_per_person.ipynb)
+
+## Adding new columns
+
+New columns can be added to a `DataFrame` by assigning them by index (as you would for a Python `dict`):
+
+```{python}
+tips["percent_tip"] = (tips["tip"] / tips["total_bill"])*100
+tips
+```
+
+### Exercise 4
+
+Take the "bill per person" result you calculated in the last exercise and add it as a new column, `bill_per_person`, in the DataFrame.
+
+[<small>answer</small>](answer_analysis_per_person_column.ipynb)
+

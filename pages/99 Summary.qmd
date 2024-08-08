@@ -1,0 +1,18 @@
+---
+title: Summary
+jupyter: python3
+---
+
+
+This course has given you a brief introduction to the tools that can help you read in, analyse and plot your data.
+
+Once you're happy with the concepts in this course, you may want to look at the [Applied Data Analysis in Python](../applied_data_analysis/) course which starts to show how to apply more advanced techniques such as machine learning to data.
+
+## Credits
+
+This course was written by Matt Williams. All text is published under a [Creative Commons Attribution 4.0 International
+License](https://creativecommons.org/licenses/by/4.0/) with all code snippets licensed as MIT.
+
+The source for the material can be found on [GitLab](https://gitlab.com/milliams/data_analysis_python/) where fixes are welcome.
+
+

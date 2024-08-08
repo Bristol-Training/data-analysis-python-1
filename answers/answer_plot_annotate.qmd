@@ -1,0 +1,45 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+from pandas import Series
+```
+
+```{python}
+import matplotlib.pyplot as plt
+```
+
+```{python}
+temperature = pd.read_csv(
+    "https://milliams.com/courses/data_analysis_python/cetml1659on.txt",  # file name
+    skiprows=6,  # skip header
+    delim_whitespace=True,  # whitespace separated
+    na_values=['-99.9', '-99.99'],  # NaNs
+)
+```
+
+```{python}
+#| scrolled: true
+fig, ax = plt.subplots()
+
+temperature['JAN'].plot(color="steelblue", ax=ax)
+temperature['JUN'].plot(color="firebrick", ax=ax)
+temperature['YEAR'].plot(color="green", linestyle="--", ax=ax)
+
+ax.set_xlabel(r'Year')
+ax.set_ylabel(r'Temperature ($^\circ$C)')
+ax.legend(loc='upper left')
+
+warm_winter_year = temperature['JAN'].idxmax()
+warm_winter_temp = temperature['JAN'].max()
+
+ax.annotate('Warmest winter',
+            xy=(warm_winter_year, warm_winter_temp), xycoords='data',
+            xytext=(-100, +30), textcoords='offset points', fontsize=12,
+            arrowprops=dict(arrowstyle="->", connectionstyle="arc3,rad=-.2"))
+
+plt.show()
+```
+

@@ -1,0 +1,51 @@
+---
+jupyter: python3
+---
+
+https://www.metoffice.gov.uk/research/climate/maps-and-data/historic-station-data
+
+```{python}
+#| tags: [nbval-ignore-output]
+from urllib.parse import urlparse
+from pathlib import PurePath, Path
+from subprocess import run
+
+import pandas as pd
+
+def historic_station_data(site):
+    url = f"https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/{site}data.txt"
+    fn = Path(PurePath(urlparse(url).path).name)
+    fn.unlink(missing_ok=True)
+    run(["wget", url])
+
+    df = pd.read_csv(
+        fn.name,
+        skiprows=7,
+        delim_whitespace=True,
+        na_values=["---"],
+        names=["yyyy", "mm", "tmax", "tmin", "af", "rain", "sun", "provisional"],
+        parse_dates=[["yyyy", "mm"]],
+        index_col="yyyy_mm",
+    )
+
+    fn.unlink(missing_ok=True)
+
+    # There are some * and # in the file to denote things. Let's rip them out
+    for col in ["tmax", "tmin", "af", "rain", "sun"]:
+        if hasattr(df[col], "str"):
+            df[col] = pd.to_numeric(df[col].str.replace("[\*#]", "", regex=True))
+
+    return df
+
+rain = pd.concat(
+    [
+        historic_station_data("cardiff")["rain"].rename("Cardiff"),
+        historic_station_data("stornoway")["rain"].rename("Stornoway"),
+        historic_station_data("oxford")["rain"].rename("Oxford"),
+        historic_station_data("armagh")["rain"].rename("Armagh"),
+    ],
+    axis=1,
+)
+rain.loc[:"2020"].resample("Y").mean().to_csv("rain.csv", date_format="%Y", index_label=False, float_format='%.1f')
+```
+

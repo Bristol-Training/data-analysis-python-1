@@ -1,0 +1,26 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+tips["bill_per_person"] = tips["total_bill"] / tips["size"]
+```
+
+```{python}
+import seaborn as sns
+```
+
+```{python}
+sns.catplot(data=tips, x="day", y="bill_per_person", order=["Thur", "Fri", "Sat", "Sun"], kind="box")
+```
+
+```{python}
+sns.catplot(data=tips, x="day", y="size", order=["Thur", "Fri", "Sat", "Sun"], kind="violin")
+```
+

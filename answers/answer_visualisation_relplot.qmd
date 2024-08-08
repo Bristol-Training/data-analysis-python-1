@@ -1,0 +1,31 @@
+---
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+
+tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+```
+
+```{python}
+tips["bill_per_person"] = tips["total_bill"] / tips["size"]
+tips["percent_tip"] = (tips["tip"] / tips["total_bill"])*100
+```
+
+```{python}
+#| tags: []
+import seaborn as sns
+
+sns.relplot(
+    data=tips,
+    x="bill_per_person",
+    y="percent_tip",
+    hue="day",
+    style="day",
+).set(
+    xlabel="Bill per person (£)",
+    ylabel="Tip percent",
+)
+```
+

@@ -1,0 +1,51 @@
+---
+title: Final exercise
+jupyter: python3
+---
+
+
+
+<img style="float:right; border-radius: 10px;" src="titanic.jpg"/>For the final exercise you should try to combine together all the skills you've learned over this course. This is expected to take you longer than any of the exercises so far. If you get to this point in the session, feel free to get started on it now, otherwise you can treat this as practice later on.
+
+Read the file [`https://milliams.com/courses/data_analysis_python/titanic.csv`](https://milliams.com/courses/data_analysis_python/titanic.csv). This file contains information about all the passengers and crew aboard the RMS Titanic. Its columns are:
+
+- `name`: strings with the name of the passenger.
+- `gender`: "male" or "female".
+- `age`: a float with the persons age on the day of the sinking. The age of babies (under 12 months) is given as a fraction of one year.
+- `class`: a string specifying the class (1<sup>st</sup>, 2<sup>nd</sup> or 3<sup>rd</sup>) for passengers or the type of service aboard for crew members.
+- `embarked`: the persons place of of embarkment.
+- `country`: the persons home country.
+- `ticketno`: the persons ticket number (NA for crew members).
+- `fare`: the ticket price (NA for crew members, musicians and employees of the shipyard company).
+- `sibsp`: a number specifying the number if siblings/spouses aboard.
+- `parch`: a number specifying the number of parents/children aboard.
+- `survived`: a string ("no" or "yes") specifying whether the person has survived the sinking.
+
+Work through the following suggested questions. Feel free to go off-course and explore whatever you think is interesting in the data.
+
+## Summarising
+
+- Find the average age of all people on board
+- Use a filter to select only the males
+- Find the average age of the males on board
+
+## Filtering
+
+- Use a filter to select only the people in 3<sup>rd</sup> class.
+- Create a DataFrame which only contains the passengers on the ship (those in first, second or third class).
+
+## Plotting
+
+- Plot and compare the distribution of ages for males and females.
+- How does this differ by class?
+
+## Combining
+
+Calculate the percentage that survived within each class.
+
+## Explore
+
+Explore the data and see what you can find. For example, try exploring what the main factors predicting survival were.
+
+There's some help with the answers to some parts of this exercise [here](answer_final_exercise.ipynb).
+
