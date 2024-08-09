@@ -24,3 +24,4 @@ sns.catplot(data=tips, x="day", y="bill_per_person", order=["Thur", "Fri", "Sat"
 sns.catplot(data=tips, x="day", y="size", order=["Thur", "Fri", "Sat", "Sun"], kind="violin")
 ```
 
+[Return to course](../pages/05%20Visualisation.qmd#exercise-3)

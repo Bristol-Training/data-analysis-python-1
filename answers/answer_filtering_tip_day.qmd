@@ -21,3 +21,5 @@ thurs["tip"].mean()
 tips[tips["day"] == "Sat"]["tip"].mean()
 ```
 
+
+[Return to course](../pages/04%20Filtering.qmd#exercise-1)

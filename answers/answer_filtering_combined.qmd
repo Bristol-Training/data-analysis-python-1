@@ -12,3 +12,4 @@ tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
 tips[(tips["size"] >= 4) & (tips["time"] == "Lunch")]
 ```
 
+[Return to course](../pages/04%20Filtering.qmd#exercise-3)

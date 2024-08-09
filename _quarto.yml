@@ -4,6 +4,9 @@ project:
 
 jupyter: python3
 
+resources:
+  - "data/*"
+
 website:
   title: "Intermediate Python"
   page-navigation: true

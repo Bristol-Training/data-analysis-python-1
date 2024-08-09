@@ -119,12 +119,13 @@ sns.relplot(
 )
 ```
 
-### Exercise 2
+::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
 
 - Using the `bill_per_person` and `percent_tip` columns from the previous chapter, plot the relationship between the percentage tip, and the bill per-person.
 - Set the colour of the data points to be based on the day of the week.
 
-[<small>answer</small>](answer_visualisation_relplot.ipynb)
+[<small>answer</small>](../answers/answer_visualisation_relplot.qmd)
+:::
 
 ### Plotting distributions
 
@@ -199,11 +200,12 @@ sns.displot(
 
 Now we can directly see that the lunch peak is tighter and peaks slightly lower.
 
-### Exercise 3
 
+::: {#exercise-2 .callout-tip title="Exercise 2" icon=false} 
 Investigate how the time of day affects how much each person spends *on average*.
 
-[<small>answer</small>](answer_visualisation_displot.ipynb)
+[<small>answer</small>](../answers/answer_visualisation_displot.qmd)
+:::
 
 ### Plotting categorical data
 
@@ -242,11 +244,12 @@ sns.catplot(
 )
 ```
 
-### Exercise 4
+::: {#exercise-3 .callout-tip title="Exercise 3" icon=false} 
 
 There seems to be a trend towards larger total bills at the weekend. Investigate whether this is due to a larger average spend per person or due to a larger average group size.
 
 See if using `kind="violin"` instead of `"box"` presents your data any better.
 
-[<small>answer</small>](answer_visualisation_catplot.ipynb)
+[<small>answer</small>](../answers/answer_visualisation_catplot.qmd)
 
+:::

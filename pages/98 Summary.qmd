@@ -1,0 +1,12 @@
+---
+title: Summary
+jupyter: python3
+---
+
+
+This course has given you a brief introduction to the tools that can help you read in, analyse and plot your data.
+
+Once you're happy with the concepts in this course, you may want to look at the [Applied Data Analysis in Python](https://milliams.com/courses/applied_data_analysis/) course which starts to show how to apply more advanced techniques such as machine learning to data.
+
+
+

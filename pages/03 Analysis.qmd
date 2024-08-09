@@ -1,6 +1,7 @@
 ---
 title: Querying your data
 jupyter: python3
+# format:ipynb
 ---
 
 
@@ -121,7 +122,12 @@ You can do any mathematical operation that Python supports, such as `+`, `-` and
 
 ## Combining columns
 
-<aside><h>Aside</h><p>Columns are actually combined by matching together their <em>index labels</em>, not strictly by their <em>position</em> in the column.</p></aside>
+
+
+::: {.column-margin}
+### Aside
+Columns are actually combined by matching together their *index labels*, not strictly by their *position* in the column.
+:::
 
 As well as operating on individual columns, you can combine together multiple columns. Any operation you do between two columns will be done *row-wise*, that is adding two columns will add together the two values from the first row of each, then the second row from each etc.
 
@@ -145,13 +151,14 @@ tip_percent = tip_fraction*100
 tip_percent
 ```
 
-### Exercise 3
-
+::: {#exercise-3 .callout-tip title="Exercise 3" icon=false} 
 The `total_bill` column give the total amount for the entire dining party. Calculate the amount spent *per person* for each row in the DataFrame.
 
 Extra: calculate the average and the standard deviation of this data. You might need to take a look at [the documentation page for the `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) type.
 
-[<small>answer</small>](answer_analysis_per_person.ipynb)
+[<small>answer</small>](../answers/answer_analysis_per_person.qmd)
+:::
+
 
 ## Adding new columns
 
@@ -162,9 +169,9 @@ tips["percent_tip"] = (tips["tip"] / tips["total_bill"])*100
 tips
 ```
 
-### Exercise 4
-
+::: {#exercise-4 .callout-tip title="Exercise 4" icon=false} 
 Take the "bill per person" result you calculated in the last exercise and add it as a new column, `bill_per_person`, in the DataFrame.
 
-[<small>answer</small>](answer_analysis_per_person_column.ipynb)
+[<small>answer</small>](../answers/answer_analysis_per_person_column.qmd)
 
+:::

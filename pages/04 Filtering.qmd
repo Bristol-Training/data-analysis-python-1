@@ -55,13 +55,14 @@ tips[tips["day"] == "Sat"]
 
 This has given us back our subset of data as another `DataFrame` which can used in exactly the same way as the previous one (further filtering, summarising etc.).
 
-### Exercise 1
-
+::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
 - Select the data for only Thursdays.
 - Calculate the mean of the `tip` column for Thursdays
 - Compare this with the mean of the `tip` column for Saturdays
 
-[<small>answer</small>](answer_filtering_tip_day.ipynb)
+[<small>answer</small>](../answers/answer_filtering_tip_day.qmd)
+:::
+
 
 ## Other filters
 
@@ -73,12 +74,11 @@ To grab only the rows where the total bill is less than £8 we can use `<`:
 tips[tips["total_bill"] < 8]
 ```
 
-### Exercise 2
-
+::: {#exercise-2 .callout-tip title="Exercise 2" icon=false}
 Filter the data to only include parties of 5 or more people.
 
-[<small>answer</small>](answer_filtering_party_size.ipynb)
-
+[<small>answer</small>](../answers/answer_filtering_party_size.qmd)
+:::
 ## Combining filters
 
 If you want to apply multiple filters, for example to select only "Saturdays with small total bills" you can do it in one of two different ways. Either split the question into multiple steps, or ask it all at once.
@@ -104,13 +104,14 @@ tips[(tips["day"] == "Sat") & (tips["total_bill"] < 8)]
 
 If you want to do an "or" operation, then instead of `&` you can use `|`.
 
-### Exercise 3
+::: {#exercise-3 .callout-tip title="Exercise 3" icon=false} 
 
 Filter the data to only include parties of 4 or more people which happened at lunch time.
 
 Hint: The `size` and `time` columns are what you want to use here.
 
-[<small>answer</small>](answer_filtering_combined.ipynb)
+[<small>answer</small>](../answers/answer_filtering_combined.qmd)
+:::
 
 ## DataFrame indexing
 

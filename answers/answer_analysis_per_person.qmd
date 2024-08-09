@@ -21,3 +21,5 @@ bill_per_person.mean()
 bill_per_person.std()
 ```
 
+
+[Return to course](../pages/03%20Analysis.qmd#exercise-3)

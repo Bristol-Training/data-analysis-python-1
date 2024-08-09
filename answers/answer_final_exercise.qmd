@@ -107,3 +107,4 @@ ratio_3rd = survived_ratio(passengers[passengers["class"] == "3rd"])
 print(ratio_1st, ratio_2nd, ratio_3rd)
 ```
 
+[Return to course](../pages/06%20Final%20exercise.qmd)

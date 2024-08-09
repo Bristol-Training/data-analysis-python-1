@@ -18,3 +18,4 @@ import seaborn as sns
 sns.displot(data=tips, x="bill_per_person", hue="time", kind="kde", common_norm=False)
 ```
 
+[Return to course](../pages/05%20Visualisation.qmd#exercise-2)

@@ -13,3 +13,5 @@ tips["bill_per_person"] = tips["total_bill"] / tips["size"]
 tips
 ```
 
+
+[Return to course](../pages/03%20Analysis.qmd#exercise-4)

@@ -1,0 +1,8 @@
+---
+title: Contributors
+---
+
+This course was originally written by Christopher Woods and published at https://chryswoods.com/beginning_python/. Some changes were made by the ACRC at the University of Bristol. The course was revised by Matt Williams, see https://milliams.com/courses/beginning_python/.
+
+* Christopher Woods
+* Matt Williams
