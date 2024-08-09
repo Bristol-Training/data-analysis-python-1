@@ -12,6 +12,13 @@ Data analysis is a huge topic and we couldn't possibly cover it all in one short
 
 You can jump ahead to any chapter:
 
+1. [Introduction to pandas](./pages/01%20Pandas.qmd)
+2. [Reading data](./pages/02%20Reading%20from%20file.qmd)
+3. [Querying data](./pages/03%20Analysis.qmd)
+4. [Filtering](./pages/04%20Filtering.qmd)
+5. [Visualisation](./pages/05%20Visualisation.qmd)
+6. [Final exercise](./pages/06%20Final%20exercise.qmd)
+7. [Summary](./pages/98%20Summary.qmd)
 
 In previous courses, you've used the `python` command line program to execute scripts. This course will use a tool called Jupyter Notebooks to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
 
