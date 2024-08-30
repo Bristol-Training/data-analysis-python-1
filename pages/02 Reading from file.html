@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-our-first-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-our-first-file">Reading our first file</h3>
 <p>You can get access to Pandas by importing the <code>pandas</code> module. By convention, it is imported as <code>pd</code>:</p>
-<div id="f63203e3" class="cell" data-execution_count="1">
+<div id="010f50be" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use the pandas function <code>read_csv()</code> to read the file and convert it to a <code>DataFrame</code>. Full documentation for this function can be found in <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the manual</a>.</p>
@@ -253,12 +253,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any valid string path is acceptable. The string could be a URL…</p>
 </blockquote>
 <p>This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:</p>
-<div id="44c25cc0" class="cell" data-tags="[]" data-execution_count="2">
+<div id="a1b010f2" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> pd.read_csv(<span class="st">"https://milliams.com/courses/data_analysis_python/rain.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>This gives us the data from the file as a type of object called a <code>DataFrame</code>. This is the core of Pandas and we will be exploring many of the things that it can do throughout this course.</p>
 <p>We can get Jupyter to display the data by putting the variable name in a cell by itself:</p>
-<div id="411ee392" class="cell" data-execution_count="3">
+<div id="487c8f64" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -386,7 +386,7 @@ year;London;Paris;Rome
 2015;8.615;2.21;
 2019;;;</code></pre>
 <p>This file has some issues that <code>read_csv</code> will not be able to automatically deal with but let’s start by trying to read it in directly:</p>
-<div id="c945b8bf" class="cell" data-execution_count="4">
+<div id="c75df9c1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"https://milliams.com/courses/data_analysis_python/city_pop.csv"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pd.read_csv(city_pop_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
@@ -459,7 +459,7 @@ year;London;Paris;Rome
 <section id="skipping-the-header" class="level4">
 <h4 class="anchored" data-anchor-id="skipping-the-header">Skipping the header</h4>
 <p>The first thing we notice is that it’s treating the text at the top of the file as though it’s data. Checking <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the documentation</a> we see that the simplest way to solve this is to use the <code>skiprows</code> argument to the function to which we give an integer giving the number of rows to skip (also note that I’ve changed to put one argument per line for readability and that the comma at the end is optional but for consistency):</p>
-<div id="9f6e1394" class="cell" data-execution_count="5">
+<div id="2e6a08c9" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,  <span class="co"># Add this</span></span>
@@ -518,7 +518,7 @@ year;London;Paris;Rome
 <section id="specifying-the-separator" class="level4">
 <h4 class="anchored" data-anchor-id="specifying-the-separator">Specifying the separator</h4>
 <p>The next most obvious problem is that it is not separating the columns at all. This is controlled by the <code>sep</code> argument which is set to <code>','</code> by default (hence <em>comma</em> separated values). We can simply set it to the appropriate semi-colon:</p>
-<div id="1cb829cc" class="cell" data-execution_count="6">
+<div id="3eeb804d" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -606,7 +606,7 @@ year;London;Paris;Rome
 <section id="identifying-missing-data" class="level4">
 <h4 class="anchored" data-anchor-id="identifying-missing-data">Identifying missing data</h4>
 <p>Reading the descriptive header of our data file we see that a value of <code>-1</code> signifies a missing reading so we should mark those too. This can be done after the fact but it is simplest to do it at file read-time using the <code>na_values</code> argument:</p>
-<div id="cc672505" class="cell" data-execution_count="7">
+<div id="5eecceb4" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -694,7 +694,7 @@ year;London;Paris;Rome
 <section id="setting-the-index" class="level4">
 <h4 class="anchored" data-anchor-id="setting-the-index">Setting the index</h4>
 <p>The last this we want to do is use the <code>year</code> column as the index for the <code>DataFrame</code>. This can be done by passing the name of the column to the <code>index_col</code> argument:</p>
-<div id="4bfcc230" class="cell" data-execution_count="8">
+<div id="8f3f7884" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>census <span class="op">=</span> pd.read_csv(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -784,7 +784,7 @@ year;London;Paris;Rome
 <h3 class="anchored" data-anchor-id="visualise-your-data">Visualise your data</h3>
 <p>Pandas comes with some tools for displaying tables of data visually. We won’t cover the details of manipulating these plots here but for quickly checking the shape of the data, it’s incredibly useful. It’s a good idea to <em>always</em> plot your data once you’ve read it in as it will often show issues with the data more clearly than by scanning table of numbers.</p>
 <p>If you have a variable containing a <code>DataFrame</code> (like we do with <code>census</code>), you can plot it as a line graph using:</p>
-<div id="6106914d" class="cell" data-tags="[]" data-execution_count="9">
+<div id="7774cf2e" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>census.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -909,7 +909,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/uob-training\.github\.io\/introduction-to-data-analysis-in-python\/");
+      var filterRegex = new RegExp("https:\/\/UoB-Data-Science-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

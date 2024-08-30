@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/01 Pandas.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/01 Pandas.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/05 Visualisation.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/05 Visualisation.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/99 Contributors.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/99 Contributors.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/04 Filtering.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/04 Filtering.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/index.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/index.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/utils/generate_weather_data.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/utils/generate_weather_data.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_plot_annotate.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_plot_annotate.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_smallest_tip.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_smallest_tip.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_catplot.html</loc>
-    <lastmod>2024-08-09T15:18:38.414Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_catplot.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_plot_colours.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_plot_colours.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_final_exercise.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_final_exercise.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_get_column.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_get_column.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_per_person.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_per_person.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_relplot.html</loc>
-    <lastmod>2024-08-09T15:18:38.414Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_relplot.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_read_weather.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_read_weather.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_tip_day.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_tip_day.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_party_size.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_party_size.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_displot.html</loc>
-    <lastmod>2024-08-09T15:18:38.414Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_visualisation_displot.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_combined.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_filtering_combined.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_per_person_column.html</loc>
-    <lastmod>2024-08-09T15:18:38.410Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/answers/answer_analysis_per_person_column.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/appendix/aside_census_plot.html</loc>
-    <lastmod>2024-08-09T15:18:38.414Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/appendix/aside_census_plot.html</loc>
+    <lastmod>2024-08-30T14:52:40.016Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/02 Reading from file.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/02 Reading from file.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/06 Final exercise.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/06 Final exercise.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/03 Analysis.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/03 Analysis.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
   <url>
-    <loc>https://uob-training.github.io/introduction-to-data-analysis-in-python/pages/98 Summary.html</loc>
-    <lastmod>2024-08-09T15:18:38.418Z</lastmod>
+    <loc>https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/pages/98 Summary.html</loc>
+    <lastmod>2024-08-30T14:52:40.024Z</lastmod>
   </url>
 </urlset>
