@@ -2,7 +2,11 @@
 title: Contributors
 ---
 
-This course was originally written by Christopher Woods and published at https://chryswoods.com/beginning_python/. Some changes were made by the ACRC at the University of Bristol. The course was revised by Matt Williams, see https://milliams.com/courses/beginning_python/.
+This course was originally written by Matt Williams, see <https://milliams.com/courses/intermediate_python/>.
+
+The course has since been modified by the Jean Golding Institute. 
 
 * Christopher Woods
 * Matt Williams
+* Léo Gorman
+* James Thomas
