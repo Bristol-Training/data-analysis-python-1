@@ -1,1 +1,1 @@
-Sitemap: https://UoB-Data-Science-Training.github.io/introduction-to-data-analysis-in-python/sitemap.xml
+Sitemap: https://UoB-Training.github.io/introduction-to-data-analysis-in-python/sitemap.xml

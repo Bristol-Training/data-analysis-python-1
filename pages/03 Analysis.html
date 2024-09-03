@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#combining-columns" id="toc-combining-columns" class="nav-link" data-scroll-target="#combining-columns">Combining columns</a></li>
   <li><a href="#adding-new-columns" id="toc-adding-new-columns" class="nav-link" data-scroll-target="#adding-new-columns">Adding new columns</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/uob-training/beginning-python/edit/main/pages/03 Analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/beginning-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/uob-training/introduction-to-data-analysis-in-python/edit/main/pages/03 Analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/introduction-to-data-analysis-in-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
@@ -241,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Once your data is read in and available as a DataFrame, Pandas provides a whole suite of tools for extracting information from it.</p>
 <p>Let’s start by looking at some example data which contains information about the amounts that people at a restaurant paid and tipped for their meals:</p>
-<div id="6ef791e1" class="cell" data-execution_count="1">
+<div id="38ca949e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"https://milliams.com/courses/data_analysis_python/tips.csv"</span>)</span>
@@ -360,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The first thing that you usually want to be able to do is to pull apart the overall table to get at specific bits of data from inside.</p>
 <p>When using <code>list</code>s and <code>dict</code>s in Python, the square-bracket syntax was used to fetch an item from the container. In Pandas we can use the same syntax but it’s a much more powerful tool.</p>
 <p>If you pass a single string to the square brackets of a <code>DataFrame</code> it will return to you just that one column:</p>
-<div id="84d0062a" class="cell" data-execution_count="2">
+<div id="e5bee478" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"total_bill"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>0      16.99
@@ -379,7 +379,7 @@ Name: total_bill, Length: 244, dtype: float64</code></pre>
 </div>
 <p>Accessing a column like this returns an object called <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">a <code>Series</code></a> which is the second of the two main Pandas data types. Don’t worry too much about these just yet but think of them as being a single column of the <code>DataFrame</code>, along with the index of the <code>DataFrame</code>.</p>
 <p>If you pass a list of column names to the square brackets then you can grab out just those columns:</p>
-<div id="0fbe14d2" class="cell" data-execution_count="3">
+<div id="b2d02787" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tips[[<span class="st">"total_bill"</span>, <span class="st">"tip"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -464,7 +464,7 @@ Name: total_bill, Length: 244, dtype: float64</code></pre>
 <section id="getting-rows" class="level4">
 <h4 class="anchored" data-anchor-id="getting-rows">Getting rows</h4>
 <p>If you want to select a <em>row</em> from a <code>DataFrame</code> then you can use the <code>.loc</code> (short for “location”) attribute which allows you to pass index values like:</p>
-<div id="67a19a0f" class="cell" data-execution_count="4">
+<div id="eb6f5b48" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tips.loc[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>total_bill     21.01
@@ -476,7 +476,7 @@ Name: 2, dtype: object</code></pre>
 </div>
 </div>
 <p>If you want to grab a single value from the table, you can follow the row label with the column name that you want:</p>
-<div id="4cea31de" class="cell" data-execution_count="5">
+<div id="b504346e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tips.loc[<span class="dv">2</span>, <span class="st">"total_bill"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>21.01</code></pre>
@@ -500,27 +500,27 @@ Exercise 1
 <section id="descriptive-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h3>
 <p>Now that we know how to refer to individual columns, we can start asking questions about the data therein. If you’ve worked with columns of data in Excel for example, you’ve probably come across the <code>SUM()</code> and <code>AVERAGE()</code> functions to summarise data. We can do the same thing in pandas by calling the <code>sum()</code> or <code>mean()</code> methods on a column:</p>
-<div id="ceb56d54" class="cell" data-execution_count="6">
+<div id="e794e615" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"total_bill"</span>].<span class="bu">sum</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>4827.77</code></pre>
 </div>
 </div>
-<div id="397483f3" class="cell" data-execution_count="7">
+<div id="6fff86c1" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"total_bill"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>19.78594262295082</code></pre>
 </div>
 </div>
 <p>You can see a list of all the possible functions you can call in the <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html">documentation for <code>Series</code></a>. So for example, you can also ask for the maximum value from a column with the <code>max()</code> method.</p>
-<div id="d2e67040" class="cell" data-execution_count="8">
+<div id="ffed6297" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"tip"</span>].<span class="bu">max</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>7.0</code></pre>
 </div>
 </div>
 <p>In some situations, you don’t just want to get the <em>value</em> of the maximum, but rather to find out <em>which row</em> it came from. In cases like that there is the <code>idxmax()</code> method which give you the <em>index label</em> of the row with the maximum:</p>
-<div id="b0e19c58" class="cell" data-execution_count="9">
+<div id="b195dbbb" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"total_bill"</span>].idxmax()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>170</code></pre>
@@ -528,7 +528,7 @@ Exercise 1
 </div>
 <p>So we know that the value of the maximum bill was £7 and it was found in the row with the label <code>170</code>.</p>
 <p>You can then use this information with the <code>.loc</code> attribute to get the rest of the information for that row:</p>
-<div id="db07b865" class="cell" data-execution_count="10">
+<div id="101ebdcb" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>index_of_max_bill <span class="op">=</span> tips[<span class="st">"total_bill"</span>].idxmax()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>tips.loc[index_of_max_bill]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
@@ -560,7 +560,7 @@ Exercise 2
 <h3 class="anchored" data-anchor-id="acting-on-columns">Acting on columns</h3>
 <p>Functions like <code>sum()</code> and <code>max()</code> summarise down the column to a single value. In some situations we instead want to manipulate a column to create a new column.</p>
 <p>For example, the data in the table is in British pounds. If we wanted to convert it into the number of pennies then we need to multiply each value by 100. In Pandas you can refer to an entire column and perform mathematical operations on it and it will apply the operation to each row:</p>
-<div id="57038861" class="cell" data-execution_count="11">
+<div id="e5dc60b2" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"total_bill"</span>] <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>0      1699.0
@@ -588,7 +588,7 @@ Name: total_bill, Length: 244, dtype: float64</code></pre>
 <p>Columns are actually combined by matching together their <em>index labels</em>, not strictly by their <em>position</em> in the column.</p>
 </section></div><p>As well as operating on individual columns, you can combine together multiple columns. Any operation you do between two columns will be done <em>row-wise</em>, that is adding two columns will add together the two values from the first row of each, then the second row from each etc.</p>
 <p>For example if we wanted to find out, for each entry in our table what the ratio between tip amount and total bill was, we could divide one column by the other:</p>
-<div id="64b172ef" class="cell" data-execution_count="12">
+<div id="b3c45b18" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>0      0.041789
@@ -606,7 +606,7 @@ Length: 244, dtype: float64</code></pre>
 </div>
 </div>
 <p>Of course, if we want the tip <em>percentage</em> so we need to multiply the value by 100:</p>
-<div id="9949ba80" class="cell" data-execution_count="13">
+<div id="a2f9d7a6" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>(tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>])<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>0       4.178929
@@ -624,7 +624,7 @@ Length: 244, dtype: float64</code></pre>
 </div>
 </div>
 <p>It can get messy and hard-to-read doing too many things on one line, so it’s a good idea to split each part of your calculation onto its own line, giving each step its own variable name along the way.</p>
-<div id="3eaef2ab" class="cell" data-execution_count="14">
+<div id="195bbc7d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tip_fraction <span class="op">=</span> tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>]</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>tip_percent <span class="op">=</span> tip_fraction<span class="op">*</span><span class="dv">100</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>tip_percent</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -662,7 +662,7 @@ Exercise 3
 <section id="adding-new-columns" class="level3">
 <h3 class="anchored" data-anchor-id="adding-new-columns">Adding new columns</h3>
 <p>New columns can be added to a <code>DataFrame</code> by assigning them by index (as you would for a Python <code>dict</code>):</p>
-<div id="1633a5fc" class="cell" data-execution_count="15">
+<div id="79a6208c" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"percent_tip"</span>] <span class="op">=</span> (tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>])<span class="op">*</span><span class="dv">100</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>tips</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
@@ -899,7 +899,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/UoB-Data-Science-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
+      var filterRegex = new RegExp("https:\/\/UoB-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1247,7 +1247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/uob-training/beginning-python/edit/main/pages/03 Analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/beginning-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/uob-training/introduction-to-data-analysis-in-python/edit/main/pages/03 Analysis.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/uob-training/introduction-to-data-analysis-in-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
