@@ -23,7 +23,7 @@ website:
 
   page-footer:
     left: "Course delivered by the [Jean Golding Institute](https://www.bristol.ac.uk/golding/)<br>© [CC-BY 4.0](http://creativecommons.org/licenses/by/4.0/)"  
-  repo-url: https://github.com/uob-training/beginning-python
+  repo-url: https://github.com/uob-training/introduction-to-data-analysis-in-python
   repo-actions: [edit, issue]
 
 format:
