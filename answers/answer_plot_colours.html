@@ -120,14 +120,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="e553a8f2" class="cell" data-execution_count="1">
+<div id="6dabe7a7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas <span class="im">import</span> Series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="131fea55" class="cell" data-execution_count="2">
+<div id="0dbbe55e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="b98fa476" class="cell" data-execution_count="3">
+<div id="a7457d64" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/cetml1659on.txt"</span>,  <span class="co"># file name</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">6</span>,  <span class="co"># skip header</span></span>
@@ -135,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    na_values<span class="op">=</span>[<span class="st">'-99.9'</span>, <span class="st">'-99.99'</span>],  <span class="co"># NaNs</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2534/3659641096.py:1: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+<pre><code>/tmp/ipykernel_2479/3659641096.py:1: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   temperature = pd.read_csv(</code></pre>
 </div>
 <div class="cell-output cell-output-error">
@@ -257,7 +257,7 @@ File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/pyt
 </div>
 </div>
 <p>Taking the colours from the <a href="https://matplotlib.org/gallery/color/named_colors.html">matplotlib docs</a>:</p>
-<div id="4b216e23" class="cell" data-execution_count="4">
+<div id="7ef95edb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JAN'</span>].plot(color<span class="op">=</span><span class="st">"steelblue"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JUN'</span>].plot(color<span class="op">=</span><span class="st">"firebrick"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -279,7 +279,7 @@ Cell <span class="ansi-green-fg">In[4], line 1</span>
 </div>
 </div>
 <p>And taking the line style from <a href="https://matplotlib.org/gallery/lines_bars_and_markers/line_styles_reference.html">the docs</a> again:</p>
-<div id="be17a3e1" class="cell" data-execution_count="5">
+<div id="9531e7fe" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JAN'</span>].plot(color<span class="op">=</span><span class="st">"steelblue"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JUN'</span>].plot(color<span class="op">=</span><span class="st">"firebrick"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'YEAR'</span>].plot(color<span class="op">=</span><span class="st">"green"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
