@@ -130,9 +130,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="./index.html" class="sidebar-logo-link">
-      <img src="./assets/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="./assets/UoB_RGB_24.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introduction to Data Analysis</a> 
@@ -238,23 +238,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>This course is aimed at the Python developer who wants to learn how to do useful data analysis tasks. It will focus primarily on the Python package <a href="http://pandas.pydata.org/">pandas</a> to query, combine and visualise your data as well as covering <a href="https://seaborn.pydata.org">seaborn</a> to visualise them.</p>
 <p>Data analysis is a huge topic and we couldn’t possibly cover it all in one short course so the purpose of this workshop is to give you an introduction to some of the most useful tools and to demonstrate some of the most common problems that surface.</p>
-<p>You can jump ahead to any chapter:</p>
-<ol type="1">
-<li><a href="./pages/01 Pandas.html">Introduction to pandas</a></li>
-<li><a href="./pages/02 Reading from file.html">Reading data</a></li>
-<li><a href="./pages/03 Analysis.html">Querying data</a></li>
-<li><a href="./pages/04 Filtering.html">Filtering</a></li>
-<li><a href="./pages/05 Visualisation.html">Visualisation</a></li>
-<li><a href="./pages/06 Final exercise.html">Final exercise</a></li>
-<li><a href="./pages/98 Summary.html">Summary</a></li>
-</ol>
-<p>In previous courses, you’ve used the <code>python</code> command line program to execute scripts. This course will use a tool called Jupyter Notebooks to run your Python code. It works with the same Python code as we’ve used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you’re doing and embed output such as graphs directly into the page.</p>
+<p>In previous courses, you’ve used the <code>python</code> command line program to execute scripts. This course will use a tool called <em>Jupyter Notebooks</em> to run your Python code. It works with the same Python code as we’ve used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you’re doing and embed output such as graphs directly into the page.</p>
 <p>To get started, open a new Notebook as shown by your instructor.</p>
 <p>Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later.</p>
 <section id="getting-started" class="level3">
 <h3 class="anchored" data-anchor-id="getting-started">Getting started</h3>
 <p>Once the notebook is launched, you will see a wide grey box with a blue <code>[ ]:</code> to the left. The grey box is an input cell where you type any Python code you want to run:</p>
-<div id="d1cbd975" class="cell" data-execution_count="1">
+<div id="620e8a78" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code can be written in 'Code' cells</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Output appears below when the cell is run"</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"To run a cell, press Ctrl-Enter or Shift-Enter with the cursor inside"</span>)</span>
@@ -266,7 +256,7 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 </div>
 </div>
 <p>In your notebook, type the following in the first cell and then run it with Shift-Enter, you should see the same output:</p>
-<div id="b1d46df9" class="cell" data-execution_count="2">
+<div id="6e0f5ef5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -275,14 +265,14 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 </div>
 </div>
 <p>The cells in a notebook are linked together so a variable defined in one is available in all the cells from that point on so in the second cell you can use the variables <code>a</code> and <code>b</code>:</p>
-<div id="7e97a2e7" class="cell" data-execution_count="3">
+<div id="7ae549e6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">-</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>-2</code></pre>
 </div>
 </div>
 <p>Some Python libraries have special integration with Jupyter notebooks and so can display their output directly into the page. For example <code>pandas</code> will format tables of data nicely and <code>matplotlib</code> will embed graphs directly:</p>
-<div id="ee469072" class="cell" data-execution_count="4">
+<div id="71c494cb" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> pd.DataFrame(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">3.1</span>, <span class="fl">2.4</span>, <span class="fl">4.8</span>, <span class="fl">4.1</span>, <span class="fl">3.4</span>, <span class="fl">4.2</span>],</span>
@@ -336,7 +326,7 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 </div>
 </div>
 </div>
-<div id="08cf07b0" class="cell" data-execution_count="5">
+<div id="27957cef" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>temp.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -351,18 +341,18 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 <h3 class="anchored" data-anchor-id="markdown">Markdown</h3>
 <p>If you want to write some text as documentation (like these words here) then you should label the cell as being a Markdown cell. Do that by selecting the cell and going to the dropdown at the top of the page labelled <em>Code</em> and changing it to <em>Markdown</em>.</p>
 <p>It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called <em>literate programming</em>.</p>
-<div id="exercise-1" class="callout callout-style-default callout-tip no-icon callout-titled" title="Exercise 1">
+<div id="exercise-1" class="callout callout-style-default callout-note no-icon callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise 1
+Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Take the following code and break it down, chunk by chunk, interspersing it with documentation explaining what each part does using Markdown blocks:</p>
-<div id="54874e80" class="cell" data-execution_count="6">
+<div id="0985ab97" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple"</span>: <span class="fl">0.40</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana"</span>: <span class="fl">0.50</span>,</span>
@@ -381,6 +371,22 @@ Exercise 1
 </div>
 <p>You don’t need to put only one line of code per cell, it makes sense sometimes to group some lines together.</p>
 <p>Throughout this course, use the Jupyter Notebook to solve the problems. Follow along with the examples, typing them into your own notebooks and see how they work.</p>
+</div>
+</div>
+<div id="answer1" class="callout callout-style-default callout-caution no-icon callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>TDB</p>
+</div>
 </div>
 </div>
 
@@ -480,7 +486,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/UoB-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
+      var filterRegex = new RegExp("https:\/\/Bristol-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -821,7 +827,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Course delivered by the <a href="https://www.bristol.ac.uk/golding/">Jean Golding Institute</a><br>© <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></p>
+<p><a href="https://www.bristol.ac.uk/golding/">Jean Golding Institute</a> © <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

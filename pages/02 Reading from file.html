@@ -131,9 +131,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/UoB_RGB_24.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Introduction to Data Analysis</a> 
@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-our-first-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-our-first-file">Reading our first file</h3>
 <p>You can get access to Pandas by importing the <code>pandas</code> module. By convention, it is imported as <code>pd</code>:</p>
-<div id="a262a55b" class="cell" data-execution_count="1">
+<div id="4a10e711" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use the pandas function <code>read_csv()</code> to read the file and convert it to a <code>DataFrame</code>. Full documentation for this function can be found in <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the manual</a>.</p>
@@ -253,12 +253,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any valid string path is acceptable. The string could be a URL…</p>
 </blockquote>
 <p>This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:</p>
-<div id="a55fae97" class="cell" data-tags="[]" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> pd.read_csv(<span class="st">"https://milliams.com/courses/data_analysis_python/rain.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> pd.read_csv(<span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/rain.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This gives us the data from the file as a type of object called a <code>DataFrame</code>. This is the core of Pandas and we will be exploring many of the things that it can do throughout this course.</p>
 <p>We can get Jupyter to display the data by putting the variable name in a cell by itself:</p>
-<div id="f1f92c03" class="cell" data-execution_count="3">
+<div id="01c4b064" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -386,9 +385,9 @@ year;London;Paris;Rome
 2015;8.615;2.21;
 2019;;;</code></pre>
 <p>This file has some issues that <code>read_csv</code> will not be able to automatically deal with but let’s start by trying to read it in directly:</p>
-<div id="7b6d66a7" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"https://milliams.com/courses/data_analysis_python/city_pop.csv"</span></span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pd.read_csv(city_pop_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="ca9d075d" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -459,7 +458,7 @@ year;London;Paris;Rome
 <section id="skipping-the-header" class="level4">
 <h4 class="anchored" data-anchor-id="skipping-the-header">Skipping the header</h4>
 <p>The first thing we notice is that it’s treating the text at the top of the file as though it’s data. Checking <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the documentation</a> we see that the simplest way to solve this is to use the <code>skiprows</code> argument to the function to which we give an integer giving the number of rows to skip (also note that I’ve changed to put one argument per line for readability and that the comma at the end is optional but for consistency):</p>
-<div id="cdc0ce55" class="cell" data-execution_count="5">
+<div id="74573ad6" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,  <span class="co"># Add this</span></span>
@@ -518,7 +517,7 @@ year;London;Paris;Rome
 <section id="specifying-the-separator" class="level4">
 <h4 class="anchored" data-anchor-id="specifying-the-separator">Specifying the separator</h4>
 <p>The next most obvious problem is that it is not separating the columns at all. This is controlled by the <code>sep</code> argument which is set to <code>','</code> by default (hence <em>comma</em> separated values). We can simply set it to the appropriate semi-colon:</p>
-<div id="3f53bfe2" class="cell" data-execution_count="6">
+<div id="1e76257b" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -606,7 +605,7 @@ year;London;Paris;Rome
 <section id="identifying-missing-data" class="level4">
 <h4 class="anchored" data-anchor-id="identifying-missing-data">Identifying missing data</h4>
 <p>Reading the descriptive header of our data file we see that a value of <code>-1</code> signifies a missing reading so we should mark those too. This can be done after the fact but it is simplest to do it at file read-time using the <code>na_values</code> argument:</p>
-<div id="aec87673" class="cell" data-execution_count="7">
+<div id="8fa6cad9" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -694,7 +693,7 @@ year;London;Paris;Rome
 <section id="setting-the-index" class="level4">
 <h4 class="anchored" data-anchor-id="setting-the-index">Setting the index</h4>
 <p>The last this we want to do is use the <code>year</code> column as the index for the <code>DataFrame</code>. This can be done by passing the name of the column to the <code>index_col</code> argument:</p>
-<div id="2aa4b1dd" class="cell" data-execution_count="8">
+<div id="9363ef9d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>census <span class="op">=</span> pd.read_csv(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -784,7 +783,7 @@ year;London;Paris;Rome
 <h3 class="anchored" data-anchor-id="visualise-your-data">Visualise your data</h3>
 <p>Pandas comes with some tools for displaying tables of data visually. We won’t cover the details of manipulating these plots here but for quickly checking the shape of the data, it’s incredibly useful. It’s a good idea to <em>always</em> plot your data once you’ve read it in as it will often show issues with the data more clearly than by scanning table of numbers.</p>
 <p>If you have a variable containing a <code>DataFrame</code> (like we do with <code>census</code>), you can plot it as a line graph using:</p>
-<div id="c6340b75" class="cell" data-tags="[]" data-execution_count="9">
+<div id="2efd2b3b" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>census.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -796,19 +795,837 @@ year;London;Paris;Rome
 </div>
 <p>From this we can quickly see the missing data showing as gaps in the graph, and also that there are no clearly anomalous entries.</p>
 <p>If you want to dive deeper into how this graph can be improved visually, you can see <a href="../appendix/aside_census_plot.html">a short aside</a> which covers that, but which does use some tools that we will not cover until later chapters.</p>
-<div id="exercise-1" class="callout callout-style-default callout-tip no-icon callout-titled" title="Exercise 1">
+<div id="exercise-1" class="callout callout-style-default callout-note no-icon callout-titled" title="Exercise">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise 1
+Exercise
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Read the file at <a href="https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt"><code>https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt</code></a> into Pandas (this data is originally from the <a href="https://www.metoffice.gov.uk/hadobs/hadcet/data/download.html">Met Office</a> and there’s <a href="https://www.metoffice.gov.uk/hadobs/hadcet/data/data_format.html">a description of the format there too</a> under “Format for monthly CET series data”). This contains some historical weather data for a location in the UK. Import that file as a Pandas <code>DataFrame</code> using <code>read_csv()</code>, making sure that you set the index column, skip the appropriate rows, separate the columns correctly and cover all the possible NaN values.</p>
 <p>Hint: This data is a little tricky to deal with as it uses spaces to separate its columns. You can’t just use <code>sep=" "</code> as that will assume that a <em>single</em> space is the separator. Instead of using <code>sep</code> at all, you need to tell it to use <em>whitespace</em> (e.g.&nbsp;spaces, tabs, etc.) as the <em>delimiter</em> (search the documentation for an appropriate argument).</p>
-<p><a href="../answers/answer_read_weather.html"><small>answer</small></a></p>
+</div>
+</div>
+<div id="answer1" class="callout callout-style-default callout-caution no-icon callout-titled" title="Answer">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div id="f2d512cb" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Firstly, if we read the data in without passing any extra arguments, we get:</p>
+<div id="42c1d2de" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Mean Central England Temperature (Degrees Celsius)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1659-1973 Manley (Q.J.R.METEOROL.SOC.</td>
+<td>1974)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1974 on Parker et al. (INT.J.CLIM.</td>
+<td>1992)</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">Parker and Horton (INT.J.CLIM.</td>
+<td>2005)</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">Year Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Annual</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1659 3.0 4.0 6.0 7.0 11.0 13.0 16.0 16.0 13.0 10.0 5.0 2.0 8.9</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>So we need to dot he same as before, setting the <code>skiprows</code> argument:</p>
+<div id="ec2c1423" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,  <span class="co"># skip first 4 rows of the header</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Annual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1659 3.0 4.0 6.0 7.0 11.0 13...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1660 0.0 4.0 6.0 9.0 11.0 14...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1661 5.0 5.0 6.0 8.0 11.0 14...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1662 5.0 6.0 6.0 8.0 11.0 15...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1663 1.0 1.0 5.0 7.0 10.0 14...</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>It’s not separating the columns correctly so if we look at the data and see spaces, we <em>might</em> think that useing <code>sep=" "</code> would work, but if we try it:</p>
+<div id="7ae7eabb" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">" "</span>,  <span class="co"># try this...</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">Unnamed: 1</th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Unnamed: 3</th>
+<th data-quarto-table-cell-role="th">Unnamed: 4</th>
+<th data-quarto-table-cell-role="th">Unnamed: 5</th>
+<th data-quarto-table-cell-role="th">Jan</th>
+<th data-quarto-table-cell-role="th">Unnamed: 7</th>
+<th data-quarto-table-cell-role="th">Unnamed: 8</th>
+<th data-quarto-table-cell-role="th">Unnamed: 9</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">Unnamed: 43</th>
+<th data-quarto-table-cell-role="th">Unnamed: 44</th>
+<th data-quarto-table-cell-role="th">Unnamed: 45</th>
+<th data-quarto-table-cell-role="th">Nov</th>
+<th data-quarto-table-cell-role="th">Unnamed: 47</th>
+<th data-quarto-table-cell-role="th">Unnamed: 48</th>
+<th data-quarto-table-cell-role="th">Unnamed: 49</th>
+<th data-quarto-table-cell-role="th">Dec</th>
+<th data-quarto-table-cell-role="th">Unnamed: 51</th>
+<th data-quarto-table-cell-role="th">Annual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1659</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>2.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>8.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1660</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>0.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.1</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1661</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>6.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.8</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1662</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>3.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>9.5</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1663</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>1.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>...</td>
+<td>NaN</td>
+<td>5.0</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>8.6</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>5 rows × 53 columns</p>
+</div>
+</div>
+</div>
+<p>That doesn’t look right. This is because <code>sep=" "</code> means “use a single space” as the separator, but in the data most columns are separated by multiple spaces. To make it use “any number of spaces” as the separator, you can instead set <code>sep='\s+'</code>:</p>
+<div id="6d08e61f" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,  <span class="co"># whitespace-separated columns</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th">Jan</th>
+<th data-quarto-table-cell-role="th">Feb</th>
+<th data-quarto-table-cell-role="th">Mar</th>
+<th data-quarto-table-cell-role="th">Apr</th>
+<th data-quarto-table-cell-role="th">May</th>
+<th data-quarto-table-cell-role="th">Jun</th>
+<th data-quarto-table-cell-role="th">Jul</th>
+<th data-quarto-table-cell-role="th">Aug</th>
+<th data-quarto-table-cell-role="th">Sep</th>
+<th data-quarto-table-cell-role="th">Oct</th>
+<th data-quarto-table-cell-role="th">Nov</th>
+<th data-quarto-table-cell-role="th">Dec</th>
+<th data-quarto-table-cell-role="th">Annual</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>1659</td>
+<td>3.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>11.0</td>
+<td>13.0</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>2.0</td>
+<td>8.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>1660</td>
+<td>0.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>9.0</td>
+<td>11.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>9.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>1661</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>11.0</td>
+<td>8.0</td>
+<td>6.0</td>
+<td>9.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>1662</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>11.0</td>
+<td>6.0</td>
+<td>3.0</td>
+<td>9.5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>1663</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>7.0</td>
+<td>10.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>5.0</td>
+<td>8.6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>That looks much better! Now we set the <code>index_col</code>:</p>
+<div id="92af87ba" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    index_col<span class="op">=</span><span class="st">"Year"</span>,  <span class="co"># Set the index</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Jan</th>
+<th data-quarto-table-cell-role="th">Feb</th>
+<th data-quarto-table-cell-role="th">Mar</th>
+<th data-quarto-table-cell-role="th">Apr</th>
+<th data-quarto-table-cell-role="th">May</th>
+<th data-quarto-table-cell-role="th">Jun</th>
+<th data-quarto-table-cell-role="th">Jul</th>
+<th data-quarto-table-cell-role="th">Aug</th>
+<th data-quarto-table-cell-role="th">Sep</th>
+<th data-quarto-table-cell-role="th">Oct</th>
+<th data-quarto-table-cell-role="th">Nov</th>
+<th data-quarto-table-cell-role="th">Dec</th>
+<th data-quarto-table-cell-role="th">Annual</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1659</td>
+<td>3.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>7.0</td>
+<td>11.0</td>
+<td>13.0</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>5.0</td>
+<td>2.0</td>
+<td>8.9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1660</td>
+<td>0.0</td>
+<td>4.0</td>
+<td>6.0</td>
+<td>9.0</td>
+<td>11.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>16.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>6.0</td>
+<td>5.0</td>
+<td>9.1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1661</td>
+<td>5.0</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>11.0</td>
+<td>8.0</td>
+<td>6.0</td>
+<td>9.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1662</td>
+<td>5.0</td>
+<td>6.0</td>
+<td>6.0</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>11.0</td>
+<td>6.0</td>
+<td>3.0</td>
+<td>9.5</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">1663</td>
+<td>1.0</td>
+<td>1.0</td>
+<td>5.0</td>
+<td>7.0</td>
+<td>10.0</td>
+<td>14.0</td>
+<td>15.0</td>
+<td>15.0</td>
+<td>13.0</td>
+<td>10.0</td>
+<td>7.0</td>
+<td>5.0</td>
+<td>8.6</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>And, as we should always do, we plot the data we’ve just read in:</p>
+<div id="288f3657" class="cell" data-tags="[]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02 Reading from file_files/figure-html/cell-17-output-1.png" width="586" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Something is wrong with this. There’s a line on the right-hand side which seems wrong. If we look at the last few lines of the data to see what’s going on:</p>
+<div id="3e389431" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>temperature.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Jan</th>
+<th data-quarto-table-cell-role="th">Feb</th>
+<th data-quarto-table-cell-role="th">Mar</th>
+<th data-quarto-table-cell-role="th">Apr</th>
+<th data-quarto-table-cell-role="th">May</th>
+<th data-quarto-table-cell-role="th">Jun</th>
+<th data-quarto-table-cell-role="th">Jul</th>
+<th data-quarto-table-cell-role="th">Aug</th>
+<th data-quarto-table-cell-role="th">Sep</th>
+<th data-quarto-table-cell-role="th">Oct</th>
+<th data-quarto-table-cell-role="th">Nov</th>
+<th data-quarto-table-cell-role="th">Dec</th>
+<th data-quarto-table-cell-role="th">Annual</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2018</td>
+<td>5.3</td>
+<td>3.1</td>
+<td>5.0</td>
+<td>9.9</td>
+<td>13.3</td>
+<td>16.1</td>
+<td>19.3</td>
+<td>16.8</td>
+<td>13.7</td>
+<td>10.5</td>
+<td>8.3</td>
+<td>6.8</td>
+<td>10.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2019</td>
+<td>4.0</td>
+<td>6.9</td>
+<td>7.9</td>
+<td>9.1</td>
+<td>11.2</td>
+<td>14.2</td>
+<td>17.6</td>
+<td>17.2</td>
+<td>14.3</td>
+<td>9.8</td>
+<td>6.2</td>
+<td>5.7</td>
+<td>10.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2020</td>
+<td>6.4</td>
+<td>6.4</td>
+<td>6.8</td>
+<td>10.5</td>
+<td>12.6</td>
+<td>15.3</td>
+<td>15.8</td>
+<td>17.7</td>
+<td>14.0</td>
+<td>10.4</td>
+<td>8.5</td>
+<td>4.9</td>
+<td>10.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2021</td>
+<td>3.2</td>
+<td>5.3</td>
+<td>7.3</td>
+<td>6.5</td>
+<td>10.3</td>
+<td>15.5</td>
+<td>17.8</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>12.0</td>
+<td>7.2</td>
+<td>6.3</td>
+<td>10.3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2022</td>
+<td>4.7</td>
+<td>6.9</td>
+<td>8.0</td>
+<td>9.2</td>
+<td>13.1</td>
+<td>14.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+<td>-99.9</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<p>We can see there are some <code>-99.9</code> in the data, repsenting missing data. We should fix this with <code>na_values</code>:</p>
+<div id="0d54fa19" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    index_col<span class="op">=</span><span class="st">"Year"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    na_values<span class="op">=</span>[<span class="st">"-99.9"</span>]</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>temperature.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Jan</th>
+<th data-quarto-table-cell-role="th">Feb</th>
+<th data-quarto-table-cell-role="th">Mar</th>
+<th data-quarto-table-cell-role="th">Apr</th>
+<th data-quarto-table-cell-role="th">May</th>
+<th data-quarto-table-cell-role="th">Jun</th>
+<th data-quarto-table-cell-role="th">Jul</th>
+<th data-quarto-table-cell-role="th">Aug</th>
+<th data-quarto-table-cell-role="th">Sep</th>
+<th data-quarto-table-cell-role="th">Oct</th>
+<th data-quarto-table-cell-role="th">Nov</th>
+<th data-quarto-table-cell-role="th">Dec</th>
+<th data-quarto-table-cell-role="th">Annual</th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">Year</th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2018</td>
+<td>5.3</td>
+<td>3.1</td>
+<td>5.0</td>
+<td>9.9</td>
+<td>13.3</td>
+<td>16.1</td>
+<td>19.3</td>
+<td>16.8</td>
+<td>13.7</td>
+<td>10.5</td>
+<td>8.3</td>
+<td>6.8</td>
+<td>10.7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2019</td>
+<td>4.0</td>
+<td>6.9</td>
+<td>7.9</td>
+<td>9.1</td>
+<td>11.2</td>
+<td>14.2</td>
+<td>17.6</td>
+<td>17.2</td>
+<td>14.3</td>
+<td>9.8</td>
+<td>6.2</td>
+<td>5.7</td>
+<td>10.4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2020</td>
+<td>6.4</td>
+<td>6.4</td>
+<td>6.8</td>
+<td>10.5</td>
+<td>12.6</td>
+<td>15.3</td>
+<td>15.8</td>
+<td>17.7</td>
+<td>14.0</td>
+<td>10.4</td>
+<td>8.5</td>
+<td>4.9</td>
+<td>10.8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">2021</td>
+<td>3.2</td>
+<td>5.3</td>
+<td>7.3</td>
+<td>6.5</td>
+<td>10.3</td>
+<td>15.5</td>
+<td>17.8</td>
+<td>16.0</td>
+<td>16.0</td>
+<td>12.0</td>
+<td>7.2</td>
+<td>6.3</td>
+<td>10.3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2022</td>
+<td>4.7</td>
+<td>6.9</td>
+<td>8.0</td>
+<td>9.2</td>
+<td>13.1</td>
+<td>14.9</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="699b05b3" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="02 Reading from file_files/figure-html/cell-20-output-1.png" width="566" height="429" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <p>That covers the basics of reading in data with pandas. Next we will be looking at how we can query detailed information from our data.</p>
@@ -909,7 +1726,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/UoB-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
+      var filterRegex = new RegExp("https:\/\/Bristol-Training\.github\.io\/introduction-to-data-analysis-in-python\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1253,7 +2070,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Course delivered by the <a href="https://www.bristol.ac.uk/golding/">Jean Golding Institute</a><br>© <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></p>
+<p><a href="https://www.bristol.ac.uk/golding/">Jean Golding Institute</a> © <a href="http://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a></p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
