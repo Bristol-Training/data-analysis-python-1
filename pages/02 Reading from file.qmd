@@ -32,8 +32,7 @@ The first argument to the function is called `filepath_or_buffer`, the documenta
 This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:
 
 ```{.python}
-#| tags: []
-rain = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/rain.csv")
+rain = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data")
 ```
 
 ```{python}
@@ -63,7 +62,7 @@ We can see there are a few key parts of the output:
 
 Now let's move on to how you can deal with the kind of data you're likely to come across in the real world.
 
-Imagine we have a CSV (comma-separated values) file. The example we will use today is available at [city_pop.csv](https://milliams.com/courses/data_analysis_python/city_pop.csv). If you were to open that file then you would see:
+Imagine we have a CSV (comma-separated values) file. The example we will use today is available at [city_pop.csv](https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv). If you were to open that file then you would see:
 
 ```
 This is an example CSV file
@@ -84,16 +83,11 @@ year;London;Paris;Rome
 
 This file has some issues that `read_csv` will not be able to automatically deal with but let's start by trying to read it in directly:
 
-```{.python}
-city_pop_file = "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"
-pd.read_csv(city_pop_file)
-```
-
 ```{python}
-#| echo: false
 city_pop_file = "./data/city_pop.csv"
 pd.read_csv(city_pop_file)
 ```
+
 
 We can see that by default it's done a fairly bad job of parsing the file (this is mostly because I've constructed the `city_pop.csv` file to be as obtuse as possible). It's making a lot of assumptions about the structure of the file but in general it's taking quite a naïve approach.
 

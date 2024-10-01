@@ -7,7 +7,7 @@ jupyter: python3
 
 <img style="float:right; border-radius: 15px; margin-left: 15px;" src="../assets/titanic.jpg"/>For the final exercise you should try to combine together all the skills you've learned over this course. This is expected to take you longer than any of the exercises so far. If you get to this point in the session, feel free to get started on it now, otherwise you can treat this as practice later on.
 
-Read the file [`https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/titanic.csv`](../data/titanic.csv). This file contains information about all the passengers and crew aboard the RMS Titanic. Its columns are:
+Read the file [`./data/titanic.csv`](../data/titanic.csv). This file contains information about all the passengers and crew aboard the RMS Titanic. Its columns are:
 
 - `name`: strings with the name of the passenger.
 - `gender`: "male" or "female".

@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 ```{python}
 temperature = pd.read_csv(
-    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/cetml1659on.txt",  # file name
+    "./data/cetml1659on.txt",  # file name
     skiprows=6,  # skip header
     delim_whitespace=True,  # whitespace separated
     na_values=['-99.9', '-99.99'],  # NaNs

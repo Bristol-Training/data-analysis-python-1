@@ -24,7 +24,7 @@ You create a filter by performing some operation on your `DataFrame` or a column
 
 ```{.python}
 import pandas as pd
-tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
+tips = pd.read_csv("./data/tips.csv")
 ```
 
 ```{python}
