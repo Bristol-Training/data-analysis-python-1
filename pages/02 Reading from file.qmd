@@ -4,9 +4,9 @@ jupyter: python3
 ---
 
 
-One of the most common situations is that you have a data file containing the data you want to read. Perhaps this is data you've produced yourself or maybe it's from a colleague or perhaps from an online source. In an ideal world the file will be perfectly formatted and will be trivial to import into pandas but since this is so often not the case, pandas provides a number of features to make your life easier.
+One of the most common situations is that you want to read your data from a file. In an ideal world the file will be perfectly formatted and will be trivial to import into pandas but since this is so often not the case, pandas provides a number of features to make your life easier.
 
-Full information on reading and writing is available in the pandas manual on [IO tools](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) but first it's worth noting the common formats that pandas can work with:
+Full information on reading and writing files is available in the pandas manual on [IO tools](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) but first it's worth noting the common formats that pandas can work with:
 - Comma separated tables (or tab-separated or space-separated etc.)
 - Excel spreadsheets
 - HDF5 files
@@ -23,20 +23,40 @@ You can get access to Pandas by importing the `pandas` module. By convention, it
 import pandas as pd
 ```
 
-We can use the pandas function `read_csv()` to read the file and convert it to a `DataFrame`. Full documentation for this function can be found in [the manual](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
+We can use the pandas function `read_csv()` to read a file and convert it to a `DataFrame`. Full documentation for this function can be found [here](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html).
 
 The first argument to the function is called `filepath_or_buffer`, the documentation for which begins:
 
 > Any valid string path is acceptable. The string could be a URL...
 
-This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:
+This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file with rainfall data:
 
 ```{.python}
-rain = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data")
+rain = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/rain.csv")
 ```
 
+::: {#tip1 .callout-tip title="If this doesn't work for you..." icon=false} 
+We have seen in some instances that reading from a URL triggers an error message like
+```
+URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate>
+```
+
+This usually relates to a configuration problem in your environment. If you are using a Windows machine try running
+```{.bash filename="Command Prompt"}
+python -m pip install certifi
+```
+
+In MacOS, try executing (you need to replace `3.v` with your Python version)
+```{.bash filename="Terminal"}
+python3 -m pip install certifi
+/Applications/Python\ 3.v/Install\ Certificates.command
+```
+
+:::
+
+However, in this course we will read the files from a local folder `data`. You can do the same downloading all the data that is available in a zip file [data.zip](https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/data.zip) and extract it in your working directory. Now we can call
+
 ```{python}
-#| echo: false
 rain = pd.read_csv("./data/rain.csv")
 ```
 
@@ -148,7 +168,7 @@ We can see that his has moved the `Year` column to become the index.
 
 ## Visualise your data
 
-Pandas comes with some tools for displaying tables of data visually. We won't cover the details of manipulating these plots here but for quickly checking the shape of the data, it's incredibly useful. It's a good idea to *always* plot your data once you've read it in as it will often show issues with the data more clearly than by scanning table of numbers.
+Pandas comes with some tools for displaying tables of data visually. We won't cover the details of manipulating these plots here but for quickly checking the shape of the data, it's incredibly useful. It's a good idea to plot your data once you've read it in as it will often show issues with the data more clearly than by scanning tables of numbers.
 
 If you have a variable containing a `DataFrame` (like we do with `census`), you can plot it as a line graph using:
 
@@ -163,15 +183,13 @@ If you want to dive deeper into how this graph can be improved visually, you can
 
 ::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 
-Read the file at [`https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt`](https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt) into Pandas (this data is originally from the [Met Office](https://www.metoffice.gov.uk/hadobs/hadcet/data/download.html) and there's [a description of the format there too](https://www.metoffice.gov.uk/hadobs/hadcet/data/data_format.html) under "Format for monthly CET series data"). This contains some historical weather data for a location in the UK. Import that file as a Pandas `DataFrame` using `read_csv()`, making sure that you set the index column, skip the appropriate rows, separate the columns correctly and cover all the possible NaN values.
+Read the file [`meantemp_monthly_totals.txt`](https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt) into Pandas. This data is originally from the [Met Office](https://www.metoffice.gov.uk/hadobs/hadcet/data/download.html) and there's [a description of the format there](https://www.metoffice.gov.uk/hadobs/hadcet/data/data_format.html) under "Format for monthly CET series data". It contains some historical weather data for a location in the UK. Import that file as a Pandas `DataFrame` using `read_csv()`, making sure that you set the index column, skip the appropriate rows, separate the columns correctly and cover all the possible NaN values.
 
-Hint: This data is a little tricky to deal with as it uses spaces to separate its columns. You can't just use `sep=" "` as that will assume that a _single_ space is the separator. Instead of using `sep` at all, you need to tell it to use _whitespace_ (e.g. spaces, tabs, etc.) as the _delimiter_ (search the documentation for an appropriate argument).
+**Hint:** This data is a little tricky to deal with as it uses spaces to separate its columns. You can't just use `sep=" "` as that will assume that a _single_ space is the separator. Instead of using `sep` at all, you need to tell it to use _whitespace_ (e.g. spaces, tabs, etc.) as the _delimiter_ (search the documentation for an appropriate argument).
 
 :::
 
 ::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_read_weather.qmd >}}
 :::
-
-That covers the basics of reading in data with pandas. Next we will be looking at how we can query detailed information from our data.
 

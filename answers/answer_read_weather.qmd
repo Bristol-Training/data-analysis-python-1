@@ -34,13 +34,13 @@ temperature = pd.read_csv(
 temperature.head()
 ```
 
-That doesn't look right. This is because `sep=" "` means "use a single space" as the separator, but in the data most columns are separated by multiple spaces. To make it use "any number of spaces" as the separator, you can instead set `sep='\s+'`:
+That doesn't look right. This is because `sep=" "` means "use a single space" as the separator, but in the data most columns are separated by multiple spaces. To make it use "any number of spaces" as the separator, you can instead set `sep=r'\s+'`:
 
 ```{python}
 temperature = pd.read_csv(
     "./data/meantemp_monthly_totals.txt",
     skiprows=4,
-    sep='\s+',  # whitespace-separated columns
+    sep=r'\s+',  # whitespace-separated columns
 )
 temperature.head()
 ```
@@ -51,7 +51,7 @@ That looks much better! Now we set the `index_col`:
 temperature = pd.read_csv(
     "./data/meantemp_monthly_totals.txt",
     skiprows=4,
-    sep='\s+',
+    sep=r'\s+',
     index_col="Year",  # Set the index
 )
 temperature.head()
@@ -76,7 +76,7 @@ We can see there are some `-99.9` in the data, repsenting missing data. We shoul
 temperature = pd.read_csv(
     "./data/meantemp_monthly_totals.txt",
     skiprows=4,
-    sep='\s+',
+    sep=r'\s+',
     index_col="Year",
     na_values=["-99.9"]
 )

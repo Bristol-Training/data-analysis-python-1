@@ -8,90 +8,14 @@ jupyter: python3
 This course is aimed at the Python developer who wants to learn how to do useful data analysis tasks.
 It will focus primarily on the Python package [pandas](http://pandas.pydata.org/) to query, combine and visualise your data as well as covering [seaborn](https://seaborn.pydata.org) to visualise them.
 
-Data analysis is a huge topic and we couldn't possibly cover it all in one short course so the purpose of this workshop is to give you an introduction to some of the most useful tools and to demonstrate some of the most common problems that surface.
-
-In previous courses, you've used the `python` command line program to execute scripts. This course will use a tool called *Jupyter Notebooks* to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
-
-To get started, open a new Notebook as shown by your instructor.
-
-Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later.
-
-## Getting started
-
-Once the notebook is launched, you will see a wide grey box with a blue `[ ]:` to the left. The grey box is an input cell where you type any Python code you want to run:
-
-```{python}
-# Python code can be written in 'Code' cells
-print("Output appears below when the cell is run")
-print("To run a cell, press Ctrl-Enter or Shift-Enter with the cursor inside")
-print("or use the run button (▶) in the toolbar at the top")
-```
-
-In your notebook, type the following in the first cell and then run it with Shift-Enter, you should see the same output:
-
-```{python}
-a = 5
-b = 7
-a + b
-```
-
-The cells in a notebook are linked together so a variable defined in one is available in all the cells from that point on so in the second cell you can use the variables `a` and `b`:
-
-```{python}
-a - b
-```
-
-Some Python libraries have special integration with Jupyter notebooks and so can display their output directly into the page. For example `pandas` will format tables of data nicely and `matplotlib` will embed graphs directly:
-
-```{python}
-import pandas as pd
-temp = pd.DataFrame(
-    [3.1, 2.4, 4.8, 4.1, 3.4, 4.2],
-    columns=["temp (°C)"],
-    index=pd.RangeIndex(2000, 2006, name="year")
-)
-temp
-```
-
-```{python}
-temp.plot()
-```
-
-## Markdown
-
-If you want to write some text as documentation (like these words here) then you should label the cell as being a Markdown cell. Do that by selecting the cell and going to the dropdown at the top of the page labelled *Code* and changing it to *Markdown*.
-
-It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called *literate programming*.
+Data analysis is a huge topic and we couldn't possibly cover it all in one short course so the purpose of this workshop is to give you an introduction to some of the most useful tools and to demonstrate some common problems that surface.
 
 
-::: {#exercise-1 .callout-note title="Exercise" icon=false} 
+### Intended learning outcomes
 
-Take the following code and break it down, chunk by chunk, interspersing it with documentation explaining what each part does using Markdown blocks:
-```{python}
-#| output: false
-prices = {
-    "apple": 0.40,
-    "banana": 0.50,
-}
+By the end of this course, you will:
 
-my_basket = {
-    "apple": 1,
-    "banana": 6,
-}
-
-total_grocery_bill = 0
-for fruit, count in my_basket.items():
-    total_grocery_bill += prices[fruit] * count
-
-print(f"I owe the grocer £{total_grocery_bill:.2f}")
-```
-You don't need to put only one line of code per cell, it makes sense sometimes to group some lines together.
-
-Throughout this course, use the Jupyter Notebook to solve the problems. Follow along with the examples, typing them into your own notebooks and see how they work.
-:::
-
-<!--
-::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
-TDB
-:::
---->
+- Know how to use Jupyter Notebooks.
+- Be familiar with `pandas` and `seaborn`.
+- Know how to read a data file and deal with format issues.
+- Have the skills to create a simple plot to visualize and explore your data.

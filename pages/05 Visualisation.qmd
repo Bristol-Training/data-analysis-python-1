@@ -261,7 +261,7 @@ sns.catplot(
 )
 ```
 
-::: {#exercise-3 .callout-tip title="Exercise" icon=false} 
+::: {#exercise-3 .callout-note title="Exercise" icon=false} 
 
 There seems to be a trend towards larger total bills at the weekend. Investigate whether this is due to a larger average spend per person or due to a larger average group size.
 
