@@ -10,3 +10,4 @@ The course has since been modified by the Jean Golding Institute.
 * Matt Williams
 * Léo Gorman
 * James Thomas
+* Pau Erola

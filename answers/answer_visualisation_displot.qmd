@@ -5,7 +5,7 @@ jupyter: python3
 ```{python}
 import pandas as pd
 
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
 ```
 
 ```{python}
@@ -18,4 +18,3 @@ import seaborn as sns
 sns.displot(data=tips, x="bill_per_person", hue="time", kind="kde", common_norm=False)
 ```
 
-[Return to course](../pages/05%20Visualisation.qmd#exercise-2)

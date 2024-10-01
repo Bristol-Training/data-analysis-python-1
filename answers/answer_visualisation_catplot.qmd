@@ -5,7 +5,7 @@ jupyter: python3
 ```{python}
 import pandas as pd
 
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
 ```
 
 ```{python}
@@ -24,4 +24,3 @@ sns.catplot(data=tips, x="day", y="bill_per_person", order=["Thur", "Fri", "Sat"
 sns.catplot(data=tips, x="day", y="size", order=["Thur", "Fri", "Sat", "Sun"], kind="violin")
 ```
 
-[Return to course](../pages/05%20Visualisation.qmd#exercise-3)

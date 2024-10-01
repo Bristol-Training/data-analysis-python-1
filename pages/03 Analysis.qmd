@@ -10,10 +10,18 @@ Once your data is read in and available as a DataFrame, Pandas provides a whole 
 Let's start by looking at some example data which contains information about the amounts that people at a restaurant paid and tipped for their meals:
 
 
-```{python}
+```{.python}
 import pandas as pd
 
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
+tips
+```
+
+```{python}
+#| echo: false
+import pandas as pd
+
+tips = pd.read_csv("./data/tips.csv")
 tips
 ```
 
@@ -57,10 +65,13 @@ tips.loc[2, "total_bill"]
 ```
 
 
-::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
+::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 The `size` column in the data is the number of people in the dining party. Extract this column from the DataFrame.
+:::
 
-[<small>answer</small>](../answers/answer_analysis_get_column.qmd)
+
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_analysis_get_column.qmd >}}
 :::
 
 ## Descriptive statistics
@@ -96,14 +107,17 @@ index_of_max_bill = tips["total_bill"].idxmax()
 tips.loc[index_of_max_bill]
 ```
 
-::: {#exercise-2 .callout-tip title="Exercise 2" icon=false} 
+::: {#exercise-2 .callout-note title="Exercise" icon=false} 
 
 Find the value of the tip that was paid for the smallest total bill.
 
 Hint: Have a look at the [documentation page for `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html). There's a function which works like `idxmax()` but finds the minimum.
 
-[<small>answer</small>](../answers/answer_analysis_smallest_tip.qmd)
 
+:::
+
+::: {#answer2 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_analysis_smallest_tip.qmd >}}
 :::
 
 ## Acting on columns
@@ -151,12 +165,15 @@ tip_percent = tip_fraction*100
 tip_percent
 ```
 
-::: {#exercise-3 .callout-tip title="Exercise 3" icon=false} 
+::: {#exercise-3 .callout-note title="Exercise" icon=false} 
 The `total_bill` column give the total amount for the entire dining party. Calculate the amount spent *per person* for each row in the DataFrame.
 
 Extra: calculate the average and the standard deviation of this data. You might need to take a look at [the documentation page for the `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) type.
 
-[<small>answer</small>](../answers/answer_analysis_per_person.qmd)
+:::
+
+::: {#answer2 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_analysis_per_person.qmd >}}
 :::
 
 
@@ -169,9 +186,11 @@ tips["percent_tip"] = (tips["tip"] / tips["total_bill"])*100
 tips
 ```
 
-::: {#exercise-4 .callout-tip title="Exercise 4" icon=false} 
+::: {#exercise-4 .callout-note title="Exercise" icon=false} 
 Take the "bill per person" result you calculated in the last exercise and add it as a new column, `bill_per_person`, in the DataFrame.
 
-[<small>answer</small>](../answers/answer_analysis_per_person_column.qmd)
+:::
 
+::: {#answer4 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_analysis_per_person_column.qmd >}}
 :::

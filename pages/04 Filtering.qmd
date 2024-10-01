@@ -22,9 +22,15 @@ In Pandas there are two steps to asking a question like this.
 
 You create a filter by performing some operation on your `DataFrame` or a column within it. To ask about only those rows which refer to Saturday, you grab the `day` column and compare it to `"Sat"`:
 
-```{python}
+```{.python}
 import pandas as pd
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
+```
+
+```{python}
+#| echo: false
+import pandas as pd
+tips = pd.read_csv("./data/tips.csv")
 ```
 
 ```{python}
@@ -55,14 +61,16 @@ tips[tips["day"] == "Sat"]
 
 This has given us back our subset of data as another `DataFrame` which can used in exactly the same way as the previous one (further filtering, summarising etc.).
 
-::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
+::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 - Select the data for only Thursdays.
 - Calculate the mean of the `tip` column for Thursdays
 - Compare this with the mean of the `tip` column for Saturdays
 
-[<small>answer</small>](../answers/answer_filtering_tip_day.qmd)
 :::
 
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_filtering_tip_day.qmd >}}
+:::
 
 ## Other filters
 
@@ -74,11 +82,16 @@ To grab only the rows where the total bill is less than £8 we can use `<`:
 tips[tips["total_bill"] < 8]
 ```
 
-::: {#exercise-2 .callout-tip title="Exercise 2" icon=false}
+::: {#exercise-2 .callout-note title="Exercise" icon=false}
 Filter the data to only include parties of 5 or more people.
 
-[<small>answer</small>](../answers/answer_filtering_party_size.qmd)
 :::
+
+::: {#answer4 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_filtering_party_size.qmd >}}
+:::
+
+
 ## Combining filters
 
 If you want to apply multiple filters, for example to select only "Saturdays with small total bills" you can do it in one of two different ways. Either split the question into multiple steps, or ask it all at once.
@@ -110,8 +123,13 @@ Filter the data to only include parties of 4 or more people which happened at lu
 
 Hint: The `size` and `time` columns are what you want to use here.
 
-[<small>answer</small>](../answers/answer_filtering_combined.qmd)
 :::
+
+::: {#answer3 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_filtering_combined.qmd >}}
+:::
+
+
 
 ## DataFrame indexing
 

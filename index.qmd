@@ -10,17 +10,7 @@ It will focus primarily on the Python package [pandas](http://pandas.pydata.org/
 
 Data analysis is a huge topic and we couldn't possibly cover it all in one short course so the purpose of this workshop is to give you an introduction to some of the most useful tools and to demonstrate some of the most common problems that surface.
 
-You can jump ahead to any chapter:
-
-1. [Introduction to pandas](./pages/01%20Pandas.qmd)
-2. [Reading data](./pages/02%20Reading%20from%20file.qmd)
-3. [Querying data](./pages/03%20Analysis.qmd)
-4. [Filtering](./pages/04%20Filtering.qmd)
-5. [Visualisation](./pages/05%20Visualisation.qmd)
-6. [Final exercise](./pages/06%20Final%20exercise.qmd)
-7. [Summary](./pages/98%20Summary.qmd)
-
-In previous courses, you've used the `python` command line program to execute scripts. This course will use a tool called Jupyter Notebooks to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
+In previous courses, you've used the `python` command line program to execute scripts. This course will use a tool called *Jupyter Notebooks* to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and allows you to intersperse your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
 
 To get started, open a new Notebook as shown by your instructor.
 
@@ -74,7 +64,7 @@ If you want to write some text as documentation (like these words here) then you
 It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called *literate programming*.
 
 
-::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
+::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 
 Take the following code and break it down, chunk by chunk, interspersing it with documentation explaining what each part does using Markdown blocks:
 ```{python}
@@ -98,4 +88,8 @@ print(f"I owe the grocer £{total_grocery_bill:.2f}")
 You don't need to put only one line of code per cell, it makes sense sometimes to group some lines together.
 
 Throughout this course, use the Jupyter Notebook to solve the problems. Follow along with the examples, typing them into your own notebooks and see how they work.
+:::
+
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+TDB
 :::

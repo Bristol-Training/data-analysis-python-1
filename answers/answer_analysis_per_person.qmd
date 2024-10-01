@@ -5,7 +5,7 @@ jupyter: python3
 ```{python}
 import pandas as pd
 
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/tips.csv")
 ```
 
 ```{python}
@@ -20,6 +20,3 @@ bill_per_person.mean()
 ```{python}
 bill_per_person.std()
 ```
-
-
-[Return to course](../pages/03%20Analysis.qmd#exercise-3)

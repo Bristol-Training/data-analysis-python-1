@@ -17,7 +17,7 @@ Most data analyses will follow a similar series of steps which we will go throug
 
 ```{=html}
 <div class="contents-grid">
-    <div class="grid-icon"><img src="../assets/pipeline1.svg" width="100%"></div>
+    <div class="grid-icon"><img src="../assets/pipeline1.svg" width="50%" style="padding-left: 15%;></div>
     <div class="grid-text">
         <p>
             The first step of any data analysis is getting hold of some data.
@@ -27,16 +27,16 @@ Most data analyses will follow a similar series of steps which we will go throug
             Pandas provides you with the tools you need to read in a variety of different formats and to deal with the data cleaning that inevitably will be required in the real world.
         </p>
     </div>
-    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="100%"></div>
+    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="50%" style="padding-left: 15%;"></div>
     <div class="grid-text"></div>
-    <div class="grid-item"><img src="../assets/pipeline2.svg" width="100%"></div>
+    <div class="grid-item"><img src="../assets/pipeline2.svg" width="50%" style="padding-left: 15%;></div>
     <div class="grid-text">
         <p>Pandas provides us with all the tools we need to be able to select, query, filter and combine our data.</p>
         <p>We will start with the basics of selcting our data and then move on to more complex selections and how to ask questions of your data.</p>
     </div>
-    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="100%"></div>
+    <div class="grid-arrow"><img src="../assets/down_arrow.svg" width="50%" style="padding-left: 15%;></div>
     <div class="grid-text"></div>
-    <div class="grid-icon"><img src="../assets/pipeline3.svg" width="100%"></div>
+    <div class="grid-icon"><img src="../assets/pipeline3.svg" width="50%" style="padding-left: 15%;></div>
     <div class="grid-text">
         <p>
             Working with raw data will only get you so far.

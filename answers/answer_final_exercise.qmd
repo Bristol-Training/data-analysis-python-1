@@ -1,14 +1,8 @@
----
-title: Example answers for final exercise
-jupyter: python3
----
-
-
 
 ```{python}
 import pandas as pd
 import seaborn as sns
-titanic = pd.read_csv("https://milliams.com/courses/data_analysis_python/titanic.csv")
+titanic = pd.read_csv("./data/titanic.csv")
 titanic
 ```
 
@@ -107,4 +101,3 @@ ratio_3rd = survived_ratio(passengers[passengers["class"] == "3rd"])
 print(ratio_1st, ratio_2nd, ratio_3rd)
 ```
 
-[Return to course](../pages/06%20Final%20exercise.qmd)

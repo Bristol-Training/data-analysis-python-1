@@ -1,16 +1,11 @@
----
-jupyter: python3
----
 
 ```{python}
 import pandas as pd
 
-tips = pd.read_csv("https://milliams.com/courses/data_analysis_python/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/datan/tips.csv")
 ```
 
 ```{python}
 tips["size"]
 ```
-
-[Return to course](../pages/03%20Analysis.qmd#exercise-1)
 

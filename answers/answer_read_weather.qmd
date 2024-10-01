@@ -1,6 +1,4 @@
----
-jupyter: python3
----
+
 
 ```{python}
 import pandas as pd
@@ -10,7 +8,7 @@ Firstly, if we read the data in without passing any extra arguments, we get:
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
 )
 temperature.head()
 ```
@@ -19,7 +17,7 @@ So we need to dot he same as before, setting the `skiprows` argument:
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
     skiprows=4,  # skip first 4 rows of the header
 )
 temperature.head()
@@ -29,7 +27,7 @@ It's not separating the columns correctly so if we look at the data and see spac
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
     skiprows=4,
     sep=" ",  # try this...
 )
@@ -40,7 +38,7 @@ That doesn't look right. This is because `sep=" "` means "use a single space" as
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
     skiprows=4,
     sep='\s+',  # whitespace-separated columns
 )
@@ -51,7 +49,7 @@ That looks much better! Now we set the `index_col`:
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
     skiprows=4,
     sep='\s+',
     index_col="Year",  # Set the index
@@ -76,7 +74,7 @@ We can see there are some `-99.9` in the data, repsenting missing data. We shoul
 
 ```{python}
 temperature = pd.read_csv(
-    "https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt",
+    "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt",
     skiprows=4,
     sep='\s+',
     index_col="Year",
@@ -88,5 +86,3 @@ temperature.tail()
 ```{python}
 temperature.plot()
 ```
-
-[Return to course](../pages/02%20Reading%20from%20file.qmd#exercise-1)

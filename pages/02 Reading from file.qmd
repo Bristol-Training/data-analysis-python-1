@@ -31,9 +31,14 @@ The first argument to the function is called `filepath_or_buffer`, the documenta
 
 This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:
 
-```{python}
+```{.python}
 #| tags: []
-rain = pd.read_csv("https://milliams.com/courses/data_analysis_python/rain.csv")
+rain = pd.read_csv("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/rain.csv")
+```
+
+```{python}
+#| echo: false
+rain = pd.read_csv("./data/rain.csv")
 ```
 
 This gives us the data from the file as a type of object called a `DataFrame`. This is the core of Pandas and we will be exploring many of the things that it can do throughout this course.
@@ -79,8 +84,14 @@ year;London;Paris;Rome
 
 This file has some issues that `read_csv` will not be able to automatically deal with but let's start by trying to read it in directly:
 
+```{.python}
+city_pop_file = "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"
+pd.read_csv(city_pop_file)
+```
+
 ```{python}
-city_pop_file = "https://milliams.com/courses/data_analysis_python/city_pop.csv"
+#| echo: false
+city_pop_file = "./data/city_pop.csv"
 pd.read_csv(city_pop_file)
 ```
 
@@ -156,14 +167,16 @@ From this we can quickly see the missing data showing as gaps in the graph, and 
 
 If you want to dive deeper into how this graph can be improved visually, you can see [a short aside](../appendix/aside_census_plot.qmd) which covers that, but which does use some tools that we will not cover until later chapters.
 
-::: {#exercise-1 .callout-tip title="Exercise 1" icon=false} 
+::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 
 Read the file at [`https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt`](https://milliams.com/courses/data_analysis_python/meantemp_monthly_totals.txt) into Pandas (this data is originally from the [Met Office](https://www.metoffice.gov.uk/hadobs/hadcet/data/download.html) and there's [a description of the format there too](https://www.metoffice.gov.uk/hadobs/hadcet/data/data_format.html) under "Format for monthly CET series data"). This contains some historical weather data for a location in the UK. Import that file as a Pandas `DataFrame` using `read_csv()`, making sure that you set the index column, skip the appropriate rows, separate the columns correctly and cover all the possible NaN values.
 
 Hint: This data is a little tricky to deal with as it uses spaces to separate its columns. You can't just use `sep=" "` as that will assume that a _single_ space is the separator. Instead of using `sep` at all, you need to tell it to use _whitespace_ (e.g. spaces, tabs, etc.) as the _delimiter_ (search the documentation for an appropriate argument).
 
-[<small>answer</small>](../answers/answer_read_weather.qmd)
+:::
 
+::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
+{{< include ../answers/answer_read_weather.qmd >}}
 :::
 
 That covers the basics of reading in data with pandas. Next we will be looking at how we can query detailed information from our data.
