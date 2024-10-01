@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="b557edd7" class="cell" data-execution_count="1">
+<div id="6a280dff" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>titanic <span class="op">=</span> pd.read_csv(<span class="st">"./data/titanic.csv"</span>)</span>
@@ -337,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="find-the-average-age-of-all-people-on-board" class="level4">
 <h4 class="anchored" data-anchor-id="find-the-average-age-of-all-people-on-board">Find the average age of all people on board</h4>
-<div id="1cf91564" class="cell" data-execution_count="2">
+<div id="6c235dd4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>titanic[<span class="st">"age"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>30.436734693877504</code></pre>
@@ -346,13 +346,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="use-a-filter-to-select-only-the-males" class="level4">
 <h4 class="anchored" data-anchor-id="use-a-filter-to-select-only-the-males">Use a filter to select only the males</h4>
-<div id="aa1312dc" class="cell" data-execution_count="3">
+<div id="6943cc4d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_males <span class="op">=</span> titanic[titanic[<span class="st">"gender"</span>] <span class="op">==</span> <span class="st">"male"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="find-the-average-age-of-the-males-on-board" class="level4">
 <h4 class="anchored" data-anchor-id="find-the-average-age-of-the-males-on-board">Find the average age of the males on board</h4>
-<div id="34a76474" class="cell" data-execution_count="4">
+<div id="c812ff2e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_males[<span class="st">"age"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>30.83231351981346</code></pre>
@@ -363,7 +363,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="filtering">Filtering</h3>
 <section id="select-on-the-people-in-3rd-class" class="level4">
 <h4 class="anchored" data-anchor-id="select-on-the-people-in-3rd-class">Select on the people in 3<sup>rd</sup> class</h4>
-<div id="3adc3209" class="cell" data-execution_count="5">
+<div id="225f0206" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>titanic[titanic[<span class="st">"class"</span>] <span class="op">==</span> <span class="st">"3rd"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -552,7 +552,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="select-just-the-passengers" class="level4">
 <h4 class="anchored" data-anchor-id="select-just-the-passengers">Select just the passengers</h4>
 <p>The technique shown in class was to combine together multiple selectors with <code>|</code>:</p>
-<div id="77f210ba" class="cell" data-execution_count="6">
+<div id="c7323b06" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>passengers <span class="op">=</span> titanic[</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    (titanic[<span class="st">"class"</span>] <span class="op">==</span> <span class="st">"1st"</span>) <span class="op">|</span> </span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    (titanic[<span class="st">"class"</span>] <span class="op">==</span> <span class="st">"2nd"</span>) <span class="op">|</span> </span>
@@ -560,7 +560,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>However, it is also possible to use the <code>isin</code> method to select from a list of matching options:</p>
-<div id="4de42130" class="cell" data-execution_count="7">
+<div id="633c4e7b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>passengers <span class="op">=</span> titanic[titanic[<span class="st">"class"</span>].isin([<span class="st">"1st"</span>, <span class="st">"2nd"</span>, <span class="st">"3rd"</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -570,7 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="plot-the-distribution-of-ages-for-males-and-females" class="level4">
 <h4 class="anchored" data-anchor-id="plot-the-distribution-of-ages-for-males-and-females">Plot the distribution of ages for males and females</h4>
 <p>Using <code>displot</code> with <code>age</code> as the main variable shows the distribution. YOu can overlay the two genders using <code>hue="gender"</code>. To simplify the view, you can set <code>kind="kde"</code>. Since KDE mode smooths the data, you can also set a cutoff of 0 to avoid it showing negative ages:</p>
-<div id="156fa056" class="cell" data-execution_count="8">
+<div id="4615bed8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>passengers,</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"age"</span>,</span>
@@ -590,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="how-does-this-differ-by-class" class="level4">
 <h4 class="anchored" data-anchor-id="how-does-this-differ-by-class">How does this differ by class?</h4>
 <p>All that has changed from the last plot is adding in the split by <code>class</code> over multiple columns:</p>
-<div id="4bcad8ef" class="cell" data-execution_count="9">
+<div id="c8661830" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>passengers,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"age"</span>,</span>
@@ -613,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="combining" class="level3">
 <h3 class="anchored" data-anchor-id="combining">Combining</h3>
 <p>To reduce the duplication of effort here, I create a function which, given a set of data, calculated the survived fraction within. This is then called three times, once for each class:</p>
-<div id="2e477960" class="cell" data-tags="[]" data-execution_count="10">
+<div id="223c0fdf" class="cell" data-tags="[]" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> survived_ratio(df):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    yes <span class="op">=</span> df[df[<span class="st">"survived"</span>] <span class="op">==</span> <span class="st">"yes"</span>]</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="bu">len</span>(yes) <span class="op">/</span> <span class="bu">len</span>(df)</span>

@@ -244,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reading-our-first-file" class="level3">
 <h3 class="anchored" data-anchor-id="reading-our-first-file">Reading our first file</h3>
 <p>You can get access to Pandas by importing the <code>pandas</code> module. By convention, it is imported as <code>pd</code>:</p>
-<div id="7c5e973f" class="cell" data-execution_count="1">
+<div id="519e604b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use the pandas function <code>read_csv()</code> to read the file and convert it to a <code>DataFrame</code>. Full documentation for this function can be found in <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the manual</a>.</p>
@@ -253,11 +253,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Any valid string path is acceptable. The string could be a URL…</p>
 </blockquote>
 <p>This means that we can take a URL and pass it directly (or via a variable) to the function. For example, here is a file I have prepared for you:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: []</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> pd.read_csv(<span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/rain.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rain <span class="op">=</span> pd.read_csv(<span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This gives us the data from the file as a type of object called a <code>DataFrame</code>. This is the core of Pandas and we will be exploring many of the things that it can do throughout this course.</p>
 <p>We can get Jupyter to display the data by putting the variable name in a cell by itself:</p>
-<div id="3bba8740" class="cell" data-execution_count="3">
+<div id="01db52ce" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div>
@@ -369,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="dealing-with-messy-data" class="level3">
 <h3 class="anchored" data-anchor-id="dealing-with-messy-data">Dealing with messy data</h3>
 <p>Now let’s move on to how you can deal with the kind of data you’re likely to come across in the real world.</p>
-<p>Imagine we have a CSV (comma-separated values) file. The example we will use today is available at <a href="https://milliams.com/courses/data_analysis_python/city_pop.csv">city_pop.csv</a>. If you were to open that file then you would see:</p>
+<p>Imagine we have a CSV (comma-separated values) file. The example we will use today is available at <a href="https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv">city_pop.csv</a>. If you were to open that file then you would see:</p>
 <pre><code>This is an example CSV file
 The text at the top here is not part of the data but instead is here
 to describe the file. You'll see this quite often in real-world data.
@@ -385,9 +384,9 @@ year;London;Paris;Rome
 2015;8.615;2.21;
 2019;;;</code></pre>
 <p>This file has some issues that <code>read_csv</code> will not be able to automatically deal with but let’s start by trying to read it in directly:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"</span></span>
+<div id="17fd9b6d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"./data/city_pop.csv"</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>pd.read_csv(city_pop_file)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="1f9b2444" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -458,7 +457,7 @@ year;London;Paris;Rome
 <section id="skipping-the-header" class="level4">
 <h4 class="anchored" data-anchor-id="skipping-the-header">Skipping the header</h4>
 <p>The first thing we notice is that it’s treating the text at the top of the file as though it’s data. Checking <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html">the documentation</a> we see that the simplest way to solve this is to use the <code>skiprows</code> argument to the function to which we give an integer giving the number of rows to skip (also note that I’ve changed to put one argument per line for readability and that the comma at the end is optional but for consistency):</p>
-<div id="ae06e3d2" class="cell" data-execution_count="5">
+<div id="d9b0eb5e" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,  <span class="co"># Add this</span></span>
@@ -517,7 +516,7 @@ year;London;Paris;Rome
 <section id="specifying-the-separator" class="level4">
 <h4 class="anchored" data-anchor-id="specifying-the-separator">Specifying the separator</h4>
 <p>The next most obvious problem is that it is not separating the columns at all. This is controlled by the <code>sep</code> argument which is set to <code>','</code> by default (hence <em>comma</em> separated values). We can simply set it to the appropriate semi-colon:</p>
-<div id="9fa19072" class="cell" data-execution_count="6">
+<div id="710b2a70" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -605,7 +604,7 @@ year;London;Paris;Rome
 <section id="identifying-missing-data" class="level4">
 <h4 class="anchored" data-anchor-id="identifying-missing-data">Identifying missing data</h4>
 <p>Reading the descriptive header of our data file we see that a value of <code>-1</code> signifies a missing reading so we should mark those too. This can be done after the fact but it is simplest to do it at file read-time using the <code>na_values</code> argument:</p>
-<div id="ec6d2b6d" class="cell" data-execution_count="7">
+<div id="b830fd13" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pd.read_csv(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -693,7 +692,7 @@ year;London;Paris;Rome
 <section id="setting-the-index" class="level4">
 <h4 class="anchored" data-anchor-id="setting-the-index">Setting the index</h4>
 <p>The last this we want to do is use the <code>year</code> column as the index for the <code>DataFrame</code>. This can be done by passing the name of the column to the <code>index_col</code> argument:</p>
-<div id="cdea669f" class="cell" data-execution_count="8">
+<div id="750b4810" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>census <span class="op">=</span> pd.read_csv(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    city_pop_file,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">5</span>,</span>
@@ -783,7 +782,7 @@ year;London;Paris;Rome
 <h3 class="anchored" data-anchor-id="visualise-your-data">Visualise your data</h3>
 <p>Pandas comes with some tools for displaying tables of data visually. We won’t cover the details of manipulating these plots here but for quickly checking the shape of the data, it’s incredibly useful. It’s a good idea to <em>always</em> plot your data once you’ve read it in as it will often show issues with the data more clearly than by scanning table of numbers.</p>
 <p>If you have a variable containing a <code>DataFrame</code> (like we do with <code>census</code>), you can plot it as a line graph using:</p>
-<div id="e51c8d78" class="cell" data-tags="[]" data-execution_count="9">
+<div id="f0b70258" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>census.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -821,13 +820,13 @@ Answer
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="54fcb25d" class="cell" data-execution_count="10">
+<div id="09e5d353" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Firstly, if we read the data in without passing any extra arguments, we get:</p>
-<div id="eb3c54fd" class="cell" data-execution_count="11">
+<div id="3f4f928f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
@@ -869,9 +868,9 @@ Answer
 </div>
 </div>
 <p>So we need to dot he same as before, setting the <code>skiprows</code> argument:</p>
-<div id="f00b4bcf" class="cell" data-execution_count="12">
+<div id="7c6f69e9" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,  <span class="co"># skip first 4 rows of the header</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -914,9 +913,9 @@ Answer
 </div>
 </div>
 <p>It’s not separating the columns correctly so if we look at the data and see spaces, we <em>might</em> think that useing <code>sep=" "</code> would work, but if we try it:</p>
-<div id="0cfe5563" class="cell" data-execution_count="13">
+<div id="b5c3117c" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">" "</span>,  <span class="co"># try this...</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1081,9 +1080,9 @@ Answer
 </div>
 </div>
 <p>That doesn’t look right. This is because <code>sep=" "</code> means “use a single space” as the separator, but in the data most columns are separated by multiple spaces. To make it use “any number of spaces” as the separator, you can instead set <code>sep='\s+'</code>:</p>
-<div id="f00e916b" class="cell" data-execution_count="14">
+<div id="d9759128" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,  <span class="co"># whitespace-separated columns</span></span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span>
@@ -1205,9 +1204,9 @@ Answer
 </div>
 </div>
 <p>That looks much better! Now we set the <code>index_col</code>:</p>
-<div id="3b99ad27" class="cell" data-execution_count="15">
+<div id="749af4ef" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    index_col<span class="op">=</span><span class="st">"Year"</span>,  <span class="co"># Set the index</span></span>
@@ -1340,7 +1339,7 @@ Answer
 </div>
 </div>
 <p>And, as we should always do, we plot the data we’ve just read in:</p>
-<div id="91a04c7d" class="cell" data-tags="[]" data-execution_count="16">
+<div id="1221f2a1" class="cell" data-tags="[]" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -1351,7 +1350,7 @@ Answer
 </div>
 </div>
 <p>Something is wrong with this. There’s a line on the right-hand side which seems wrong. If we look at the last few lines of the data to see what’s going on:</p>
-<div id="adabd140" class="cell" data-execution_count="17">
+<div id="f70450ff" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>temperature.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
 <div>
@@ -1480,9 +1479,9 @@ Answer
 </div>
 </div>
 <p>We can see there are some <code>-99.9</code> in the data, repsenting missing data. We should fix this with <code>na_values</code>:</p>
-<div id="6db15503" class="cell" data-execution_count="18">
+<div id="7d46d0b7" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/meantemp_monthly_totals.txt"</span>,</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">'\s+'</span>,</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    index_col<span class="op">=</span><span class="st">"Year"</span>,</span>
@@ -1615,7 +1614,7 @@ Answer
 </div>
 </div>
 </div>
-<div id="73910e7b" class="cell" data-execution_count="19">
+<div id="9533614a" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>

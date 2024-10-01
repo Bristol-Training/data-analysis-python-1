@@ -120,31 +120,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div id="6dabe7a7" class="cell" data-execution_count="1">
+<div id="b80b0c61" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pandas <span class="im">import</span> Series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="0dbbe55e" class="cell" data-execution_count="2">
+<div id="e632a3ab" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="a7457d64" class="cell" data-execution_count="3">
+<div id="2a891f2e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/cetml1659on.txt"</span>,  <span class="co"># file name</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/cetml1659on.txt"</span>,  <span class="co"># file name</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">6</span>,  <span class="co"># skip header</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    delim_whitespace<span class="op">=</span><span class="va">True</span>,  <span class="co"># whitespace separated</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    na_values<span class="op">=</span>[<span class="st">'-99.9'</span>, <span class="st">'-99.99'</span>],  <span class="co"># NaNs</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_2479/3659641096.py:1: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+<pre><code>/tmp/ipykernel_2609/1223804242.py:1: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   temperature = pd.read_csv(</code></pre>
 </div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">HTTPError</span>                                 Traceback (most recent call last)
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
 Cell <span class="ansi-green-fg">In[3], line 1</span>
 <span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">read_csv</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">      2</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/cetml1659on.txt</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg">  </span><span style="font-style:italic;color:rgb(95,135,135)" class="ansi-yellow-bg"># file name</span>
+<span class="ansi-green-fg ansi-bold">      2</span> <span class="ansi-yellow-bg">    </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">./data/cetml1659on.txt</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg">  </span><span style="font-style:italic;color:rgb(95,135,135)" class="ansi-yellow-bg"># file name</span>
 <span class="ansi-green-fg ansi-bold">      3</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">skiprows</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">6</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg">  </span><span style="font-style:italic;color:rgb(95,135,135)" class="ansi-yellow-bg"># skip header</span>
 <span class="ansi-green-fg ansi-bold">      4</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">delim_whitespace</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="font-weight:bold;color:rgb(0,135,0)" class="ansi-yellow-bg">True</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg">  </span><span style="font-style:italic;color:rgb(95,135,135)" class="ansi-yellow-bg"># whitespace separated</span>
 <span class="ansi-green-fg ansi-bold">      5</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">na_values</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">[</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">-99.9</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">-99.99</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span class="ansi-yellow-bg">]</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg">  </span><span style="font-style:italic;color:rgb(95,135,135)" class="ansi-yellow-bg"># NaNs</span>
@@ -188,76 +188,29 @@ File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/pyt
 <span class="ansi-green-fg ansi-bold">   1890</span> <span style="font-weight:bold;color:rgb(0,135,0)">assert</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>
 <span class="ansi-green-fg ansi-bold">   1891</span> f <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>handles<span style="color:rgb(98,98,98)">.</span>handle
 
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/pandas/io/common.py:728</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="ansi-green-fg ansi-bold">    725</span>     codecs<span style="color:rgb(98,98,98)">.</span>lookup_error(errors)
-<span class="ansi-green-fg ansi-bold">    727</span> <span style="font-style:italic;color:rgb(95,135,135)"># open URLs</span>
-<span class="ansi-green-fg">--&gt; 728</span> ioargs <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">_get_filepath_or_buffer</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">    729</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">path_or_buf</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    730</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">encoding</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    731</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">compression</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">compression</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    732</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">mode</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    733</span> <span class="ansi-yellow-bg">    </span><span class="ansi-yellow-bg">storage_options</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">storage_options</span><span class="ansi-yellow-bg">,</span>
-<span class="ansi-green-fg ansi-bold">    734</span> <span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    736</span> handle <span style="color:rgb(98,98,98)">=</span> ioargs<span style="color:rgb(98,98,98)">.</span>filepath_or_buffer
-<span class="ansi-green-fg ansi-bold">    737</span> handles: <span style="color:rgb(0,135,0)">list</span>[BaseBuffer]
+File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/pandas/io/common.py:873</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
+<span class="ansi-green-fg ansi-bold">    868</span> <span style="font-weight:bold;color:rgb(0,135,0)">elif</span> <span style="color:rgb(0,135,0)">isinstance</span>(handle, <span style="color:rgb(0,135,0)">str</span>):
+<span class="ansi-green-fg ansi-bold">    869</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Check whether the filename is to be opened in binary mode.</span>
+<span class="ansi-green-fg ansi-bold">    870</span>     <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode does not support 'encoding' and 'newline'.</span>
+<span class="ansi-green-fg ansi-bold">    871</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> ioargs<span style="color:rgb(98,98,98)">.</span>encoding <span style="font-weight:bold;color:rgb(175,0,255)">and</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">b</span><span style="color:rgb(175,0,0)">"</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(175,0,255)">in</span> ioargs<span style="color:rgb(98,98,98)">.</span>mode:
+<span class="ansi-green-fg ansi-bold">    872</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Encoding</span>
+<span class="ansi-green-fg">--&gt; 873</span>         handle <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">open</span><span class="ansi-yellow-bg">(</span>
+<span class="ansi-green-fg ansi-bold">    874</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">handle</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    875</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">ioargs</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">mode</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    876</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">encoding</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">ioargs</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">encoding</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    877</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">errors</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span class="ansi-yellow-bg">errors</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    878</span> <span class="ansi-yellow-bg">            </span><span class="ansi-yellow-bg">newline</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">=</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">"</span><span class="ansi-yellow-bg">,</span>
+<span class="ansi-green-fg ansi-bold">    879</span> <span class="ansi-yellow-bg">        </span><span class="ansi-yellow-bg">)</span>
+<span class="ansi-green-fg ansi-bold">    880</span>     <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
+<span class="ansi-green-fg ansi-bold">    881</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Binary mode</span>
+<span class="ansi-green-fg ansi-bold">    882</span>         handle <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">open</span>(handle, ioargs<span style="color:rgb(98,98,98)">.</span>mode)
 
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/pandas/io/common.py:384</span>, in <span class="ansi-cyan-fg">_get_filepath_or_buffer</span><span class="ansi-blue-fg">(filepath_or_buffer, encoding, compression, mode, storage_options)</span>
-<span class="ansi-green-fg ansi-bold">    382</span> <span style="font-style:italic;color:rgb(95,135,135)"># assuming storage_options is to be interpreted as headers</span>
-<span class="ansi-green-fg ansi-bold">    383</span> req_info <span style="color:rgb(98,98,98)">=</span> urllib<span style="color:rgb(98,98,98)">.</span>request<span style="color:rgb(98,98,98)">.</span>Request(filepath_or_buffer, headers<span style="color:rgb(98,98,98)">=</span>storage_options)
-<span class="ansi-green-fg">--&gt; 384</span> <span style="font-weight:bold;color:rgb(0,135,0)">with</span> <span class="ansi-yellow-bg">urlopen</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">req_info</span><span class="ansi-yellow-bg">)</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> req:
-<span class="ansi-green-fg ansi-bold">    385</span>     content_encoding <span style="color:rgb(98,98,98)">=</span> req<span style="color:rgb(98,98,98)">.</span>headers<span style="color:rgb(98,98,98)">.</span>get(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Content-Encoding</span><span style="color:rgb(175,0,0)">"</span>, <span style="font-weight:bold;color:rgb(0,135,0)">None</span>)
-<span class="ansi-green-fg ansi-bold">    386</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> content_encoding <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">gzip</span><span style="color:rgb(175,0,0)">"</span>:
-<span class="ansi-green-fg ansi-bold">    387</span>         <span style="font-style:italic;color:rgb(95,135,135)"># Override compression based on Content-Encoding header</span>
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/site-packages/pandas/io/common.py:289</span>, in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-fg ansi-bold">    283</span> <span style="font-style:italic;color:rgb(175,0,0)">"""</span>
-<span class="ansi-green-fg ansi-bold">    284</span> <span style="font-style:italic;color:rgb(175,0,0)">Lazy-import wrapper for stdlib urlopen, as that imports a big chunk of</span>
-<span class="ansi-green-fg ansi-bold">    285</span> <span style="font-style:italic;color:rgb(175,0,0)">the stdlib.</span>
-<span class="ansi-green-fg ansi-bold">    286</span> <span style="font-style:italic;color:rgb(175,0,0)">"""</span>
-<span class="ansi-green-fg ansi-bold">    287</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">urllib</span><span style="font-weight:bold;color:rgb(0,0,255)">.</span><span style="font-weight:bold;color:rgb(0,0,255)">request</span>
-<span class="ansi-green-fg">--&gt; 289</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">urllib</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">request</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">urlopen</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">kwargs</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:216</span>, in <span class="ansi-cyan-fg">urlopen</span><span class="ansi-blue-fg">(url, data, timeout, cafile, capath, cadefault, context)</span>
-<span class="ansi-green-fg ansi-bold">    214</span> <span style="font-weight:bold;color:rgb(0,135,0)">else</span>:
-<span class="ansi-green-fg ansi-bold">    215</span>     opener <span style="color:rgb(98,98,98)">=</span> _opener
-<span class="ansi-green-fg">--&gt; 216</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span class="ansi-yellow-bg">opener</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">open</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">url</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">data</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">timeout</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:525</span>, in <span class="ansi-cyan-fg">OpenerDirector.open</span><span class="ansi-blue-fg">(self, fullurl, data, timeout)</span>
-<span class="ansi-green-fg ansi-bold">    523</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> processor <span style="font-weight:bold;color:rgb(175,0,255)">in</span> <span style="color:rgb(0,135,0)">self</span><span style="color:rgb(98,98,98)">.</span>process_response<span style="color:rgb(98,98,98)">.</span>get(protocol, []):
-<span class="ansi-green-fg ansi-bold">    524</span>     meth <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">getattr</span>(processor, meth_name)
-<span class="ansi-green-fg">--&gt; 525</span>     response <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">meth</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg">req</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">response</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    527</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> response
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:634</span>, in <span class="ansi-cyan-fg">HTTPErrorProcessor.http_response</span><span class="ansi-blue-fg">(self, request, response)</span>
-<span class="ansi-green-fg ansi-bold">    631</span> <span style="font-style:italic;color:rgb(95,135,135)"># According to RFC 2616, "2xx" code indicates that the client's</span>
-<span class="ansi-green-fg ansi-bold">    632</span> <span style="font-style:italic;color:rgb(95,135,135)"># request was successfully received, understood, and accepted.</span>
-<span class="ansi-green-fg ansi-bold">    633</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> (<span style="color:rgb(98,98,98)">200</span> <span style="color:rgb(98,98,98)">&lt;</span><span style="color:rgb(98,98,98)">=</span> code <span style="color:rgb(98,98,98)">&lt;</span> <span style="color:rgb(98,98,98)">300</span>):
-<span class="ansi-green-fg">--&gt; 634</span>     response <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">parent</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">error</span><span class="ansi-yellow-bg">(</span>
-<span class="ansi-green-fg ansi-bold">    635</span> <span class="ansi-yellow-bg">        </span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">http</span><span style="color:rgb(175,0,0)" class="ansi-yellow-bg">'</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">request</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">response</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">code</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">msg</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">hdrs</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    637</span> <span style="font-weight:bold;color:rgb(0,135,0)">return</span> response
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:563</span>, in <span class="ansi-cyan-fg">OpenerDirector.error</span><span class="ansi-blue-fg">(self, proto, *args)</span>
-<span class="ansi-green-fg ansi-bold">    561</span> <span style="font-weight:bold;color:rgb(0,135,0)">if</span> http_err:
-<span class="ansi-green-fg ansi-bold">    562</span>     args <span style="color:rgb(98,98,98)">=</span> (<span style="color:rgb(0,135,0)">dict</span>, <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">default</span><span style="color:rgb(175,0,0)">'</span>, <span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">http_error_default</span><span style="color:rgb(175,0,0)">'</span>) <span style="color:rgb(98,98,98)">+</span> orig_args
-<span class="ansi-green-fg">--&gt; 563</span>     <span style="font-weight:bold;color:rgb(0,135,0)">return</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">self</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">.</span><span class="ansi-yellow-bg">_call_chain</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">)</span>
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:496</span>, in <span class="ansi-cyan-fg">OpenerDirector._call_chain</span><span class="ansi-blue-fg">(self, chain, kind, meth_name, *args)</span>
-<span class="ansi-green-fg ansi-bold">    494</span> <span style="font-weight:bold;color:rgb(0,135,0)">for</span> handler <span style="font-weight:bold;color:rgb(175,0,255)">in</span> handlers:
-<span class="ansi-green-fg ansi-bold">    495</span>     func <span style="color:rgb(98,98,98)">=</span> <span style="color:rgb(0,135,0)">getattr</span>(handler, meth_name)
-<span class="ansi-green-fg">--&gt; 496</span>     result <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">func</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg">args</span><span class="ansi-yellow-bg">)</span>
-<span class="ansi-green-fg ansi-bold">    497</span>     <span style="font-weight:bold;color:rgb(0,135,0)">if</span> result <span style="font-weight:bold;color:rgb(175,0,255)">is</span> <span style="font-weight:bold;color:rgb(175,0,255)">not</span> <span style="font-weight:bold;color:rgb(0,135,0)">None</span>:
-<span class="ansi-green-fg ansi-bold">    498</span>         <span style="font-weight:bold;color:rgb(0,135,0)">return</span> result
-
-File <span class="ansi-green-fg">/opt/hostedtoolcache/Python/3.10.15/x64/lib/python3.10/urllib/request.py:643</span>, in <span class="ansi-cyan-fg">HTTPDefaultErrorHandler.http_error_default</span><span class="ansi-blue-fg">(self, req, fp, code, msg, hdrs)</span>
-<span class="ansi-green-fg ansi-bold">    642</span> <span style="font-weight:bold;color:rgb(0,135,0)">def</span> <span style="color:rgb(0,0,255)">http_error_default</span>(<span style="color:rgb(0,135,0)">self</span>, req, fp, code, msg, hdrs):
-<span class="ansi-green-fg">--&gt; 643</span>     <span style="font-weight:bold;color:rgb(0,135,0)">raise</span> HTTPError(req<span style="color:rgb(98,98,98)">.</span>full_url, code, msg, hdrs, fp)
-
-<span class="ansi-red-fg">HTTPError</span>: HTTP Error 404: Not Found</pre>
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: './data/cetml1659on.txt'</pre>
 </div>
 </div>
 </div>
 <p>Taking the colours from the <a href="https://matplotlib.org/gallery/color/named_colors.html">matplotlib docs</a>:</p>
-<div id="7ef95edb" class="cell" data-execution_count="4">
+<div id="c14215cf" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JAN'</span>].plot(color<span class="op">=</span><span class="st">"steelblue"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JUN'</span>].plot(color<span class="op">=</span><span class="st">"firebrick"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -279,7 +232,7 @@ Cell <span class="ansi-green-fg">In[4], line 1</span>
 </div>
 </div>
 <p>And taking the line style from <a href="https://matplotlib.org/gallery/lines_bars_and_markers/line_styles_reference.html">the docs</a> again:</p>
-<div id="9531e7fe" class="cell" data-execution_count="5">
+<div id="49b5fd69" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JAN'</span>].plot(color<span class="op">=</span><span class="st">"steelblue"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'JUN'</span>].plot(color<span class="op">=</span><span class="st">"firebrick"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>year_plot <span class="op">=</span> temperature[<span class="st">'YEAR'</span>].plot(color<span class="op">=</span><span class="st">"green"</span>, linestyle<span class="op">=</span><span class="st">"--"</span>)</span>
