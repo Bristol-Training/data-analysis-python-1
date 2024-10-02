@@ -11,7 +11,7 @@ This aside will show how we can go about improving the visuals of this graph. Th
 #| tags: []
 import pandas as pd
 
-city_pop_file = "https://milliams.com/courses/data_analysis_python/city_pop.csv"
+city_pop_file = "https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"
 census = pd.read_csv(
     city_pop_file,
     skiprows=5,
