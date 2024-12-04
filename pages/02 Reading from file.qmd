@@ -54,7 +54,22 @@ python3 -m pip install certifi
 
 :::
 
-However, in this course we will read the files from a local folder `data`. You can do the same downloading all the data that is available in a zip file [data.zip](https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/data.zip) and extract it in your working directory. Now we can call
+However, in this course we will read the files from a local folder `data`. You can do the same downloading all the data that is available in a zip file [data.zip](https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/data.zip) and extract it in your working directory, or use the below code.
+
+::: {#answer1 .callout-important icon=false title='Download data files'}
+
+
+```{.python}
+import urllib.request
+import zipfile
+
+urllib.request.urlretrieve("https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/data.zip", "data.zip")
+with zipfile.ZipFile("data.zip") as zipf:
+    zipf.extractall()
+```
+:::
+
+Now we can call
 
 ```{python}
 rain = pd.read_csv("./data/rain.csv")
