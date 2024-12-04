@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-25ce4755a34f2f541ec3aa09c5b1e091.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,13 +115,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
 <p>https://www.metoffice.gov.uk/research/climate/maps-and-data/historic-station-data</p>
-<div id="0cafc624" class="cell" data-tags="[&quot;nbval-ignore-output&quot;]" data-execution_count="1">
+<div id="addae986" class="cell" data-tags="[&quot;nbval-ignore-output&quot;]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> PurePath, Path</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
@@ -164,80 +164,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>rain.loc[:<span class="st">"2020"</span>].resample(<span class="st">"Y"</span>).mean().to_csv(<span class="st">"rain.csv"</span>, date_format<span class="op">=</span><span class="st">"%Y"</span>, index_label<span class="op">=</span><span class="va">False</span>, float_format<span class="op">=</span><span class="st">'</span><span class="sc">%.1f</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>--2024-10-02 06:33:10--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/cardiffdata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 2.23.142.166
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|2.23.142.166|:443... connected.
+<pre><code>--2024-12-04 13:40:38--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/cardiffdata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.204.198.144
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.204.198.144|:443... connected.
 HTTP request sent, awaiting response... 200 OK
-Length: 30004 (29K) [text/plain]
+Length: 30202 (29K) [text/plain]
 Saving to: ‘cardiffdata.txt’
 
-     0K .......... .......... .........                       100% 42.9M=0.001s
+     0K .......... .......... .........                       100% 5.39M=0.005s
 
-2024-10-02 06:33:10 (42.9 MB/s) - ‘cardiffdata.txt’ saved [30004/30004]
+2024-12-04 13:40:39 (5.39 MB/s) - ‘cardiffdata.txt’ saved [30202/30202]
 
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_3005/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2024-10-02 06:33:10--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/stornowaydata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 2.23.142.166
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|2.23.142.166|:443... connected.
+--2024-12-04 13:40:39--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/stornowaydata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.204.198.144
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.204.198.144|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘stornowaydata.txt’
 
-     0K .......... .......... .......... .......... .......... 42.3M
-    50K .......... .......... .......... .......... ..         10.2M=0.005s
+     0K .......... .......... .......... .......... .......... 5.76M
+    50K .......... .......... .......... .......... ...        11.7M=0.01s
 
-2024-10-02 06:33:10 (17.3 MB/s) - ‘stornowaydata.txt’ saved [95133]
+2024-12-04 13:40:39 (7.54 MB/s) - ‘stornowaydata.txt’ saved [95331]
 
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_3005/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2024-10-02 06:33:10--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/oxforddata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 2.23.142.166
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|2.23.142.166|:443... connected.
+--2024-12-04 13:40:39--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/oxforddata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.204.198.144
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.204.198.144|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘oxforddata.txt’
 
-     0K .......... .......... .......... .......... .......... 5.39M
-    50K .......... .......... .......... .......... .......... 10.9M
-   100K .....                                                   177M=0.01s
+     0K .......... .......... .......... .......... .......... 6.68M
+    50K .......... .......... .......... .......... .......... 11.5M
+   100K .....                                                  6.37M=0.01s
 
-2024-10-02 06:33:11 (7.58 MB/s) - ‘oxforddata.txt’ saved [107803]
+2024-12-04 13:40:39 (8.30 MB/s) - ‘oxforddata.txt’ saved [108001]
 
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_3005/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2024-10-02 06:33:11--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/armaghdata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 2.23.142.166
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|2.23.142.166|:443... connected.
+--2024-12-04 13:40:39--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/armaghdata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.204.198.144
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.204.198.144|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘armaghdata.txt’
 
-     0K .......... .......... .......... .......... .......... 5.11M
-    50K .......... .......... .......... .......... .......... 9.92M
-   100K .....                                                  9.83T=0.01s
+     0K .......... .......... .......... .......... .......... 6.37M
+    50K .......... .......... .......... .......... .......... 10.5M
+   100K .....                                                  10.2T=0.01s
 
-2024-10-02 06:33:11 (7.10 MB/s) - ‘armaghdata.txt’ saved [107804]
+2024-12-04 13:40:39 (8.37 MB/s) - ‘armaghdata.txt’ saved [108002]
 
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_3005/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_3005/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
-/tmp/ipykernel_2282/3811952515.py:41: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmp/ipykernel_3005/3811952515.py:41: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
   rain.loc[:"2020"].resample("Y").mean().to_csv("rain.csv", date_format="%Y", index_label=False, float_format='%.1f')</code></pre>
 </div>
 </div>
@@ -327,8 +327,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -439,7 +437,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
