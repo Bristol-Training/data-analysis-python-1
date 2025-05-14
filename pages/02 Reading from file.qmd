@@ -7,6 +7,7 @@ jupyter: python3
 One of the most common situations is that you want to read your data from a file. In an ideal world the file will be perfectly formatted and will be trivial to import into pandas but since this is so often not the case, pandas provides a number of features to make your life easier.
 
 Full information on reading and writing files is available in the pandas manual on [IO tools](https://pandas.pydata.org/pandas-docs/stable/user_guide/io.html) but first it's worth noting the common formats that pandas can work with:
+
 - Comma separated tables (or tab-separated or space-separated etc.)
 - Excel spreadsheets
 - HDF5 files
