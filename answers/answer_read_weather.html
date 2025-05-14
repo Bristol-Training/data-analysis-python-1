@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-25ce4755a34f2f541ec3aa09c5b1e091.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,9 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -118,396 +115,116 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
 
 
-<div id="f787bc09" class="cell" data-execution_count="1">
+<div id="551e8bf4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[1], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">pandas</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
+</div>
+</div>
 </div>
 <p>Firstly, if we read the data in without passing any extra arguments, we get:</p>
-<div id="9796425f" class="cell" data-execution_count="2">
+<div id="ffc96fdb" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[2], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span> )
+<span class="ansi-green-fg ansi-bold">      4</span> temperature<span style="color:rgb(98,98,98)">.</span>head()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Mean Central England Temperature (Degrees Celsius)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1659-1973 Manley (Q.J.R.METEOROL.SOC.</td>
-<td>1974)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1974 on Parker et al. (INT.J.CLIM.</td>
-<td>1992)</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">Parker and Horton (INT.J.CLIM.</td>
-<td>2005)</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">Year Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Annual</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1659 3.0 4.0 6.0 7.0 11.0 13.0 16.0 16.0 13.0 10.0 5.0 2.0 8.9</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
 <p>So we need to dot he same as before, setting the <code>skiprows</code> argument:</p>
-<div id="16972ffd" class="cell" data-execution_count="3">
+<div id="fadf6d0e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,  <span class="co"># skip first 4 rows of the header</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[3], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span>     skiprows<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">4</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># skip first 4 rows of the header</span>
+<span class="ansi-green-fg ansi-bold">      4</span> )
+<span class="ansi-green-fg ansi-bold">      5</span> temperature<span style="color:rgb(98,98,98)">.</span>head()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Year Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Annual</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1659 3.0 4.0 6.0 7.0 11.0 13...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1660 0.0 4.0 6.0 9.0 11.0 14...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>1661 5.0 5.0 6.0 8.0 11.0 14...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>1662 5.0 6.0 6.0 8.0 11.0 15...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>1663 1.0 1.0 5.0 7.0 10.0 14...</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
 <p>It’s not separating the columns correctly so if we look at the data and see spaces, we <em>might</em> think that useing <code>sep=" "</code> would work, but if we try it:</p>
-<div id="f616fbfd" class="cell" data-execution_count="4">
+<div id="e3714fef" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="st">" "</span>,  <span class="co"># try this...</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[4], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span>     skiprows<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">4</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     sep<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)"> </span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># try this...</span>
+<span class="ansi-green-fg ansi-bold">      5</span> )
+<span class="ansi-green-fg ansi-bold">      6</span> temperature<span style="color:rgb(98,98,98)">.</span>head()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Unnamed: 0</th>
-<th data-quarto-table-cell-role="th">Unnamed: 1</th>
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">Unnamed: 3</th>
-<th data-quarto-table-cell-role="th">Unnamed: 4</th>
-<th data-quarto-table-cell-role="th">Unnamed: 5</th>
-<th data-quarto-table-cell-role="th">Jan</th>
-<th data-quarto-table-cell-role="th">Unnamed: 7</th>
-<th data-quarto-table-cell-role="th">Unnamed: 8</th>
-<th data-quarto-table-cell-role="th">Unnamed: 9</th>
-<th data-quarto-table-cell-role="th">...</th>
-<th data-quarto-table-cell-role="th">Unnamed: 43</th>
-<th data-quarto-table-cell-role="th">Unnamed: 44</th>
-<th data-quarto-table-cell-role="th">Unnamed: 45</th>
-<th data-quarto-table-cell-role="th">Nov</th>
-<th data-quarto-table-cell-role="th">Unnamed: 47</th>
-<th data-quarto-table-cell-role="th">Unnamed: 48</th>
-<th data-quarto-table-cell-role="th">Unnamed: 49</th>
-<th data-quarto-table-cell-role="th">Dec</th>
-<th data-quarto-table-cell-role="th">Unnamed: 51</th>
-<th data-quarto-table-cell-role="th">Annual</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1659</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>...</td>
-<td>NaN</td>
-<td>2.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>8.9</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1660</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>0.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>...</td>
-<td>NaN</td>
-<td>5.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>9.1</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1661</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>5.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>...</td>
-<td>NaN</td>
-<td>6.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>9.8</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1662</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>5.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>...</td>
-<td>NaN</td>
-<td>3.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>9.5</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1663</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>1.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>...</td>
-<td>NaN</td>
-<td>5.0</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>8.6</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-<p>5 rows × 53 columns</p>
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
 <p>That doesn’t look right. This is because <code>sep=" "</code> means “use a single space” as the separator, but in the data most columns are separated by multiple spaces. To make it use “any number of spaces” as the separator, you can instead set <code>sep=r'\s+'</code>:</p>
-<div id="77389a73" class="cell" data-execution_count="5">
+<div id="bf6c18d7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    sep<span class="op">=</span><span class="vs">r'\s+'</span>,  <span class="co"># whitespace-separated columns</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[5], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span>     skiprows<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">4</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     sep<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">r</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">\</span><span style="color:rgb(175,0,0)">s+</span><span style="color:rgb(175,0,0)">'</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># whitespace-separated columns</span>
+<span class="ansi-green-fg ansi-bold">      5</span> )
+<span class="ansi-green-fg ansi-bold">      6</span> temperature<span style="color:rgb(98,98,98)">.</span>head()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">Jan</th>
-<th data-quarto-table-cell-role="th">Feb</th>
-<th data-quarto-table-cell-role="th">Mar</th>
-<th data-quarto-table-cell-role="th">Apr</th>
-<th data-quarto-table-cell-role="th">May</th>
-<th data-quarto-table-cell-role="th">Jun</th>
-<th data-quarto-table-cell-role="th">Jul</th>
-<th data-quarto-table-cell-role="th">Aug</th>
-<th data-quarto-table-cell-role="th">Sep</th>
-<th data-quarto-table-cell-role="th">Oct</th>
-<th data-quarto-table-cell-role="th">Nov</th>
-<th data-quarto-table-cell-role="th">Dec</th>
-<th data-quarto-table-cell-role="th">Annual</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>1659</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>11.0</td>
-<td>13.0</td>
-<td>16.0</td>
-<td>16.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>5.0</td>
-<td>2.0</td>
-<td>8.9</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>1660</td>
-<td>0.0</td>
-<td>4.0</td>
-<td>6.0</td>
-<td>9.0</td>
-<td>11.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>6.0</td>
-<td>5.0</td>
-<td>9.1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>1661</td>
-<td>5.0</td>
-<td>5.0</td>
-<td>6.0</td>
-<td>8.0</td>
-<td>11.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>11.0</td>
-<td>8.0</td>
-<td>6.0</td>
-<td>9.8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>1662</td>
-<td>5.0</td>
-<td>6.0</td>
-<td>6.0</td>
-<td>8.0</td>
-<td>11.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>11.0</td>
-<td>6.0</td>
-<td>3.0</td>
-<td>9.5</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>1663</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>5.0</td>
-<td>7.0</td>
-<td>10.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>7.0</td>
-<td>5.0</td>
-<td>8.6</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
 <p>That looks much better! Now we set the <code>index_col</code>:</p>
-<div id="4b530140" class="cell" data-execution_count="6">
+<div id="a590ed83" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
@@ -515,274 +232,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    index_col<span class="op">=</span><span class="st">"Year"</span>,  <span class="co"># Set the index</span></span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>temperature.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[6], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span>     skiprows<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">4</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     sep<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">r</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">\</span><span style="color:rgb(175,0,0)">s+</span><span style="color:rgb(175,0,0)">'</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     index_col<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Year</span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Set the index</span>
+<span class="ansi-green-fg ansi-bold">      6</span> )
+<span class="ansi-green-fg ansi-bold">      7</span> temperature<span style="color:rgb(98,98,98)">.</span>head()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Jan</th>
-<th data-quarto-table-cell-role="th">Feb</th>
-<th data-quarto-table-cell-role="th">Mar</th>
-<th data-quarto-table-cell-role="th">Apr</th>
-<th data-quarto-table-cell-role="th">May</th>
-<th data-quarto-table-cell-role="th">Jun</th>
-<th data-quarto-table-cell-role="th">Jul</th>
-<th data-quarto-table-cell-role="th">Aug</th>
-<th data-quarto-table-cell-role="th">Sep</th>
-<th data-quarto-table-cell-role="th">Oct</th>
-<th data-quarto-table-cell-role="th">Nov</th>
-<th data-quarto-table-cell-role="th">Dec</th>
-<th data-quarto-table-cell-role="th">Annual</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1659</td>
-<td>3.0</td>
-<td>4.0</td>
-<td>6.0</td>
-<td>7.0</td>
-<td>11.0</td>
-<td>13.0</td>
-<td>16.0</td>
-<td>16.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>5.0</td>
-<td>2.0</td>
-<td>8.9</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1660</td>
-<td>0.0</td>
-<td>4.0</td>
-<td>6.0</td>
-<td>9.0</td>
-<td>11.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>16.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>6.0</td>
-<td>5.0</td>
-<td>9.1</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1661</td>
-<td>5.0</td>
-<td>5.0</td>
-<td>6.0</td>
-<td>8.0</td>
-<td>11.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>11.0</td>
-<td>8.0</td>
-<td>6.0</td>
-<td>9.8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1662</td>
-<td>5.0</td>
-<td>6.0</td>
-<td>6.0</td>
-<td>8.0</td>
-<td>11.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>11.0</td>
-<td>6.0</td>
-<td>3.0</td>
-<td>9.5</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">1663</td>
-<td>1.0</td>
-<td>1.0</td>
-<td>5.0</td>
-<td>7.0</td>
-<td>10.0</td>
-<td>14.0</td>
-<td>15.0</td>
-<td>15.0</td>
-<td>13.0</td>
-<td>10.0</td>
-<td>7.0</td>
-<td>5.0</td>
-<td>8.6</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
 <p>And, as we should always do, we plot the data we’ve just read in:</p>
-<div id="3f2f380a" class="cell" data-tags="[]" data-execution_count="7">
+<div id="8262c7c0" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="answer_read_weather_files/figure-html/cell-8-output-1.png" width="586" height="429" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[7], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">temperature</span><span style="color:rgb(98,98,98)">.</span>plot()
+
+<span class="ansi-red-fg">NameError</span>: name 'temperature' is not defined</pre>
 </div>
 </div>
 </div>
 <p>Something is wrong with this. There’s a line on the right-hand side which seems wrong. If we look at the last few lines of the data to see what’s going on:</p>
-<div id="2493ecf4" class="cell" data-execution_count="8">
+<div id="a254f7ab" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>temperature.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[8], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">temperature</span><span style="color:rgb(98,98,98)">.</span>tail()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Jan</th>
-<th data-quarto-table-cell-role="th">Feb</th>
-<th data-quarto-table-cell-role="th">Mar</th>
-<th data-quarto-table-cell-role="th">Apr</th>
-<th data-quarto-table-cell-role="th">May</th>
-<th data-quarto-table-cell-role="th">Jun</th>
-<th data-quarto-table-cell-role="th">Jul</th>
-<th data-quarto-table-cell-role="th">Aug</th>
-<th data-quarto-table-cell-role="th">Sep</th>
-<th data-quarto-table-cell-role="th">Oct</th>
-<th data-quarto-table-cell-role="th">Nov</th>
-<th data-quarto-table-cell-role="th">Dec</th>
-<th data-quarto-table-cell-role="th">Annual</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2018</td>
-<td>5.3</td>
-<td>3.1</td>
-<td>5.0</td>
-<td>9.9</td>
-<td>13.3</td>
-<td>16.1</td>
-<td>19.3</td>
-<td>16.8</td>
-<td>13.7</td>
-<td>10.5</td>
-<td>8.3</td>
-<td>6.8</td>
-<td>10.7</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2019</td>
-<td>4.0</td>
-<td>6.9</td>
-<td>7.9</td>
-<td>9.1</td>
-<td>11.2</td>
-<td>14.2</td>
-<td>17.6</td>
-<td>17.2</td>
-<td>14.3</td>
-<td>9.8</td>
-<td>6.2</td>
-<td>5.7</td>
-<td>10.4</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2020</td>
-<td>6.4</td>
-<td>6.4</td>
-<td>6.8</td>
-<td>10.5</td>
-<td>12.6</td>
-<td>15.3</td>
-<td>15.8</td>
-<td>17.7</td>
-<td>14.0</td>
-<td>10.4</td>
-<td>8.5</td>
-<td>4.9</td>
-<td>10.8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2021</td>
-<td>3.2</td>
-<td>5.3</td>
-<td>7.3</td>
-<td>6.5</td>
-<td>10.3</td>
-<td>15.5</td>
-<td>17.8</td>
-<td>16.0</td>
-<td>16.0</td>
-<td>12.0</td>
-<td>7.2</td>
-<td>6.3</td>
-<td>10.3</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2022</td>
-<td>4.7</td>
-<td>6.9</td>
-<td>8.0</td>
-<td>9.2</td>
-<td>13.1</td>
-<td>14.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-<td>-99.9</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'temperature' is not defined</pre>
 </div>
 </div>
 </div>
 <p>We can see there are some <code>-99.9</code> in the data, repsenting missing data. We should fix this with <code>na_values</code>:</p>
-<div id="801bc465" class="cell" data-execution_count="9">
+<div id="cfb68346" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> pd.read_csv(</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"./data/meantemp_monthly_totals.txt"</span>,</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    skiprows<span class="op">=</span><span class="dv">4</span>,</span>
@@ -791,139 +287,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    na_values<span class="op">=</span>[<span class="st">"-99.9"</span>]</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>temperature.tail()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[9], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> temperature <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">pd</span><span style="color:rgb(98,98,98)">.</span>read_csv(
+<span class="ansi-green-fg ansi-bold">      2</span>     <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/meantemp_monthly_totals.txt</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      3</span>     skiprows<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(98,98,98)">4</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     sep<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">r</span><span style="color:rgb(175,0,0)">'</span><span style="color:rgb(175,0,0)">\</span><span style="color:rgb(175,0,0)">s+</span><span style="color:rgb(175,0,0)">'</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     index_col<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Year</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      6</span>     na_values<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">-99.9</span><span style="color:rgb(175,0,0)">"</span>]
+<span class="ansi-green-fg ansi-bold">      7</span> )
+<span class="ansi-green-fg ansi-bold">      8</span> temperature<span style="color:rgb(98,98,98)">.</span>tail()
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Jan</th>
-<th data-quarto-table-cell-role="th">Feb</th>
-<th data-quarto-table-cell-role="th">Mar</th>
-<th data-quarto-table-cell-role="th">Apr</th>
-<th data-quarto-table-cell-role="th">May</th>
-<th data-quarto-table-cell-role="th">Jun</th>
-<th data-quarto-table-cell-role="th">Jul</th>
-<th data-quarto-table-cell-role="th">Aug</th>
-<th data-quarto-table-cell-role="th">Sep</th>
-<th data-quarto-table-cell-role="th">Oct</th>
-<th data-quarto-table-cell-role="th">Nov</th>
-<th data-quarto-table-cell-role="th">Dec</th>
-<th data-quarto-table-cell-role="th">Annual</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2018</td>
-<td>5.3</td>
-<td>3.1</td>
-<td>5.0</td>
-<td>9.9</td>
-<td>13.3</td>
-<td>16.1</td>
-<td>19.3</td>
-<td>16.8</td>
-<td>13.7</td>
-<td>10.5</td>
-<td>8.3</td>
-<td>6.8</td>
-<td>10.7</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2019</td>
-<td>4.0</td>
-<td>6.9</td>
-<td>7.9</td>
-<td>9.1</td>
-<td>11.2</td>
-<td>14.2</td>
-<td>17.6</td>
-<td>17.2</td>
-<td>14.3</td>
-<td>9.8</td>
-<td>6.2</td>
-<td>5.7</td>
-<td>10.4</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2020</td>
-<td>6.4</td>
-<td>6.4</td>
-<td>6.8</td>
-<td>10.5</td>
-<td>12.6</td>
-<td>15.3</td>
-<td>15.8</td>
-<td>17.7</td>
-<td>14.0</td>
-<td>10.4</td>
-<td>8.5</td>
-<td>4.9</td>
-<td>10.8</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2021</td>
-<td>3.2</td>
-<td>5.3</td>
-<td>7.3</td>
-<td>6.5</td>
-<td>10.3</td>
-<td>15.5</td>
-<td>17.8</td>
-<td>16.0</td>
-<td>16.0</td>
-<td>12.0</td>
-<td>7.2</td>
-<td>6.3</td>
-<td>10.3</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2022</td>
-<td>4.7</td>
-<td>6.9</td>
-<td>8.0</td>
-<td>9.2</td>
-<td>13.1</td>
-<td>14.9</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
+<span class="ansi-red-fg">NameError</span>: name 'pd' is not defined</pre>
 </div>
 </div>
 </div>
-<div id="5277a728" class="cell" data-execution_count="10">
+<div id="aeb45eeb" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>temperature.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="answer_read_weather_files/figure-html/cell-11-output-1.png" width="566" height="429" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[10], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">temperature</span><span style="color:rgb(98,98,98)">.</span>plot()
+
+<span class="ansi-red-fg">NameError</span>: name 'temperature' is not defined</pre>
 </div>
 </div>
 </div>
@@ -1013,6 +404,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1123,6 +516,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

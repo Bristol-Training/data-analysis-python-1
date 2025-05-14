@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-25ce4755a34f2f541ec3aa09c5b1e091.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -245,18 +245,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="seaborn">seaborn</h3>
 <p>The built-in pandas plotting we saw earlier is really useful because it is always available at your fingertips and it smooths over some of the tricky parts of matplotlib, but it will only take you so far.</p>
 <p>seaborn is a third-party library which provides an easy-to-use interface for plotting tabular data which integrates with pandas really well. By convention it is imported as <code>sns</code>:</p>
-<div id="d51a8dc9" class="cell" data-execution_count="1">
+<div id="8e89ca6b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[1], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">seaborn</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">sns</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'seaborn'</pre>
+</div>
+</div>
 </div>
 <p>seaborn comes with its own style which affects the colours, grid, fonts etc. You don’t have to use the seaborn theme but it generally looks nicer than the matplotlib defaults:</p>
-<div id="fc39e206" class="cell" data-execution_count="2">
+<div id="5f136b94" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[2], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>set_theme()
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
+</div>
+</div>
 </div>
 <p>Note, in versions before seaborn 0.11 this function was called <code>sns.set()</code>. If you are running an older version you will need to use that form.</p>
 <p>Once you’ve done this, you’re all ready to get started. So let’s grab some data and start thinking about what we might want to plot. We’ll use the “tips” data set from before as it’s got some interesting features in the data for us to explore:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="925fed77" class="cell" data-execution_count="3">
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[3], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">pandas</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
+<span class="ansi-green-fg ansi-bold">      3</span> tips <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>read_csv(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/tips.csv</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
+</div>
+</div>
+</div>
 <p>Before diving in, it’s worth thinking about what kinds of plots we can do and what kind of information we want to show. When communicating your results to an audience you should consider the story you are trying to tell. Not story in the “fiction” sense but story in the “narrative” sense. Visualisations should be used to discover and back up conclusions and so the choice of what you show, as well as the choice of what you don’t is important.</p>
 <p>There are three major kinds of visualisation that you may want to use:</p>
 <dl>
@@ -284,22 +317,29 @@ Categories in your data can be used in conjunction with both the methods describ
 <p>We’ll start with looking at how we can visualise how data are related to each other. seaborn offers a generic interface for doing this called <code>relplot()</code>. You can find more information in the seaborn <a href="https://seaborn.pydata.org/generated/seaborn.relplot.html">documentation for the <code>relplot()</code> function</a> and the more general page on <a href="https://seaborn.pydata.org/tutorial/relational.html">visualising statistical relationships</a>.</p>
 <p>You use <code>relplot()</code> by passing it the DataFrame you want to explore and the two dimensions of the table that you want to compare. This only makes sense for dimensions that are numerical (e.g.&nbsp;height, weight, price, etc.) and not for “categorical” data like “day of the week” or “species”. The numerical variables in our data are <code>total_bill</code>, <code>tip</code> and <code>size</code>.</p>
 <p>The <code>data</code> argument should be the entire DataFrame and the <code>x</code> and <code>y</code> arguments should be the names of the columns to plot. So, to plot the values of tips against the total bill, we do:</p>
-<div id="88f6b270" class="cell" data-execution_count="4">
+<div id="ac67e3ee" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"tip"</span>,</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-5-output-1.png" width="465" height="465" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[4], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>relplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>By default it creates a scatter plot and uses the column names as axis labels. To set the axis labels to something more useful, you can call <code>set()</code> on the object returned by <code>relplot()</code>:</p>
-<div id="8cc4b6e9" class="cell" data-execution_count="5">
+<div id="9fd5fbb1" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -308,11 +348,21 @@ Categories in your data can be used in conjunction with both the methods describ
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Total bill (£)"</span>,</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Tip (£)"</span>,</span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-6-output-1.png" width="465" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[5], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>relplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span> )<span style="color:rgb(98,98,98)">.</span>set(
+<span class="ansi-green-fg ansi-bold">      6</span>     xlabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Total bill (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      7</span>     ylabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Tip (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      8</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
@@ -327,7 +377,7 @@ Categories in your data can be used in conjunction with both the methods describ
 <li><code>row=</code> and <code>col=</code>: for discrete variables, draw a separate subplot along a row or column for each category</li>
 </ul>
 <p>If you have multiple dimensions to visualise, you can therefore plot up to 7 dimensional data. Here’s an example using 5 dimensions for different variables:</p>
-<div id="abf6793f" class="cell" data-execution_count="6">
+<div id="2ce26908" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -339,16 +389,29 @@ Categories in your data can be used in conjunction with both the methods describ
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Total bill (£)"</span>,</span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Tip (£)"</span>,</span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-7-output-1.png" width="564" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[6], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>relplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     hue<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      6</span>     size<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">size</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      7</span>     style<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      8</span> )<span style="color:rgb(98,98,98)">.</span>set(
+<span class="ansi-green-fg ansi-bold">      9</span>     xlabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Total bill (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">     10</span>     ylabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Tip (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">     11</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>But this very quickly gets very hard to interpret and understand. It is instead recommended to keep the number of variables plotted at once small and instead use the plotting dimensions redundantly, i.e.&nbsp;using both the marker style and the hue for the same data variable. This can make the plot more accessible when printed in black-and-white or when viewed by someone with colour-blindness:</p>
-<div id="10ecc244" class="cell" data-execution_count="7">
+<div id="270caf63" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -359,11 +422,23 @@ Categories in your data can be used in conjunction with both the methods describ
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Total bill (£)"</span>,</span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Tip (£)"</span>,</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-8-output-1.png" width="551" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[7], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>relplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     hue<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      6</span>     style<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      7</span> )<span style="color:rgb(98,98,98)">.</span>set(
+<span class="ansi-green-fg ansi-bold">      8</span>     xlabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Total bill (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      9</span>     ylabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Tip (£)</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">     10</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
@@ -398,11 +473,22 @@ Answer
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="3b0c952a" class="cell" data-execution_count="8">
+<div id="5249070e" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"percent_tip"</span>] <span class="op">=</span> (tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>])<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[8], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">tips</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">/</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">size</span><span style="color:rgb(175,0,0)">"</span>]
+<span class="ansi-green-fg ansi-bold">      2</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">percent_tip</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> (tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">/</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>])<span style="color:rgb(98,98,98)">*</span><span style="color:rgb(98,98,98)">100</span>
+
+<span class="ansi-red-fg">NameError</span>: name 'tips' is not defined</pre>
 </div>
-<div id="e20a35b9" class="cell" data-tags="[]" data-execution_count="9">
+</div>
+</div>
+<div id="4b17bf3e" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
@@ -415,11 +501,20 @@ Answer
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Bill per person (£)"</span>,</span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Tip percent"</span>,</span>
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-10-output-1.png" width="549" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[9], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">seaborn</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">sns</span>
+<span class="ansi-green-fg ansi-bold">      3</span> sns<span style="color:rgb(98,98,98)">.</span>relplot(
+<span class="ansi-green-fg ansi-bold">      4</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      5</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg">   (...)</span>
+<span class="ansi-green-fg ansi-bold">     11</span>     ylabel<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Tip percent</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">     12</span> )
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'seaborn'</pre>
 </div>
 </div>
 </div>
@@ -434,37 +529,50 @@ Answer
 <p>seaborn provides a function for investigating the distribution of a variable called <a href="https://seaborn.pydata.org/generated/seaborn.displot.html"><code>displot</code></a> which works in a similar way to <code>relplot</code>. You pass the data frame you want to visualise and then start specifying the dimensions that you want to show.</p>
 <p>Note: <code>displot</code> was added in version 0.11 of seaborn. If you are on an earlier version then you will not have it available. In this case you should upgrade your version of seaborn to at least 0.11. If you cannot upgrade then you can make histograms using the <a href="https://seaborn.pydata.org/archive/0.10/generated/seaborn.distplot.html"><code>distplot</code></a> function (note the extra <code>t</code>), though it lacks some features.</p>
 <p>For example, to show a histogram of the total bill, you do the following:</p>
-<div id="01b5acd2" class="cell" data-execution_count="10">
+<div id="73bbd1ae" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-11-output-1.png" width="465" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[10], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>displot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>As with <code>relplot</code> we can ask seaborn to show additional dimensions of our data with the following arguments (which have the same meaning as in <code>relplot</code>): <code>x</code>, <code>y</code>, <code>hue</code>, <code>row</code> and <code>col</code>.</p>
 <p>So, to compare the distribution of total bills between lunch time and dinner time, arraying them by column, you can do:</p>
-<div id="ce33e988" class="cell" data-execution_count="11">
+<div id="dbf8aaec" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    col<span class="op">=</span><span class="st">"time"</span>,  <span class="co"># Added this line</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-12-output-1.png" width="945" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[11], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>displot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     col<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Added this line</span>
+<span class="ansi-green-fg ansi-bold">      5</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>Since <code>displot</code> shows the <em>count</em> of the values in each bin by default, the first thing that you would conclude is that there are more dinner data than lunch. If this is the story you are exploring then it’s all good. However, we want to show how the <em>distribution</em> varies from lunch to dinner. To have it ignore the absolute values of the counts and to instead normalise the counts within each category, you can set <code>common_norm=False</code> which allows each subset to normalise individually:</p>
-<div id="8b628f2b" class="cell" data-execution_count="12">
+<div id="f167285e" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -472,17 +580,26 @@ Answer
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    stat<span class="op">=</span><span class="st">"density"</span>,  <span class="co"># Added this line</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    common_norm<span class="op">=</span><span class="va">False</span>,  <span class="co"># Added this line</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-13-output-1.png" width="945" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[12], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>displot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     col<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     stat<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">density</span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Added this line</span>
+<span class="ansi-green-fg ansi-bold">      6</span>     common_norm<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Added this line</span>
+<span class="ansi-green-fg ansi-bold">      7</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>We can now see that the lunch bills have a higher single peak which suggests that it has a tighter distribution. However, plotting them side-by-side makes it difficult to compare the point at which the peak happens in each data set. Do they align or are they shifted?</p>
 <p>To solve this, we can plot the two overlaid by using the <code>hue</code> semantic instead of the <code>col</code>:</p>
-<div id="9d2d07fd" class="cell" data-execution_count="13">
+<div id="489b7c5d" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -490,17 +607,26 @@ Answer
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    stat<span class="op">=</span><span class="st">"density"</span>,</span>
 <span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    common_norm<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-14-output-1.png" width="577" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[13], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>displot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     hue<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Changed this line</span>
+<span class="ansi-green-fg ansi-bold">      5</span>     stat<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">density</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      6</span>     common_norm<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>,
+<span class="ansi-green-fg ansi-bold">      7</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>We can now see that the lunch orders peak at a similar value to dinner but are shifted slightly to the left. They also have a tighter distribution.</p>
 <p>To simplify the view down further, you can smooth the bins by applying a “kernel density estimation” which allows you to turn it into a line graph:</p>
-<div id="845c828a" class="cell" data-execution_count="14">
+<div id="d1cc8661" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -508,11 +634,20 @@ Answer
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    kind<span class="op">=</span><span class="st">"kde"</span>,  <span class="co"># Changed this line</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    common_norm<span class="op">=</span><span class="va">False</span>,</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-15-output-1.png" width="577" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[14], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>displot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     hue<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     kind<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">kde</span><span style="color:rgb(175,0,0)">"</span>,  <span style="font-style:italic;color:rgb(95,135,135)"># Changed this line</span>
+<span class="ansi-green-fg ansi-bold">      6</span>     common_norm<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>,
+<span class="ansi-green-fg ansi-bold">      7</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
@@ -542,23 +677,48 @@ Answer
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="22db3b8b" class="cell" data-execution_count="15">
+<div id="28dc1fea" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[15], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">pandas</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
+<span class="ansi-green-fg ansi-bold">      3</span> tips <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>read_csv(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/tips.csv</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
 </div>
-<div id="d3f740be" class="cell" data-execution_count="16">
+</div>
+</div>
+<div id="9baf17be" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[16], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">tips</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">/</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">size</span><span style="color:rgb(175,0,0)">"</span>]
+
+<span class="ansi-red-fg">NameError</span>: name 'tips' is not defined</pre>
 </div>
-<div id="86c57411" class="cell" data-execution_count="17">
+</div>
+</div>
+<div id="1e34dd96" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"bill_per_person"</span>, hue<span class="op">=</span><span class="st">"time"</span>, kind<span class="op">=</span><span class="st">"kde"</span>, common_norm<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-18-output-1.png" width="577" height="463" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[17], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">seaborn</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">sns</span>
+<span class="ansi-green-fg ansi-bold">      3</span> sns<span style="color:rgb(98,98,98)">.</span>displot(data<span style="color:rgb(98,98,98)">=</span>tips, x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>, hue<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">time</span><span style="color:rgb(175,0,0)">"</span>, kind<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">kde</span><span style="color:rgb(175,0,0)">"</span>, common_norm<span style="color:rgb(98,98,98)">=</span><span style="font-weight:bold;color:rgb(0,135,0)">False</span>)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'seaborn'</pre>
 </div>
 </div>
 </div>
@@ -570,38 +730,53 @@ Answer
 <h4 class="anchored" data-anchor-id="plotting-categorical-data">Plotting categorical data</h4>
 <p>When you have categorical variables in your data, you usually want to compare between the categories. seaborn’s <a href="https://seaborn.pydata.org/generated/seaborn.catplot.html"><code>catplot</code></a> and the <a href="https://seaborn.pydata.org/tutorial/categorical.html">associated tutorial page</a> are the solution here.</p>
 <p>The categorical variables in our data set are <code>day</code> and <code>time</code>. If we wanted to see how the total bill depended on the day of the week, we could do the following:</p>
-<div id="fa5073be" class="cell" data-execution_count="18">
+<div id="0c09d953" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"total_bill"</span>,</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-19-output-1.png" width="484" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[18], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>catplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>While the day of week is a categorical variable, it also has an understood common ordering to it where we would expect the days to presented in that order. We can specify the ordering with the <code>order</code> parameter:</p>
-<div id="74a17b9e" class="cell" data-execution_count="19">
+<div id="08efb766" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">"total_bill"</span>,</span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>],</span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-20-output-1.png" width="484" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[19], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>catplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     order<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Thur</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fri</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sat</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sun</span><span style="color:rgb(175,0,0)">"</span>],
+<span class="ansi-green-fg ansi-bold">      6</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
 <p>This is showing that it seems like Thursday and Friday have a slightly lower average that the other days. The default “strip plot” is good because it doesn’t summarise the data too much, but when looking for averages something like a box plot might be better. Pass the argument <code>kind="box"</code> to do this:</p>
-<div id="8b66841b" class="cell" data-execution_count="20">
+<div id="eac7b502" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
@@ -609,11 +784,20 @@ Answer
 <span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>    order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>],</span>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>    kind<span class="op">=</span><span class="st">"box"</span>,</span>
 <span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-21-output-1.png" width="484" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[20], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>catplot(
+<span class="ansi-green-fg ansi-bold">      2</span>     data<span style="color:rgb(98,98,98)">=</span>tips,
+<span class="ansi-green-fg ansi-bold">      3</span>     x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      4</span>     y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      5</span>     order<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Thur</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fri</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sat</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sun</span><span style="color:rgb(175,0,0)">"</span>],
+<span class="ansi-green-fg ansi-bold">      6</span>     kind<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">box</span><span style="color:rgb(175,0,0)">"</span>,
+<span class="ansi-green-fg ansi-bold">      7</span> )
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
@@ -643,34 +827,71 @@ Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c2479328" class="cell" data-execution_count="21">
+<div id="4f847b64" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[21], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">pandas</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
+<span class="ansi-green-fg ansi-bold">      3</span> tips <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>read_csv(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/tips.csv</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
 </div>
-<div id="6c62041c" class="cell" data-execution_count="22">
+</div>
+</div>
+<div id="cbfa0958" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[22], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">tips</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">total_bill</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">/</span> tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">size</span><span style="color:rgb(175,0,0)">"</span>]
+
+<span class="ansi-red-fg">NameError</span>: name 'tips' is not defined</pre>
 </div>
-<div id="f8957abe" class="cell" data-execution_count="23">
+</div>
+</div>
+<div id="89fde28e" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[23], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">seaborn</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">sns</span>
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'seaborn'</pre>
 </div>
-<div id="2bdd4c6e" class="cell" data-execution_count="24">
+</div>
+</div>
+<div id="4595bdd0" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"bill_per_person"</span>, order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>], kind<span class="op">=</span><span class="st">"box"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-25-output-1.png" width="484" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[24], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>catplot(data<span style="color:rgb(98,98,98)">=</span>tips, x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>, y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">bill_per_person</span><span style="color:rgb(175,0,0)">"</span>, order<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Thur</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fri</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sat</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sun</span><span style="color:rgb(175,0,0)">"</span>], kind<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">box</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
-<div id="32d21b74" class="cell" data-execution_count="25">
+<div id="b58ed34d" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"size"</span>, order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>], kind<span class="op">=</span><span class="st">"violin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05 Visualisation_files/figure-html/cell-26-output-1.png" width="485" height="464" class="figure-img"></p>
-</figure>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[25], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">sns</span><span style="color:rgb(98,98,98)">.</span>catplot(data<span style="color:rgb(98,98,98)">=</span>tips, x<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>, y<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">size</span><span style="color:rgb(175,0,0)">"</span>, order<span style="color:rgb(98,98,98)">=</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Thur</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Fri</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sat</span><span style="color:rgb(175,0,0)">"</span>, <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sun</span><span style="color:rgb(175,0,0)">"</span>], kind<span style="color:rgb(98,98,98)">=</span><span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">violin</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">NameError</span>: name 'sns' is not defined</pre>
 </div>
 </div>
 </div>
@@ -765,6 +986,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -875,6 +1098,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -69,10 +69,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-0626ff4d7a71b55c8707dcae1d04a9b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-25ce4755a34f2f541ec3aa09c5b1e091.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -100,9 +100,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 </head>
@@ -118,140 +115,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
 
 
 
 
-<div id="26383c5e" class="cell" data-execution_count="1">
+<div id="6efba598" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[1], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span style="font-weight:bold;color:rgb(0,135,0)">import</span> <span style="font-weight:bold;color:rgb(0,0,255)">pandas</span> <span style="font-weight:bold;color:rgb(0,135,0)">as</span> <span style="font-weight:bold;color:rgb(0,0,255)">pd</span>
+<span class="ansi-green-fg ansi-bold">      3</span> tips <span style="color:rgb(98,98,98)">=</span> pd<span style="color:rgb(98,98,98)">.</span>read_csv(<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">./data/tips.csv</span><span style="color:rgb(175,0,0)">"</span>)
+
+<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named 'pandas'</pre>
 </div>
-<div id="dc553ba9" class="cell" data-execution_count="2">
+</div>
+</div>
+<div id="a2533933" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>thurs <span class="op">=</span> tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Thur"</span>]</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>thurs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[2], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> thurs <span style="color:rgb(98,98,98)">=</span> <span class="ansi-yellow-bg">tips</span>[tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Thur</span><span style="color:rgb(175,0,0)">"</span>]
+<span class="ansi-green-fg ansi-bold">      2</span> thurs
 
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">total_bill</th>
-<th data-quarto-table-cell-role="th">tip</th>
-<th data-quarto-table-cell-role="th">day</th>
-<th data-quarto-table-cell-role="th">time</th>
-<th data-quarto-table-cell-role="th">size</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">77</td>
-<td>27.20</td>
-<td>2.80</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">78</td>
-<td>22.76</td>
-<td>2.10</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">79</td>
-<td>17.29</td>
-<td>1.90</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">80</td>
-<td>19.44</td>
-<td>2.10</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">81</td>
-<td>16.66</td>
-<td>2.38</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-<td>...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">202</td>
-<td>13.00</td>
-<td>1.40</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">203</td>
-<td>16.40</td>
-<td>1.75</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">204</td>
-<td>20.53</td>
-<td>2.80</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>4</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">205</td>
-<td>16.47</td>
-<td>2.26</td>
-<td>Thur</td>
-<td>Lunch</td>
-<td>3</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">243</td>
-<td>18.78</td>
-<td>2.10</td>
-<td>Thur</td>
-<td>Dinner</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-
-<p>62 rows × 5 columns</p>
+<span class="ansi-red-fg">NameError</span>: name 'tips' is not defined</pre>
 </div>
 </div>
 </div>
-<div id="693a6f29" class="cell" data-execution_count="3">
+<div id="b82d9d32" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>thurs[<span class="st">"tip"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>1.9398387096774192</code></pre>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[3], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">thurs</span>[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>mean()
+
+<span class="ansi-red-fg">NameError</span>: name 'thurs' is not defined</pre>
 </div>
 </div>
-<div id="00a22d10" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>][<span class="st">"tip"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre><code>2.095402298850575</code></pre>
+</div>
+<div id="91b46c1d" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>][<span class="st">"tip"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[4], line 1</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">tips</span>[tips[<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">day</span><span style="color:rgb(175,0,0)">"</span>] <span style="color:rgb(98,98,98)">==</span> <span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">Sat</span><span style="color:rgb(175,0,0)">"</span>][<span style="color:rgb(175,0,0)">"</span><span style="color:rgb(175,0,0)">tip</span><span style="color:rgb(175,0,0)">"</span>]<span style="color:rgb(98,98,98)">.</span>mean()
+
+<span class="ansi-red-fg">NameError</span>: name 'tips' is not defined</pre>
+</div>
 </div>
 </div>
 
@@ -340,6 +263,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -450,6 +375,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
+      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
