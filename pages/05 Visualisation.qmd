@@ -1,9 +1,6 @@
 ---
 title: Visualising data
-jupyter: python3
 ---
-
-
 
 The de facto standard plotting and visualisation library for Python is [matplotlib](https://matplotlib.org/). It is incredibly versatile and it is worth getting to know. However, its API can be a little complex and can require a fair bit of code to get plot looking how you want.
 
@@ -42,19 +39,18 @@ import pandas as pd
 tips = pd.read_csv("./data/tips.csv")
 ```
 
-
 Before diving in, it's worth thinking about what kinds of plots we can do and what kind of information we want to show. When communicating your results to an audience you should consider the story you are trying to tell. Not story in the "fiction" sense but story in the "narrative" sense. Visualisations should be used to discover and back up conclusions and so the choice of what you show, as well as the choice of what you don't is important.
 
 There are three major kinds of visualisation that you may want to use:
 
-<dl>
-<dt>Plotting <em>relationships between</em> variables in the data set</dt>
-<dd>This is showing how a change in one variable affects another variable. For example it could be scatter plot of how age and weight are related or a line plot of the change in temperature over time.</dd>
-<dt>Plotting the <em>distribution</em> of variables</dt>
-<dd>This is usually about <em>how many</em> of each value you have and how they are spread out. For example it could be a histogram of the spread of marks for a class of students or the ages of people in a country.</dd>
-<dt>Seeing how the data varies by <em>category</em></dt>
-<dd>Categories in your data can be used in conjunction with both the methods described above but sometimes splitting your data by category and looking at each separately is a good choice. For example it could be a bar chart of how much each country spent on foreign aid.</dd>
-</dl>
+Plotting <em>relationships between</em> variables in the data set
+: This is showing how a change in one variable affects another variable. For example it could be scatter plot of how age and weight are related or a line plot of the change in temperature over time.
+
+Plotting the <em>distribution</em> of variables
+: This is usually about <em>how many</em> of each value you have and how they are spread out. For example it could be a histogram of the spread of marks for a class of students or the ages of people in a country.
+
+Seeing how the data varies by <em>category</em>
+: Categories in your data can be used in conjunction with both the methods described above but sometimes splitting your data by category and looking at each separately is a good choice. For example it could be a bar chart of how much each country spent on foreign aid.
 
 ### Plotting relationships
 
@@ -128,16 +124,13 @@ sns.relplot(
 ```
 
 ::: {#exercise-1 .callout-note title="Exercise" icon=false} 
-
 - Using the `bill_per_person` and `percent_tip` columns from the previous chapter, plot the relationship between the percentage tip, and the bill per-person.
 - Set the colour of the data points to be based on the day of the week.
-
 :::
 
 ::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_visualisation_relplot.qmd >}}
 :::
-
 
 ### Plotting distributions
 
@@ -212,17 +205,13 @@ sns.displot(
 
 Now we can directly see that the lunch peak is tighter and peaks slightly lower.
 
-
 ::: {#exercise-2 .callout-note title="Exercise 2" icon=false} 
 Investigate how the time of day affects how much each person spends *on average*.
-
 :::
-
 
 ::: {#answer2 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_visualisation_displot.qmd >}}
 :::
-
 
 ### Plotting categorical data
 
@@ -262,11 +251,9 @@ sns.catplot(
 ```
 
 ::: {#exercise-3 .callout-note title="Exercise" icon=false} 
-
 There seems to be a trend towards larger total bills at the weekend. Investigate whether this is due to a larger average spend per person or due to a larger average group size.
 
 See if using `kind="violin"` instead of `"box"` presents your data any better.
-
 :::
 
 ::: {#answer3 .callout-caution icon=false title='Answer' collapse="true"}

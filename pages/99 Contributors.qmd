@@ -2,9 +2,11 @@
 title: Contributors
 ---
 
-This course was originally written by Matt Williams, see <https://milliams.com/courses/intermediate_python/>.
+This course has been developed by the [Jean Golding Institute](https://www.bristol.ac.uk/golding/).
 
-The course has since been modified by the Jean Golding Institute. 
+It is based on the materials written by [Matt Williams](https://milliams.com/courses/data_analysis_python/).
+
+Thanks to:
 
 * Christopher Woods
 * Matt Williams

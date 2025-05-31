@@ -3,15 +3,12 @@ title: Introduction
 jupyter: python3
 ---
 
-
-
 This course is aimed at the Python developer who wants to learn how to do useful data analysis tasks.
 It will focus primarily on the Python package [pandas](http://pandas.pydata.org/) to query, combine and visualise your data as well as covering [seaborn](https://seaborn.pydata.org) to visualise them.
 
 Data analysis is a huge topic and we couldn't possibly cover it all in one short course so the purpose of this workshop is to give you an introduction to some of the most useful tools and to demonstrate some common problems that surface.
 
-
-### Intended learning outcomes
+## Intended learning outcomes
 
 By the end of this course, you will:
 
@@ -19,3 +16,33 @@ By the end of this course, you will:
 - Be familiar with `pandas` and `seaborn`.
 - Know how to read a data file and deal with format issues.
 - Have the skills to create a simple plot to visualize and explore your data.
+
+## How to read this course
+
+In this course, any time that we are seeing a small snippet of Python code, we'll see it written in a grey box like the following:
+
+```{.python}
+print("Hello, Python")
+```
+
+If the commands are executed by the machine we will see the output of them below enclosed on a vertical purple line:
+
+```{python}
+print("Hello, Python!")
+```
+
+There are some exercises along this course, and it is important you try to answer them yourself to understand how Python works. Exercises are shown in blue boxes followed by a yellow box that contains the answer of each exercise. We recommend you to try to answer each exercise yourself before looking at the solution. 
+
+::: {#exampleN .callout-note icon=false title='Exercise'}
+This is an exercise. You will need to click in the below box to see the answer.
+:::
+
+::: {#answerN .callout-caution icon=false title='Answer (click to open)' collapse="true"}
+This is the answer.
+:::
+
+Last, we will highlight important points using green boxes like this one:
+
+::: {#keypointsN .callout-tip icon=false title='Important points'}
+These are important concepts and technical notes.
+:::

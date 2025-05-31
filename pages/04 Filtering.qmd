@@ -1,9 +1,6 @@
 ---
 title: Filtering data
-jupyter: python3
 ---
-
-
 
 In the last section we looked at how to act on entire columns at once. For example when we did:
 
@@ -84,13 +81,11 @@ tips[tips["total_bill"] < 8]
 
 ::: {#exercise-2 .callout-note title="Exercise" icon=false}
 Filter the data to only include parties of 5 or more people.
-
 :::
 
 ::: {#answer4 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_filtering_party_size.qmd >}}
 :::
-
 
 ## Combining filters
 
@@ -118,31 +113,27 @@ tips[(tips["day"] == "Sat") & (tips["total_bill"] < 8)]
 If you want to do an "or" operation, then instead of `&` you can use `|`.
 
 ::: {#exercise-3 .callout-tip title="Exercise 3" icon=false} 
-
 Filter the data to only include parties of 4 or more people which happened at lunch time.
 
 Hint: The `size` and `time` columns are what you want to use here.
-
 :::
 
 ::: {#answer3 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_filtering_combined.qmd >}}
 :::
 
-
-
 ## DataFrame indexing
 
 When we use the square bracket syntax on a `DataFrame` directly there are a few different types of object that can be passed:
 
-<dl>
-<dt>A single string</dt>
-<dd>This will select a single column form the <code>DataFrame</code>, returning a <code>Series</code> object.</dd>
-<dt>A list of strings</dt>
-<dd>This will select those columns by name, returning a <code>DataFrame</code>.</dd>
-<dt>A filter (a <code>Series</code> of <code>True</code>/<code>False</code>)</dt>
-<dd>This will filter the table as a whole, returning a <code>DataFrame</code> with only the rows matching <code>True</code>included.</dd>
-</dl>
+A single string
+: This will select a single column form the <code>DataFrame</code>, returning a <code>Series</code> object.
+
+A list of strings
+: This will select those columns by name, returning a <code>DataFrame</code>.
+
+A filter (a <code>Series</code> of <code>True</code>/<code>False</code>)
+: This will filter the table as a whole, returning a <code>DataFrame</code> with only the rows matching <code>True</code>included.
 
 These are provided as shortcuts as they are the most common operations to do an a `DataFrame`. This is why some of them operate on columns and other on rows.
 

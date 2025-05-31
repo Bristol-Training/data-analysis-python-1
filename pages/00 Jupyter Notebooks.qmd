@@ -1,13 +1,10 @@
 ---
 title: Jupyter Notebooks
-jupyter: python3
 ---
-
 
 In previous courses, you've used the `python` in the command line program to execute scripts. This course will use a tool called *Jupyter Notebooks* to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and can combine your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
 
 Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later. To open a new Notebook in JupyterLab go to `File` > `New` > `Notebook` or click the `Python 3` button under `Notebook` section in the `Launcher` tab.
-
 
 Once the notebook is launched, you will see a wide grey box with a blue `[ ]:` to the left. The grey box is an input cell where you type any Python code you want to run:
 
@@ -53,7 +50,6 @@ temp.plot()
 If you want to write some text as documentation (like these words here) then you should label the cell as being a Markdown cell. Do that by selecting the cell and going to the dropdown at the top of the page labelled *Code* and changing it to *Markdown*.
 
 It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called *literate programming*.
-
 
 ::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 
@@ -112,5 +108,4 @@ We print a message with the total owed to the shop.
 ```{python}
 print(f"I owe the grocer £{total_grocery_bill:.2f}")
 ```
-
 :::

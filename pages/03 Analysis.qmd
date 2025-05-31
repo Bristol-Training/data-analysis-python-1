@@ -1,14 +1,10 @@
 ---
 title: Querying your data
-jupyter: python3
-# format:ipynb
 ---
-
 
 Once your data is read in and available as a DataFrame, Pandas provides a whole suite of tools for extracting information from it.
 
 Let's start by looking at some example data which contains information about the amounts that people at a restaurant paid and tipped for their meals:
-
 
 ```{.python}
 import pandas as pd
@@ -64,11 +60,9 @@ If you want to grab a single value from the table, you can follow the row label 
 tips.loc[2, "total_bill"]
 ```
 
-
 ::: {#exercise-1 .callout-note title="Exercise" icon=false} 
 The `size` column in the data is the number of people in the dining party. Extract this column from the DataFrame.
 :::
-
 
 ::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_analysis_get_column.qmd >}}
@@ -108,12 +102,9 @@ tips.loc[index_of_max_bill]
 ```
 
 ::: {#exercise-2 .callout-note title="Exercise" icon=false} 
-
 Find the value of the tip that was paid for the smallest total bill.
 
 Hint: Have a look at the [documentation page for `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html). There's a function which works like `idxmax()` but finds the minimum.
-
-
 :::
 
 ::: {#answer2 .callout-caution icon=false title='Answer' collapse="true"}
@@ -135,8 +126,6 @@ The data in row `0` was previously 16.99 but the result here is 1699.0, and like
 You can do any mathematical operation that Python supports, such as `+`, `-` and `/`.
 
 ## Combining columns
-
-
 
 ::: {.column-margin}
 ### Aside
@@ -169,13 +158,11 @@ tip_percent
 The `total_bill` column give the total amount for the entire dining party. Calculate the amount spent *per person* for each row in the DataFrame.
 
 Extra: calculate the average and the standard deviation of this data. You might need to take a look at [the documentation page for the `Series`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html) type.
-
 :::
 
 ::: {#answer2 .callout-caution icon=false title='Answer' collapse="true"}
 {{< include ../answers/answer_analysis_per_person.qmd >}}
 :::
-
 
 ## Adding new columns
 
@@ -188,7 +175,6 @@ tips
 
 ::: {#exercise-4 .callout-note title="Exercise" icon=false} 
 Take the "bill per person" result you calculated in the last exercise and add it as a new column, `bill_per_person`, in the DataFrame.
-
 :::
 
 ::: {#answer4 .callout-caution icon=false title='Answer' collapse="true"}

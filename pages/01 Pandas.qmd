@@ -1,8 +1,6 @@
 ---
 title: Introduction to Pandas
-jupyter: python3
 ---
-
 
 Pandas is a Python library providing high-performance, easy-to-use data structures and data analysis tools. Pandas provides easy and powerful ways to import data from a variety of sources and export it to just as many. It is also explicitly designed to handle *missing data* elegantly which is a very common problem in data from the real world.
 
@@ -10,10 +8,7 @@ It can be used to perform the same tasks that you might use spreadsheets such as
 
 The official [pandas documentation](http://pandas.pydata.org/pandas-docs/stable/) is very comprehensive and you will be able to answer a lot of questions in there, however, it can sometimes be hard to find the right page. Don't be afraid to use Google to find help.
 
-
 Most data analyses will follow a similar series of steps which we will go through in this course:
-
-
 
 ```{=html}
 <div class="contents-grid">
