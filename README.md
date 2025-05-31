@@ -4,7 +4,7 @@ This course is maintained by the [Jean Golding Institute](https://www.bristol.ac
 
 ## Read the course materials
 
-[View the course website](https://bristol-training.github.io/intro-python-1/)
+[View the course website](https://bristol-training.github.io/introduction-to-data-analysis-in-python/)
 
 ## Changing the course
 
