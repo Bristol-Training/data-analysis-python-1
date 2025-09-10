@@ -1,5 +1,5 @@
 ---
-title: Jupyter Notebooks
+title: Workspace Setup
 ---
 
 For setup, go to our [setup instructions](https://bristol-training.github.io/data-science-project-setup/).
