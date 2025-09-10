@@ -153,8 +153,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../pages/00 Jupyter Notebooks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Jupyter Notebooks</span></a>
+  <a href="../pages/00_setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Workspace Setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,11 +247,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="seaborn">seaborn</h3>
 <p>The built-in pandas plotting we saw earlier is really useful because it is always available at your fingertips and it smooths over some of the tricky parts of matplotlib, but it will only take you so far.</p>
 <p>seaborn is a third-party library which provides an easy-to-use interface for plotting tabular data which integrates with pandas really well. By convention it is imported as <code>sns</code>:</p>
-<div id="40a08d8f" class="cell" data-execution_count="1">
+<div id="588d99c2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>seaborn comes with its own style which affects the colours, grid, fonts etc. You don’t have to use the seaborn theme but it generally looks nicer than the matplotlib defaults:</p>
-<div id="4e8700e3" class="cell" data-execution_count="2">
+<div id="6993d45b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Note, in versions before seaborn 0.11 this function was called <code>sns.set()</code>. If you are running an older version you will need to use that form.</p>
@@ -280,7 +280,7 @@ Categories in your data can be used in conjunction with both the methods describ
 <p>We’ll start with looking at how we can visualise how data are related to each other. seaborn offers a generic interface for doing this called <code>relplot()</code>. You can find more information in the seaborn <a href="https://seaborn.pydata.org/generated/seaborn.relplot.html">documentation for the <code>relplot()</code> function</a> and the more general page on <a href="https://seaborn.pydata.org/tutorial/relational.html">visualising statistical relationships</a>.</p>
 <p>You use <code>relplot()</code> by passing it the DataFrame you want to explore and the two dimensions of the table that you want to compare. This only makes sense for dimensions that are numerical (e.g.&nbsp;height, weight, price, etc.) and not for “categorical” data like “day of the week” or “species”. The numerical variables in our data are <code>total_bill</code>, <code>tip</code> and <code>size</code>.</p>
 <p>The <code>data</code> argument should be the entire DataFrame and the <code>x</code> and <code>y</code> arguments should be the names of the columns to plot. So, to plot the values of tips against the total bill, we do:</p>
-<div id="3527c2fb" class="cell" data-execution_count="4">
+<div id="a203dbe6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -295,7 +295,7 @@ Categories in your data can be used in conjunction with both the methods describ
 </div>
 </div>
 <p>By default it creates a scatter plot and uses the column names as axis labels. To set the axis labels to something more useful, you can call <code>set()</code> on the object returned by <code>relplot()</code>:</p>
-<div id="9100932b" class="cell" data-execution_count="5">
+<div id="9f381208" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -323,7 +323,7 @@ Categories in your data can be used in conjunction with both the methods describ
 <li><code>row=</code> and <code>col=</code>: for discrete variables, draw a separate subplot along a row or column for each category</li>
 </ul>
 <p>If you have multiple dimensions to visualise, you can therefore plot up to 7 dimensional data. Here’s an example using 5 dimensions for different variables:</p>
-<div id="fddfdab7" class="cell" data-execution_count="6">
+<div id="a70be47f" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -344,7 +344,7 @@ Categories in your data can be used in conjunction with both the methods describ
 </div>
 </div>
 <p>But this very quickly gets very hard to interpret and understand. It is instead recommended to keep the number of variables plotted at once small and instead use the plotting dimensions redundantly, i.e.&nbsp;using both the marker style and the hue for the same data variable. This can make the plot more accessible when printed in black-and-white or when viewed by someone with colour-blindness:</p>
-<div id="082231d0" class="cell" data-execution_count="7">
+<div id="62840524" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -394,11 +394,11 @@ Answer
 <div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="aef807dd" class="cell" data-execution_count="8">
+<div id="2b04acd2" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"percent_tip"</span>] <span class="op">=</span> (tips[<span class="st">"tip"</span>] <span class="op">/</span> tips[<span class="st">"total_bill"</span>])<span class="op">*</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c7760cca" class="cell" data-tags="[]" data-execution_count="9">
+<div id="e56b4815" class="cell" data-tags="[]" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>sns.relplot(</span>
@@ -430,7 +430,7 @@ Answer
 <p>seaborn provides a function for investigating the distribution of a variable called <a href="https://seaborn.pydata.org/generated/seaborn.displot.html"><code>displot</code></a> which works in a similar way to <code>relplot</code>. You pass the data frame you want to visualise and then start specifying the dimensions that you want to show.</p>
 <p>Note: <code>displot</code> was added in version 0.11 of seaborn. If you are on an earlier version then you will not have it available. In this case you should upgrade your version of seaborn to at least 0.11. If you cannot upgrade then you can make histograms using the <a href="https://seaborn.pydata.org/archive/0.10/generated/seaborn.distplot.html"><code>distplot</code></a> function (note the extra <code>t</code>), though it lacks some features.</p>
 <p>For example, to show a histogram of the total bill, you do the following:</p>
-<div id="e3fd851a" class="cell" data-execution_count="10">
+<div id="6122ccf9" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -445,7 +445,7 @@ Answer
 </div>
 <p>As with <code>relplot</code> we can ask seaborn to show additional dimensions of our data with the following arguments (which have the same meaning as in <code>relplot</code>): <code>x</code>, <code>y</code>, <code>hue</code>, <code>row</code> and <code>col</code>.</p>
 <p>So, to compare the distribution of total bills between lunch time and dinner time, arraying them by column, you can do:</p>
-<div id="f61d7e17" class="cell" data-execution_count="11">
+<div id="5d4984fa" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -460,7 +460,7 @@ Answer
 </div>
 </div>
 <p>Since <code>displot</code> shows the <em>count</em> of the values in each bin by default, the first thing that you would conclude is that there are more dinner data than lunch. If this is the story you are exploring then it’s all good. However, we want to show how the <em>distribution</em> varies from lunch to dinner. To have it ignore the absolute values of the counts and to instead normalise the counts within each category, you can set <code>common_norm=False</code> which allows each subset to normalise individually:</p>
-<div id="294024ba" class="cell" data-execution_count="12">
+<div id="1b87f0a3" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -478,7 +478,7 @@ Answer
 </div>
 <p>We can now see that the lunch bills have a higher single peak which suggests that it has a tighter distribution. However, plotting them side-by-side makes it difficult to compare the point at which the peak happens in each data set. Do they align or are they shifted?</p>
 <p>To solve this, we can plot the two overlaid by using the <code>hue</code> semantic instead of the <code>col</code>:</p>
-<div id="17fd6b3a" class="cell" data-execution_count="13">
+<div id="67af2e58" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -496,7 +496,7 @@ Answer
 </div>
 <p>We can now see that the lunch orders peak at a similar value to dinner but are shifted slightly to the left. They also have a tighter distribution.</p>
 <p>To simplify the view down further, you can smooth the bins by applying a “kernel density estimation” which allows you to turn it into a line graph:</p>
-<div id="7725b988" class="cell" data-execution_count="14">
+<div id="e270a0cf" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.displot(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"total_bill"</span>,</span>
@@ -538,15 +538,15 @@ Answer
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c1ebd4ce" class="cell" data-execution_count="15">
+<div id="338d8fc7" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c83937df" class="cell" data-execution_count="16">
+<div id="181e833f" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="558f5c23" class="cell" data-execution_count="17">
+<div id="bb387a82" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>sns.displot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"bill_per_person"</span>, hue<span class="op">=</span><span class="st">"time"</span>, kind<span class="op">=</span><span class="st">"kde"</span>, common_norm<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -566,7 +566,7 @@ Answer
 <h4 class="anchored" data-anchor-id="plotting-categorical-data">Plotting categorical data</h4>
 <p>When you have categorical variables in your data, you usually want to compare between the categories. seaborn’s <a href="https://seaborn.pydata.org/generated/seaborn.catplot.html"><code>catplot</code></a> and the <a href="https://seaborn.pydata.org/tutorial/categorical.html">associated tutorial page</a> are the solution here.</p>
 <p>The categorical variables in our data set are <code>day</code> and <code>time</code>. If we wanted to see how the total bill depended on the day of the week, we could do the following:</p>
-<div id="6513bbc5" class="cell" data-execution_count="18">
+<div id="2f28872b" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
@@ -581,7 +581,7 @@ Answer
 </div>
 </div>
 <p>While the day of week is a categorical variable, it also has an understood common ordering to it where we would expect the days to presented in that order. We can specify the ordering with the <code>order</code> parameter:</p>
-<div id="e3bd455e" class="cell" data-execution_count="19">
+<div id="2bbcfb3e" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
@@ -597,7 +597,7 @@ Answer
 </div>
 </div>
 <p>This is showing that it seems like Thursday and Friday have a slightly lower average that the other days. The default “strip plot” is good because it doesn’t summarise the data too much, but when looking for averages something like a box plot might be better. Pass the argument <code>kind="box"</code> to do this:</p>
-<div id="d0851cbd" class="cell" data-execution_count="20">
+<div id="5645bdb0" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>tips,</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">"day"</span>,</span>
@@ -639,18 +639,18 @@ Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="a669cee0" class="cell" data-execution_count="21">
+<div id="62912a3a" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="f2930ad9" class="cell" data-execution_count="22">
+<div id="a547dccd" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"bill_per_person"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>] <span class="op">/</span> tips[<span class="st">"size"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="bc749123" class="cell" data-execution_count="23">
+<div id="91cc6676" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cebcc78c" class="cell" data-execution_count="24">
+<div id="cb8e0be7" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"bill_per_person"</span>, order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>], kind<span class="op">=</span><span class="st">"box"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -660,7 +660,7 @@ Answer
 </div>
 </div>
 </div>
-<div id="27dede67" class="cell" data-execution_count="25">
+<div id="0f2516f7" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>sns.catplot(data<span class="op">=</span>tips, x<span class="op">=</span><span class="st">"day"</span>, y<span class="op">=</span><span class="st">"size"</span>, order<span class="op">=</span>[<span class="st">"Thur"</span>, <span class="st">"Fri"</span>, <span class="st">"Sat"</span>, <span class="st">"Sun"</span>], kind<span class="op">=</span><span class="st">"violin"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
