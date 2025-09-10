@@ -1,0 +1,10 @@
+[project]
+name = "data-analysis-python-1"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.3.3",
+    "pandas>=2.3.2",
+    "quarto-cli>=1.7.34",
+    "seaborn>=0.13.2",
+]
