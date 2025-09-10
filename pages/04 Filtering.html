@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Filtering data – Introduction to Data Analysis in Python</title>
+<title>Filtering data – Introduction to Data Analysis in Python (Part 1)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <img src="../assets/UoB_RGB_24.png" alt="University of Bristol logo" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Introduction to Data Analysis in Python</a> 
+      <a href="../">Introduction to Data Analysis in Python (Part 1)</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#combining-filters" id="toc-combining-filters" class="nav-link" data-scroll-target="#combining-filters">Combining filters</a></li>
   <li><a href="#dataframe-indexing" id="toc-dataframe-indexing" class="nav-link" data-scroll-target="#dataframe-indexing">DataFrame indexing</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/bristol-training/introduction-to-data-analysis-in-python/edit/main/pages/04 Filtering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bristol-training/introduction-to-data-analysis-in-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/edit/main/pages/04 Filtering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -258,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You create a filter by performing some operation on your <code>DataFrame</code> or a column within it. To ask about only those rows which refer to Saturday, you grab the <code>day</code> column and compare it to <code>"Sat"</code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="4357b32f" class="cell" data-execution_count="2">
+<div id="791b3673" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>0      False
@@ -277,11 +277,11 @@ Name: day, Length: 244, dtype: bool</code></pre>
 </div>
 <p>This has created a filter object (sometimes called a <em>mask</em> or a <em>boolean array</em>) which has <code>True</code> set for the rows where the day is Saturday and <code>False</code> elsewhere.</p>
 <p>We could save this filter as a variable:</p>
-<div id="9f63afdc" class="cell" data-execution_count="3">
+<div id="e2a3b71e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sat_filter <span class="op">=</span> tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use this to filter the <code>DataFrame</code> as a whole. <code>tips["day"] == "Sat"</code> has returned a <code>Series</code> containing booleans. Passing it back into <code>tips</code> as an indexing operation will use it to filter based on the <code>day</code> column, only keeping those rows which contained <code>True</code> in the filter:</p>
-<div id="a90974a2" class="cell" data-execution_count="4">
+<div id="8675da7e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tips[sat_filter]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
@@ -396,7 +396,7 @@ Name: day, Length: 244, dtype: bool</code></pre>
 </div>
 <p>Notice that it now says that the table only has 87 rows, down from 244. However, the index has been maintained. This is because the row labels are connected to the row, they’re not just row numbers.</p>
 <p>It is more common to do this in one step, rather than creating and naming a filter object. So the code becomes:</p>
-<div id="8796b965" class="cell" data-execution_count="5">
+<div id="7055d7bd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div>
@@ -539,12 +539,12 @@ Answer
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="78b9b4ba" class="cell" data-execution_count="6">
+<div id="5ad9e902" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="d6f3eb49" class="cell" data-execution_count="7">
+<div id="381e6d0e" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>thurs <span class="op">=</span> tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Thur"</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>thurs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
@@ -658,13 +658,13 @@ Answer
 </div>
 </div>
 </div>
-<div id="af8b107a" class="cell" data-execution_count="8">
+<div id="b4f70f59" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>thurs[<span class="st">"tip"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>np.float64(1.9398387096774192)</code></pre>
 </div>
 </div>
-<div id="1cce875b" class="cell" data-execution_count="9">
+<div id="b0682cac" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>][<span class="st">"tip"</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>np.float64(2.095402298850575)</code></pre>
@@ -677,7 +677,7 @@ Answer
 <h3 class="anchored" data-anchor-id="other-filters">Other filters</h3>
 <p>As well as filtering with the <code>==</code> operator (which only checks for exact matches), you can do other types of comparisons. Any of the standard Python comparisons will work (i.e.&nbsp;<code>==</code>, <code>!=</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>).</p>
 <p>To grab only the rows where the total bill is less than £8 we can use <code>&lt;</code>:</p>
-<div id="7ed0146f" class="cell" data-execution_count="10">
+<div id="89177d84" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"total_bill"</span>] <span class="op">&lt;</span> <span class="dv">8</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div>
@@ -782,12 +782,12 @@ Answer
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="2f365b6d" class="cell" data-execution_count="11">
+<div id="bac12c0b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="32141c9d" class="cell" data-execution_count="12">
+<div id="e1de5d92" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>tips[tips[<span class="st">"size"</span>] <span class="op">&gt;=</span> <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <div>
@@ -891,7 +891,7 @@ Answer
 <h3 class="anchored" data-anchor-id="combining-filters">Combining filters</h3>
 <p>If you want to apply multiple filters, for example to select only “Saturdays with small total bills” you can do it in one of two different ways. Either split the question into multiple steps, or ask it all at once.</p>
 <p>Let’s do it multiple steps first since we already have tools we need for that:</p>
-<div id="b9405e95" class="cell" data-execution_count="13">
+<div id="33279ca1" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sat_tips <span class="op">=</span> tips[tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>]  <span class="co"># First grab the Saturday data and save it as a variable</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sat_tips[sat_tips[<span class="st">"total_bill"</span>] <span class="op">&lt;</span> <span class="dv">8</span>]  <span class="co"># Then act on the new DataFrame as use it as before</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
@@ -943,7 +943,7 @@ Answer
 <p>Or, you can combine the questions together using the <code>&amp;</code> operator with a syntax like:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[(filter_1) <span class="op">&amp;</span> (filter_2)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>so in our case filter 1 is <code>tips["day"] == "Sat"</code> and filter 2 is <code>tips["total_bill"] &lt; 8</code> so it becomes:</p>
-<div id="8d066911" class="cell" data-execution_count="14">
+<div id="207f2fa3" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>tips[(tips[<span class="st">"day"</span>] <span class="op">==</span> <span class="st">"Sat"</span>) <span class="op">&amp;</span> (tips[<span class="st">"total_bill"</span>] <span class="op">&lt;</span> <span class="dv">8</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
@@ -1018,12 +1018,12 @@ Answer
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c9b63f81" class="cell" data-execution_count="15">
+<div id="b8e93069" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> pd.read_csv(<span class="st">"./data/tips.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="e27a2dc1" class="cell" data-execution_count="16">
+<div id="0b7bad29" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tips[(tips[<span class="st">"size"</span>] <span class="op">&gt;=</span> <span class="dv">4</span>) <span class="op">&amp;</span> (tips[<span class="st">"time"</span>] <span class="op">==</span> <span class="st">"Lunch"</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <div>
@@ -1574,7 +1574,7 @@ This will filter the table as a whole, returning a <code>DataFrame</code> with o
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/bristol-training/introduction-to-data-analysis-in-python/edit/main/pages/04 Filtering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/bristol-training/introduction-to-data-analysis-in-python/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/edit/main/pages/04 Filtering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
