@@ -2,7 +2,9 @@
 title: Jupyter Notebooks
 ---
 
-In previous courses, you've used the `python` in the command line program to execute scripts. This course will use a tool called *Jupyter Notebooks* to run your Python code. It works with the same Python code as we've used before but it allows interactive execution and can combine your code with blocks of text to explain what you're doing and embed output such as graphs directly into the page.
+For setup, go to our [setup instructions](https://bristol-training.github.io/data-science-project-setup/).
+
+This course will use a tool called *Jupyter Notebooks* to run your Python code. 
 
 Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later. To open a new Notebook in JupyterLab go to `File` > `New` > `Notebook` or click the `Python 3` button under `Notebook` section in the `Launcher` tab.
 
