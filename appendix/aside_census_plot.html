@@ -139,7 +139,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>This aside will show how we can go about improving the visuals of this graph. This will use some of the topics that we will be covering in later chapters, so you might want to come back to this aside once you’ve been through the material in the <a href="../pages/05 Visualisation.html">visualisation chapter</a>.</p>
-<div id="12912cb2" class="cell" data-tags="[]" data-execution_count="1">
+<div id="4f797f1a" class="cell" data-tags="[]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>city_pop_file <span class="op">=</span> <span class="st">"https://bristol-training.github.io/introduction-to-data-analysis-in-python/data/city_pop.csv"</span></span>
@@ -273,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The simplest thing you can do is plot the graph with no additional options:</p>
-<div id="fdbe022a" class="cell" data-tags="[]" data-execution_count="2">
+<div id="55f32a6e" class="cell" data-tags="[]" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>census.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -287,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The label on the x-axis is taken directly from the column name that we made into the index, <code>"year"</code>. Let’s make it have a capital letter at the start by passing the <code>xlabel</code> argument to <code>plot</code>:</p>
-<div id="83b34b25" class="cell" data-tags="[]" data-execution_count="3">
+<div id="45551ef7" class="cell" data-tags="[]" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>census.plot(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -305,7 +305,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>And then also set a y-axis label in a similar way:</p>
-<div id="37e81d2e" class="cell" data-tags="[]" data-execution_count="4">
+<div id="b6f04bdf" class="cell" data-tags="[]" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>census.plot(</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Population (millions)"</span>,</span>
@@ -325,7 +325,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>The y-axis currently starts around 2 which makes the difference between London and the other cities look greater than it actually is. It’s usually a good idea to set your y-axis to start at zero. We can pass a tuple <code>(0, None)</code> to the <code>ylim</code> argument which tells the y-axis to start at <code>0</code> and the <code>None</code> tells it to use the default scale for the upper bound:</p>
-<div id="0c2f3e80" class="cell" data-tags="[]" data-execution_count="5">
+<div id="81b74106" class="cell" data-tags="[]" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>census.plot(</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Population (millions)"</span>,</span>
@@ -347,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>This is now a perfectly functional graph. All we might want to do now is to play with the aesthetics a little. Using <a href="https://seaborn.pydata.org">seaborn</a> we can use their theme which can use nicer fonts and colours:</p>
-<div id="5afa0d43" class="cell" data-tags="[]" data-execution_count="6">
+<div id="c9a287ca" class="cell" data-tags="[]" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>sns.set_theme()</span>
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>If we want a white background again, we can specify the seaborn style with <code>sns.set_style</code>:</p>
-<div id="8c6c03e9" class="cell" data-tags="[]" data-execution_count="7">
+<div id="3674c4b4" class="cell" data-tags="[]" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sns.set_style(<span class="st">"white"</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>census.plot(</span>
@@ -400,7 +400,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Or, if we want, we can use seaborn directly as the plotting tool using seaborn’s <code>sns.relplot</code>:</p>
-<div id="487a3c46" class="cell" data-tags="[]" data-execution_count="8">
+<div id="27f95fdf" class="cell" data-tags="[]" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sns.relplot(data<span class="op">=</span>census, kind<span class="op">=</span><span class="st">"line"</span>).<span class="bu">set</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    xlabel<span class="op">=</span><span class="st">"Year"</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    ylabel<span class="op">=</span><span class="st">"Population (millions)"</span>,</span>
