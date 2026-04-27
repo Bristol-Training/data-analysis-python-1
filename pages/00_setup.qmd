@@ -1,113 +1,137 @@
 ---
-title: Workspace Setup
+title: "Workspace Setup"
 ---
 
-For setup, go to our [setup instructions](https://bristol-training.github.io/data-science-project-setup/).
+Before we move to the next section, let's make sure everyone has a working Python environment with the right packages installed.
 
-This course will use a tool called *Jupyter Notebooks* to run your Python code. 
 
-Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later. To open a new Notebook in JupyterLab go to `File` > `New` > `Notebook` or click the `Python 3` button under `Notebook` section in the `Launcher` tab.
 
-Once the notebook is launched, you will see a wide grey box with a blue `[ ]:` to the left. The grey box is an input cell where you type any Python code you want to run:
+
+### Option A — Google Colab (recommended)
+
+[Google Colab](https://colab.google/) is a free, cloud‑based platform that lets you write and run Python code directly in your web browser. It provides an environment similar to Jupyter Notebooks, but without the need to install Python or any additional software on your computer. This makes it an ideal starting point for medics and healthcare professionals who want to explore machine learning without worrying about technical setup.
+
+Colab also includes a wide range of pre‑installed scientific and machine‑learning libraries—such as NumPy, Pandas, Matplotlib, and TensorFlow—so you can focus on learning concepts rather than configuring tools. Notebooks are easy to share, collaborate on, and store in Google Drive, making it a convenient platform for both individual study and group work. With its simplicity and accessibility, Colab provides a smooth entry point into Python programming and practical machine‑learning experimentation.
+
+
+If you are up for **Colab**, you can try to load the Penguins dataset by running this in a new notebook cell:
 
 ```{python}
-# Python code can be written in 'Code' cells
-print("Output appears below when the cell is run")
-print("To run a cell, press Ctrl-Enter or Shift-Enter with the cursor inside")
-print("or use the run button (▶) in the toolbar at the top")
+# Load libraries
+import seaborn as sns
+
+# Load the dataset
+penguins = sns.load_dataset("penguins")
+
+# Show the first few rows
+penguins.head()
 ```
 
-In your notebook, type the following in the first cell and then run it with Shift-Enter, you should see the same output:
 
-```{python}
-a = 5
-b = 7
-a + b
+### Option B — Jupyter Notebooks (via `uv`)
+
+Jupyter Notebooks are interactive documents that allow you to combine executable Python code, text, visuals, and equations in a single place. They run code in small, editable “cells,” making it easy to experiment, get immediate feedback, and document your reasoning as you go. This format is especially useful for learning and teaching machine learning, as it supports step‑by‑step exploration, visualisation of results, and clear explanations alongside the code.
+
+There are several ways to install and run Jupyter Notebooks, ranging from full Python distributions like Anaconda to lightweight package managers and online platforms. For this course, we recommend using the `uv` package manager, as it provides a simple, reliable, and **reproducible** environment setup with minimal configuration.
+
+::: {.callout-note}
+### What is a package manager?
+
+A package manager is a tool that helps you install, update, and manage software libraries (called "packages") for a programming language. For most python projects, [uv](https://docs.astral.sh/uv/) will be a great choice of package manager.
+::: 
+
+#### Install `uv`
+
+Package manager installation should only need to be done **once** on your computer. If you encounter any issues, see [here](https://docs.astral.sh/uv/getting-started/installation/) for more installation methods to try.
+
+::: {.panel-tabset}
+
+### Windows
+
+Open your Command Prompt and run:
+
+```bat
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-The cells in a notebook are linked together so a variable defined in one is available in all the cells from that point on so in the second cell you can use the variables `a` and `b`:
+### Mac
 
-```{python}
-a - b
+Open Terminal and run:
+
+```bash
+curl -Ls https://astral.sh/uv/install.sh | bash
 ```
 
-Some Python libraries have special integration with Jupyter notebooks and so can display their output directly into the page. For example `pandas` will format tables of data nicely and `matplotlib` will embed graphs directly:
+### Linux
 
-```{python}
-import pandas as pd
-temp = pd.DataFrame(
-    [3.1, 2.4, 4.8, 4.1, 3.4, 4.2],
-    columns=["temp (°C)"],
-    index=pd.RangeIndex(2000, 2006, name="year")
-)
-temp
-```
+Open Terminal and run:
 
-```{python}
-temp.plot()
-```
-
-## Markdown
-
-If you want to write some text as documentation (like these words here) then you should label the cell as being a Markdown cell. Do that by selecting the cell and going to the dropdown at the top of the page labelled *Code* and changing it to *Markdown*.
-
-It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called *literate programming*.
-
-::: {#exercise-1 .callout-note title="Exercise" icon=false} 
-
-Take the following code and break it down, chunk by chunk, interspersing it with documentation explaining what each part does using Markdown blocks:
-```{python}
-#| output: false
-prices = {
-    "apple": 0.40,
-    "banana": 0.50,
-}
-
-my_basket = {
-    "apple": 1,
-    "banana": 6,
-}
-
-total_grocery_bill = 0
-for fruit, count in my_basket.items():
-    total_grocery_bill += prices[fruit] * count
-
-print(f"I owe the grocer £{total_grocery_bill:.2f}")
-```
-You don't need to put only one line of code per cell, it makes sense sometimes to group some lines together.
-
-Throughout this course, use the Jupyter Notebook to solve the problems. Follow along with the examples, typing them into your own notebooks and see how they work.
-:::
-
-::: {#answer1 .callout-caution icon=false title='Answer' collapse="true"}
-Your notebook could look similar to:
-
-## My first notebook
-
-We first define the price of apples and bananas.
-```{python}
-prices = {
-    "apple": 0.40,
-    "banana": 0.50,
-}
-```
-Then we state how many apples and bananas we have in the basket.
-```{python}
-my_basket = {
-    "apple": 1,
-    "banana": 6,
-}
-```
-
-For each fruit in the basket we calculate the price to pay and add it to the total bill. 
-```{python}
-total_grocery_bill = 0
-for fruit, count in my_basket.items():
-    total_grocery_bill += prices[fruit] * count
-```
-
-We print a message with the total owed to the shop.
-```{python}
-print(f"I owe the grocer £{total_grocery_bill:.2f}")
+```bash
+curl -Ls https://astral.sh/uv/install.sh | bash
 ```
 :::
+
+After installation, check that uv is available by 
+typing `uv --version`, then pressing enter. You may need to restart your terminal for the changes to take effect.
+
+#### Move into Project Directory
+
+To set up your Python environment, you need to be in your project directory. Follow these steps:
+
+1. Open your terminal.
+2. Create or navigate to your project directory.
+
+
+#### Create a Virtual Environment
+
+Enter the following command to create a minimal virtual environment:
+
+```bash
+uv init --bare
+```
+
+This will create a `pyproject.toml` file, which will record information
+on all of the packages you install in your virtual environment.
+
+#### Install Packages
+
+For all projects we need jupyterlab, this is
+where we edit code. This can be added to your project 
+with this command:
+
+```bash
+uv add jupyterlab
+```
+
+For the [Introduction to Data Analysis in Python course](https://bristol-training.github.io/data-analysis-python-1/), you would need the `pandas` and `seaborn` package. You can add these with:
+
+```bash
+uv add pandas seaborn scikit-learn
+```
+
+
+#### Opening JupyterLab
+
+Now you can open JupyterLab with:
+
+```bash
+uv run jupyter lab
+```
+
+This will take some time, and you will see text being
+printed in the terminal. Once JupyterLab is running, a browser
+window should pop open. This window should like similar to
+the image below.
+
+![JupyterLab Window](../assets/jupyterlab.png)
+
+#### Create a Notebook
+
+To create a notebook, click the "Notebook" icon in the JupyterLab launcher. The window should now look like this:
+
+![JupyterLab Notebook, with key features highlighted with arrows and blue boxes.](../assets/jupyterlab-notebook.png)
+
+In each cell, python code can be entered. It can be run by clicking the "Run" button or by pressing `Shift + Enter`.
+
+
+

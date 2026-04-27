@@ -13,7 +13,7 @@ website:
 
   sidebar: 
     title: "Introduction to Data Analysis in Python (Part 1)"
-    logo: "assets/UoB_RGB_24.png"
+    logo: "assets/logo.png"
     align: center
     logo-alt: "University of Bristol logo"
     style: "docked"
