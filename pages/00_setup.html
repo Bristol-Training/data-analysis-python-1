@@ -76,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-9582434199d49cc9e91654cdeeb4866b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-85f9c98c26ac2e3e4d6118a241f19f34.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e5e62a4707898b12b5ed41dc4dc9584c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -135,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header sidebar-header-stacked">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../assets/UoB_RGB_24.png" alt="University of Bristol logo" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../assets/logo.png" alt="University of Bristol logo" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Introduction to Data Analysis in Python (Part 1)</a> 
@@ -213,14 +213,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#markdown" id="toc-markdown" class="nav-link active" data-scroll-target="#markdown">Markdown</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/edit/main/pages/00_setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -244,47 +238,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>For setup, go to our <a href="https://bristol-training.github.io/data-science-project-setup/">setup instructions</a>.</p>
-<p>This course will use a tool called <em>Jupyter Notebooks</em> to run your Python code.</p>
-<p>Throughout this course you will likely want to start a new notebook for each section of the course so name them appropriately to make it easier to find them later. To open a new Notebook in JupyterLab go to <code>File</code> &gt; <code>New</code> &gt; <code>Notebook</code> or click the <code>Python 3</code> button under <code>Notebook</code> section in the <code>Launcher</code> tab.</p>
-<p>Once the notebook is launched, you will see a wide grey box with a blue <code>[ ]:</code> to the left. The grey box is an input cell where you type any Python code you want to run:</p>
-<div id="5a7b3aff" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python code can be written in 'Code' cells</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Output appears below when the cell is run"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"To run a cell, press Ctrl-Enter or Shift-Enter with the cursor inside"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"or use the run button (▶) in the toolbar at the top"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Output appears below when the cell is run
-To run a cell, press Ctrl-Enter or Shift-Enter with the cursor inside
-or use the run button (▶) in the toolbar at the top</code></pre>
-</div>
-</div>
-<p>In your notebook, type the following in the first cell and then run it with Shift-Enter, you should see the same output:</p>
-<div id="1ac9a439" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">7</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<pre><code>12</code></pre>
-</div>
-</div>
-<p>The cells in a notebook are linked together so a variable defined in one is available in all the cells from that point on so in the second cell you can use the variables <code>a</code> and <code>b</code>:</p>
-<div id="59a7938a" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">-</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>-2</code></pre>
-</div>
-</div>
-<p>Some Python libraries have special integration with Jupyter notebooks and so can display their output directly into the page. For example <code>pandas</code> will format tables of data nicely and <code>matplotlib</code> will embed graphs directly:</p>
-<div id="8b17ebe9" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>temp <span class="op">=</span> pd.DataFrame(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    [<span class="fl">3.1</span>, <span class="fl">2.4</span>, <span class="fl">4.8</span>, <span class="fl">4.1</span>, <span class="fl">3.4</span>, <span class="fl">4.2</span>],</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    columns<span class="op">=</span>[<span class="st">"temp (°C)"</span>],</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    index<span class="op">=</span>pd.RangeIndex(<span class="dv">2000</span>, <span class="dv">2006</span>, name<span class="op">=</span><span class="st">"year"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>temp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<p>Before we move to the next section, let’s make sure everyone has a working Python environment with the right packages installed.</p>
+<section id="option-a-google-colab-recommended" class="level4">
+<h4 class="anchored" data-anchor-id="option-a-google-colab-recommended">Option A — Google Colab (recommended)</h4>
+<p><a href="https://colab.google/">Google Colab</a> is a free, cloud‑based platform that lets you write and run Python code directly in your web browser. It provides an environment similar to Jupyter Notebooks, but without the need to install Python or any additional software on your computer. This makes it an ideal starting point for medics and healthcare professionals who want to explore machine learning without worrying about technical setup.</p>
+<p>Colab also includes a wide range of pre‑installed scientific and machine‑learning libraries—such as NumPy, Pandas, Matplotlib, and TensorFlow—so you can focus on learning concepts rather than configuring tools. Notebooks are easy to share, collaborate on, and store in Google Drive, making it a convenient platform for both individual study and group work. With its simplicity and accessibility, Colab provides a smooth entry point into Python programming and practical machine‑learning experimentation.</p>
+<p>If you are up for <strong>Colab</strong>, you can try to load the Penguins dataset by running this in a new notebook cell:</p>
+<div id="6d2f0065" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dataset</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show the first few rows</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
 
 
@@ -292,37 +261,65 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">temp (°C)</th>
-</tr>
-<tr class="even">
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">species</th>
+<th data-quarto-table-cell-role="th">island</th>
+<th data-quarto-table-cell-role="th">bill_length_mm</th>
+<th data-quarto-table-cell-role="th">bill_depth_mm</th>
+<th data-quarto-table-cell-role="th">flipper_length_mm</th>
+<th data-quarto-table-cell-role="th">body_mass_g</th>
+<th data-quarto-table-cell-role="th">sex</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2000</td>
-<td>3.1</td>
+<td data-quarto-table-cell-role="th">0</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>39.1</td>
+<td>18.7</td>
+<td>181.0</td>
+<td>3750.0</td>
+<td>Male</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2001</td>
-<td>2.4</td>
+<td data-quarto-table-cell-role="th">1</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>39.5</td>
+<td>17.4</td>
+<td>186.0</td>
+<td>3800.0</td>
+<td>Female</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2002</td>
-<td>4.8</td>
+<td data-quarto-table-cell-role="th">2</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>40.3</td>
+<td>18.0</td>
+<td>195.0</td>
+<td>3250.0</td>
+<td>Female</td>
 </tr>
 <tr class="even">
-<td data-quarto-table-cell-role="th">2003</td>
-<td>4.1</td>
+<td data-quarto-table-cell-role="th">3</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
 </tr>
 <tr class="odd">
-<td data-quarto-table-cell-role="th">2004</td>
-<td>3.4</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">2005</td>
-<td>4.2</td>
+<td data-quarto-table-cell-role="th">4</td>
+<td>Adelie</td>
+<td>Torgersen</td>
+<td>36.7</td>
+<td>19.3</td>
+<td>193.0</td>
+<td>3450.0</td>
+<td>Female</td>
 </tr>
 </tbody>
 </table>
@@ -330,100 +327,92 @@ or use the run button (▶) in the toolbar at the top</code></pre>
 </div>
 </div>
 </div>
-<div id="bcfd9b81" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>temp.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="00_setup_files/figure-html/cell-6-output-1.png" width="571" height="429" class="figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<section id="markdown" class="level3">
-<h3 class="anchored" data-anchor-id="markdown">Markdown</h3>
-<p>If you want to write some text as documentation (like these words here) then you should label the cell as being a Markdown cell. Do that by selecting the cell and going to the dropdown at the top of the page labelled <em>Code</em> and changing it to <em>Markdown</em>.</p>
-<p>It is becomming common for people to use Jupyter notebooks as a sort of lab notebook where they document their processes, interspersed with code. This style of working where you give prose and code equal weight is sometimes called <em>literate programming</em>.</p>
-<div id="exercise-1" class="callout callout-style-default callout-note no-icon callout-titled" title="Exercise">
+</section>
+<section id="option-b-jupyter-notebooks-via-uv" class="level4">
+<h4 class="anchored" data-anchor-id="option-b-jupyter-notebooks-via-uv">Option B — Jupyter Notebooks (via <code>uv</code>)</h4>
+<p>Jupyter Notebooks are interactive documents that allow you to combine executable Python code, text, visuals, and equations in a single place. They run code in small, editable “cells,” making it easy to experiment, get immediate feedback, and document your reasoning as you go. This format is especially useful for learning and teaching machine learning, as it supports step‑by‑step exploration, visualisation of results, and clear explanations alongside the code.</p>
+<p>There are several ways to install and run Jupyter Notebooks, ranging from full Python distributions like Anaconda to lightweight package managers and online platforms. For this course, we recommend using the <code>uv</code> package manager, as it provides a simple, reliable, and <strong>reproducible</strong> environment setup with minimal configuration.</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Exercise
+What is a package manager?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Take the following code and break it down, chunk by chunk, interspersing it with documentation explaining what each part does using Markdown blocks:</p>
-<div id="d9f7ab98" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple"</span>: <span class="fl">0.40</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana"</span>: <span class="fl">0.50</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>my_basket <span class="op">=</span> {</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple"</span>: <span class="dv">1</span>,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana"</span>: <span class="dv">6</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>total_grocery_bill <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, count <span class="kw">in</span> my_basket.items():</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>    total_grocery_bill <span class="op">+=</span> prices[fruit] <span class="op">*</span> count</span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I owe the grocer £</span><span class="sc">{</span>total_grocery_bill<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You don’t need to put only one line of code per cell, it makes sense sometimes to group some lines together.</p>
-<p>Throughout this course, use the Jupyter Notebook to solve the problems. Follow along with the examples, typing them into your own notebooks and see how they work.</p>
+<p>A package manager is a tool that helps you install, update, and manage software libraries (called “packages”) for a programming language. For most python projects, <a href="https://docs.astral.sh/uv/">uv</a> will be a great choice of package manager.</p>
 </div>
 </div>
-<div id="answer1" class="callout callout-style-default callout-caution no-icon callout-titled" title="Answer">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="install-uv" class="level5">
+<h5 class="anchored" data-anchor-id="install-uv">Install <code>uv</code></h5>
+<p>Package manager installation should only need to be done <strong>once</strong> on your computer. If you encounter any issues, see <a href="https://docs.astral.sh/uv/getting-started/installation/">here</a> for more installation methods to try.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Open your Command Prompt and run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bat code-with-copy"><code class="sourceCode dosbat"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>powershell <span class="at">-ExecutionPolicy</span> ByPass <span class="at">-c</span> <span class="st">"irm https://astral.sh/uv/install.ps1 | iex"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-title-container flex-fill">
-Answer
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Open Terminal and run:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Open Terminal and run:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">curl</span> <span class="at">-Ls</span> https://astral.sh/uv/install.sh <span class="kw">|</span> <span class="fu">bash</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Your notebook could look similar to:</p>
-<section id="my-first-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="my-first-notebook">My first notebook</h3>
-<p>We first define the price of apples and bananas.</p>
-<div id="1f6d45dd" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>prices <span class="op">=</span> {</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple"</span>: <span class="fl">0.40</span>,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana"</span>: <span class="fl">0.50</span>,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Then we state how many apples and bananas we have in the basket.</p>
-<div id="13b6b394" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>my_basket <span class="op">=</span> {</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"apple"</span>: <span class="dv">1</span>,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"banana"</span>: <span class="dv">6</span>,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>For each fruit in the basket we calculate the price to pay and add it to the total bill.</p>
-<div id="dc1c0dec" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>total_grocery_bill <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> fruit, count <span class="kw">in</span> my_basket.items():</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    total_grocery_bill <span class="op">+=</span> prices[fruit] <span class="op">*</span> count</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>We print a message with the total owed to the shop.</p>
-<div id="5ddca0fe" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"I owe the grocer £</span><span class="sc">{</span>total_grocery_bill<span class="sc">:.2f}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>I owe the grocer £3.40</code></pre>
-</div>
+<p>After installation, check that uv is available by typing <code>uv --version</code>, then pressing enter. You may need to restart your terminal for the changes to take effect.</p>
+</section>
+<section id="move-into-project-directory" class="level5">
+<h5 class="anchored" data-anchor-id="move-into-project-directory">Move into Project Directory</h5>
+<p>To set up your Python environment, you need to be in your project directory. Follow these steps:</p>
+<ol type="1">
+<li>Open your terminal.</li>
+<li>Create or navigate to your project directory.</li>
+</ol>
+</section>
+<section id="create-a-virtual-environment" class="level5">
+<h5 class="anchored" data-anchor-id="create-a-virtual-environment">Create a Virtual Environment</h5>
+<p>Enter the following command to create a minimal virtual environment:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> init <span class="at">--bare</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will create a <code>pyproject.toml</code> file, which will record information on all of the packages you install in your virtual environment.</p>
+</section>
+<section id="install-packages" class="level5">
+<h5 class="anchored" data-anchor-id="install-packages">Install Packages</h5>
+<p>For all projects we need jupyterlab, this is where we edit code. This can be added to your project with this command:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add jupyterlab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For the <a href="https://bristol-training.github.io/data-analysis-python-1/">Introduction to Data Analysis in Python course</a>, you would need the <code>pandas</code> and <code>seaborn</code> package. You can add these with:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> add pandas seaborn scikit-learn</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="opening-jupyterlab" class="level5">
+<h5 class="anchored" data-anchor-id="opening-jupyterlab">Opening JupyterLab</h5>
+<p>Now you can open JupyterLab with:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run jupyter lab</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will take some time, and you will see text being printed in the terminal. Once JupyterLab is running, a browser window should pop open. This window should like similar to the image below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/jupyterlab.png" class="img-fluid figure-img"></p>
+<figcaption>JupyterLab Window</figcaption>
+</figure>
 </div>
 </section>
+<section id="create-a-notebook" class="level5">
+<h5 class="anchored" data-anchor-id="create-a-notebook">Create a Notebook</h5>
+<p>To create a notebook, click the “Notebook” icon in the JupyterLab launcher. The window should now look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../assets/jupyterlab-notebook.png" class="img-fluid figure-img"></p>
+<figcaption>JupyterLab Notebook, with key features highlighted with arrows and blue boxes.</figcaption>
+</figure>
 </div>
-</div>
-</div>
+<p>In each cell, python code can be entered. It can be run by clicking the “Run” button or by pressing <code>Shift + Enter</code>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -846,7 +835,7 @@ Answer
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/edit/main/pages/00_setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/edit/main/pages/00_setup.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Bristol-Training/data-analysis-python-1/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
