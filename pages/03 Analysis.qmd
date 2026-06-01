@@ -9,7 +9,7 @@ Let's start by looking at some example data which contains information about the
 ```{.python}
 import pandas as pd
 
-tips = pd.read_csv("./data/tips.csv")
+tips = pd.read_csv("https://bristol-training.github.io/data-analysis-python-1/data/tips.csv")
 tips
 ```
 
