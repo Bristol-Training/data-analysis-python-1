@@ -123,7 +123,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>https://www.metoffice.gov.uk/research/climate/maps-and-data/historic-station-data</p>
-<div id="c403bd81" class="cell" data-tags="[&quot;nbval-ignore-output&quot;]" data-execution_count="1">
+<div id="0955e240" class="cell" data-tags="[&quot;nbval-ignore-output&quot;]" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> urllib.parse <span class="im">import</span> urlparse</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> PurePath, Path</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> subprocess <span class="im">import</span> run</span>
@@ -168,82 +168,82 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stderr">
 <pre><code>&lt;&gt;:28: SyntaxWarning: invalid escape sequence '\*'
 &lt;&gt;:28: SyntaxWarning: invalid escape sequence '\*'
-/tmp/ipykernel_2664/3811952515.py:28: SyntaxWarning: invalid escape sequence '\*'
+/tmp/ipykernel_2661/3811952515.py:28: SyntaxWarning: invalid escape sequence '\*'
   df[col] = pd.to_numeric(df[col].str.replace("[\*#]", "", regex=True))
---2026-06-01 21:17:42--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/cardiffdata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 104.94.123.3
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|104.94.123.3|:443... connected.
+--2026-06-01 21:23:04--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/cardiffdata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.59.110.19
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.59.110.19|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: 31012 (30K) [text/plain]
 Saving to: ‘cardiffdata.txt’
 
-     0K .......... .......... ..........                      100% 15.3M=0.002s
+     0K .......... .......... ..........                      100% 1.94M=0.02s
 
-2026-06-01 21:17:43 (15.3 MB/s) - ‘cardiffdata.txt’ saved [31012/31012]
+2026-06-01 21:23:04 (1.94 MB/s) - ‘cardiffdata.txt’ saved [31012/31012]
 
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_2661/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2026-06-01 21:17:43--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/stornowaydata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 104.94.123.3
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|104.94.123.3|:443... connected.
+--2026-06-01 21:23:04--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/stornowaydata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.59.110.19
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.59.110.19|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘stornowaydata.txt’
 
-     0K .......... .......... .......... .......... .......... 12.6M
-    50K .......... .......... .......... .......... ...        1.66M=0.03s
+     0K .......... .......... .......... .......... .......... 1.13M
+    50K .......... .......... .......... .......... ...        2.74M=0.06s
 
-2026-06-01 21:17:43 (3.08 MB/s) - ‘stornowaydata.txt’ saved [96141]
+2026-06-01 21:23:05 (1.56 MB/s) - ‘stornowaydata.txt’ saved [96141]
 
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_2661/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2026-06-01 21:17:43--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/oxforddata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 104.94.123.3
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|104.94.123.3|:443... connected.
+--2026-06-01 21:23:05--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/oxforddata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.59.110.19
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.59.110.19|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘oxforddata.txt’
 
-     0K .......... .......... .......... .......... .......... 15.6M
-    50K .......... .......... .......... .......... .......... 35.4M
-   100K ......                                                  121M=0.005s
+     0K .......... .......... .......... .......... .......... 1.08M
+    50K .......... .......... .......... .......... .......... 1.15M
+   100K ......                                                 8.18M=0.09s
 
-2026-06-01 21:17:43 (22.7 MB/s) - ‘oxforddata.txt’ saved [108811]
+2026-06-01 21:23:05 (1.17 MB/s) - ‘oxforddata.txt’ saved [108811]
 
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_2661/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
---2026-06-01 21:17:43--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/armaghdata.txt
-Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 104.94.123.3
-Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|104.94.123.3|:443... connected.
+--2026-06-01 21:23:05--  https://www.metoffice.gov.uk/pub/data/weather/uk/climate/stationdata/armaghdata.txt
+Resolving www.metoffice.gov.uk (www.metoffice.gov.uk)... 23.59.110.19
+Connecting to www.metoffice.gov.uk (www.metoffice.gov.uk)|23.59.110.19|:443... connected.
 HTTP request sent, awaiting response... 200 OK
 Length: unspecified [text/plain]
 Saving to: ‘armaghdata.txt’
 
-     0K .......... .......... .......... .......... .......... 18.7M
-    50K .......... .......... .......... .......... .......... 26.5M
-   100K ......                                                 11.7T=0.004s
+     0K .......... .......... .......... .......... .......... 1.13M
+    50K .......... .......... .......... .......... .......... 2.52M
+   100K ......                                                 11.7T=0.06s
 
-2026-06-01 21:17:44 (23.3 MB/s) - ‘armaghdata.txt’ saved [108812]
+2026-06-01 21:23:06 (1.66 MB/s) - ‘armaghdata.txt’ saved [108812]
 
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated. Combine the desired columns with pd.to_datetime after parsing instead.
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+/tmp/ipykernel_2661/3811952515.py:13: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+/tmp/ipykernel_2661/3811952515.py:13: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df = pd.read_csv(
-/tmp/ipykernel_2664/3811952515.py:41: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
+/tmp/ipykernel_2661/3811952515.py:41: FutureWarning: 'Y' is deprecated and will be removed in a future version, please use 'YE' instead.
   rain.loc[:"2020"].resample("Y").mean().to_csv("rain.csv", date_format="%Y", index_label=False, float_format='%.1f')</code></pre>
 </div>
 </div>
